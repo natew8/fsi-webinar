@@ -1,0 +1,13 @@
+.landingOne {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0px;
+  margin: 0px auto;
+  height: 100vh;
+  background: url(https://nw-portfolio-images.s3-us-west-1.amazonaws.com/startup-593336_1920.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 200;
+}
