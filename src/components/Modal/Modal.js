@@ -6,7 +6,6 @@ import moment from "moment";
 function Modal(props) {
   const context = useContext(Context);
   const { webinarId, schedule, webinarDate, presenter } = context;
-  console.log(presenter);
   const { closeModal, modal } = props;
 
   function handleCloseModal(e) {
