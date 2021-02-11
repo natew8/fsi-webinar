@@ -44,6 +44,7 @@
     justify-content: space-evenly;
     width: 60%;
     h1 {
+      filter: saturate(0.8);
       text-transform: none;
       font-size: 3rem;
       color: #e06027;
@@ -139,6 +140,7 @@
       margin: 0px 0.6rem;
     }
     button {
+      filter: saturate(0.8);
       background-color: #e06027;
       width: 50%;
       height: 3rem;
@@ -150,7 +152,7 @@
     }
     button:hover {
       cursor: pointer;
-      background-color: #bb4d1e;
+      background-color: #c55526;
     }
   }
 }
