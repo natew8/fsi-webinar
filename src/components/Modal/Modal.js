@@ -42,13 +42,12 @@ function Modal(props) {
               alt="something"
             />
             <h2>Social Security Workshop</h2>
-            <h2>
+            {/* <h2>
               Presented By:<h1>{presenter.name}</h1>
-            </h2>
-            <h2>{`${moment(webinarDate).format("MMMM Do YYYY")} @ ${moment(
+            </h2> */}
+            <h1>{`${moment(webinarDate).format("MMMM Do YYYY")} @ ${moment(
               webinarDate
-            ).format("hh:mm")}`}</h2>
-            <h3>We'll see you there!</h3>
+            ).format("hh:mm")}`}</h1>
           </span>
           <div className={modalStyles.line}></div>
           <form onSubmit={(e) => e.preventDefault()}>
@@ -71,6 +70,7 @@ function Modal(props) {
             <button>Register</button>
           </form>
         </span>
+        <h3>We can't wait to see you there!</h3>
       </span>
     </div>
   );

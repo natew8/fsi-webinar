@@ -7,7 +7,6 @@
   width: 100vw;
   height: 100vh;
   z-index: 2000;
-  transition: all ease 3s;
   align-items: center;
   justify-content: center;
 }
@@ -22,9 +21,15 @@
   z-index: 440000;
   display: flex;
   flex-direction: column;
+  h3 {
+    color: rgb(255, 255, 255);
+    margin: 0px;
+    margin-top: 0.6rem;
+  }
   .div {
+    font-weight: bolder;
     color: black;
-    background-color: #51c5c7;
+    background-color: #d3d3d3;
     text-align: center;
     position: absolute;
     right: -10px;
@@ -41,7 +46,7 @@
     display: block;
     margin: 0px;
     h1 {
-      color: #fff;
+      color: #e06027;
       font-size: 2.5rem;
       margin: 0;
     }
@@ -65,18 +70,15 @@
       h2 {
         color: #e06027;
         margin: 0;
-        h1 {
-          color: #fff;
-          margin: 0px;
-        }
       }
-      h3 {
-        color: rgb(255, 255, 255);
+      h1 {
+        color: #fff;
         margin: 0px;
       }
+
       img {
         width: 100%;
-        margin-bottom: 1.5rem;
+        margin-bottom: 3.5rem;
       }
     }
     form {
@@ -100,8 +102,6 @@
           border-radius: 5px;
           height: 2.5rem;
           margin: 0px;
-        }
-        input:focus {
         }
       }
       button {
