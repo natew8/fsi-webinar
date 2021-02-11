@@ -2,9 +2,16 @@ import React from "react";
 import landingStyles from "./register.module.scss";
 
 function RegisterBanner(props) {
+  const { openModal } = props;
+
+  function handleOpenModal(e) {
+    e.stopPropagation();
+    openModal();
+  }
+
   return (
     <div className={landingStyles.landingOneContainer}>
-      <h1>Your Retirement and Taxes</h1>
+      <h1>Maximise your Social Security benefits </h1>
       <div className={landingStyles.linksToRegister}>
         <div className={landingStyles.linksToRegisterHeader}>
           <img
@@ -74,9 +81,9 @@ function RegisterBanner(props) {
         </div>
         <div className={landingStyles.linksToRegisterButtons}>
           <span>
-            <button>Register for this date</button>
+            <button onClick={handleOpenModal}>Register for this date</button>
             <h1>or</h1>
-            <button>Register for this date</button>
+            <button onClick={handleOpenModal}>Register for this date</button>
           </span>
         </div>
       </div>

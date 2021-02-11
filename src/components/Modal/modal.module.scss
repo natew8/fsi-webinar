@@ -1,0 +1,21 @@
+.modal {
+  background-color: #7a7a7aa4;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  bottom: 0%;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2000;
+  transition: all ease 3s;
+  align-items: center;
+  justify-content: center;
+}
+
+.formContainer {
+  position: relative;
+  background-color: #e6e6e6;
+  width: 60%;
+  height: 70%;
+  z-index: 40000;
+}
