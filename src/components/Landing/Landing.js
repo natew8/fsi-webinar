@@ -7,6 +7,7 @@ function Landing(props) {
   //Modal
   const [modal, setModal] = useState(false);
   const selectModal = () => setModal(!modal);
+  console.log(modal);
   return (
     <>
       <Modal modal={modal} closeModal={selectModal} />

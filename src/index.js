@@ -3,10 +3,13 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { WebinarProvider } from "./components/context/WebinarContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <WebinarProvider>
+      <App />
+    </WebinarProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
