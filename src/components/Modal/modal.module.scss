@@ -1,5 +1,6 @@
 .modal {
-  background-color: #aaaaaaa4;
+  background-color: #5858586c;
+  backdrop-filter: saturate(0.5) blur(10px);
   position: fixed;
   top: 0%;
   left: 0%;
@@ -12,6 +13,7 @@
 }
 
 .formContainer {
+  box-shadow: 6px 4px 10px black;
   border-radius: 5px;
   padding: 1rem;
   position: relative;
