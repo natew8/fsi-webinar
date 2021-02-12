@@ -42,5 +42,8 @@
     ]
   },
   "proxy": "http://localhost:5000",
-  "main": "server/index.js"
+  "main": "server/index.js",
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
+  }
 }
