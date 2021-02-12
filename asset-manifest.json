@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/fsi.webinars.pages/static/css/main.cf7699ff.chunk.css",
-    "main.js": "/fsi.webinars.pages/static/js/main.d0a50ef9.chunk.js",
-    "main.js.map": "/fsi.webinars.pages/static/js/main.d0a50ef9.chunk.js.map",
+    "main.css": "/fsi.webinars.pages/static/css/main.8852d9b9.chunk.css",
+    "main.js": "/fsi.webinars.pages/static/js/main.77bf66ab.chunk.js",
+    "main.js.map": "/fsi.webinars.pages/static/js/main.77bf66ab.chunk.js.map",
     "runtime-main.js": "/fsi.webinars.pages/static/js/runtime-main.f45b5f16.js",
     "runtime-main.js.map": "/fsi.webinars.pages/static/js/runtime-main.f45b5f16.js.map",
     "static/js/2.f0473c46.chunk.js": "/fsi.webinars.pages/static/js/2.f0473c46.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.5fd91639.chunk.js": "/fsi.webinars.pages/static/js/3.5fd91639.chunk.js",
     "static/js/3.5fd91639.chunk.js.map": "/fsi.webinars.pages/static/js/3.5fd91639.chunk.js.map",
     "index.html": "/fsi.webinars.pages/index.html",
-    "static/css/main.cf7699ff.chunk.css.map": "/fsi.webinars.pages/static/css/main.cf7699ff.chunk.css.map",
+    "static/css/main.8852d9b9.chunk.css.map": "/fsi.webinars.pages/static/css/main.8852d9b9.chunk.css.map",
     "static/js/2.f0473c46.chunk.js.LICENSE.txt": "/fsi.webinars.pages/static/js/2.f0473c46.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f45b5f16.js",
     "static/js/2.f0473c46.chunk.js",
-    "static/css/main.cf7699ff.chunk.css",
-    "static/js/main.d0a50ef9.chunk.js"
+    "static/css/main.8852d9b9.chunk.css",
+    "static/js/main.77bf66ab.chunk.js"
   ]
 }
