@@ -8,31 +8,39 @@ const styles = {
     ...provided,
     width: "100%",
   }),
+  control: (provided) => ({
+    ...provided,
+    outline: "none",
+  }),
 };
-function MappedSchedules(props) {
-  const { schedules } = useContext(Context);
 
-  function handleSelected(sched) {
-    console.log(sched);
-    sched.selected = true;
-  }
+export default function MappedSchedules(props) {
+  //Context//
+  const { schedules, setSchedule, schedule } = useContext(Context);
 
-  const sortedSchedules = schedules.sort((a, b) => {
-    return a.schedule - b.schedule;
-  });
-  // .map((sched) => {
-  //   return { value: sched.schedule, label: sched.comment };
-  // });
+  //Sort and Map schedules//
+  const sortedSchedules = schedules
+    .sort((a, b) => {
+      return a.schedule - b.schedule;
+    })
+    .map((sched) => {
+      return { value: sched.schedule, label: sched.comment };
+    });
 
   return (
-    <Select
-      isSearchable={false}
-      placeholder={sortedSchedules[0]}
-      defaultValue={sortedSchedules[0]}
-      styles={styles}
-      options={sortedSchedules}
-    />
+    <>
+      <Select
+        onChange={handleInput}
+        isSearchable={false}
+        placeholder={sortedSchedules[0].label}
+        defaultValue={schedule}
+        styles={styles}
+        options={sortedSchedules}
+      />
+    </>
   );
-}
 
-export default MappedSchedules;
+  function handleInput(e) {
+    setSchedule(e.value);
+  }
+}

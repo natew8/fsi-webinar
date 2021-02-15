@@ -7,9 +7,21 @@ import moment from "moment";
 import MappedSchedules from "./MappedSchedules";
 
 function Modal(props) {
-  const { webinarId, schedules, webinarDate, presenter, name } = useContext(
-    Context
-  );
+  const {
+    webinarId,
+    presenter,
+    name,
+    schedule,
+    firstName,
+    lastName,
+    email,
+    phone,
+    setFirstName,
+    setLastName,
+    setEmail,
+    setPhone,
+    registerUser,
+  } = useContext(Context);
 
   const { closeModal, modal } = props;
 
@@ -49,41 +61,75 @@ function Modal(props) {
           </span>
           <div className={modalStyles.line}></div>
           <form onSubmit={(e) => e.preventDefault()}>
-            <label>
+            <label forhtml="firstName">
               First Name *
-              <input prefix="$" id="firstName" type="text" />
+              <input
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                prefix="$"
+                id="firstName"
+                type="text"
+              />
             </label>
-            <label>
+            <label forhtml="lastName">
               Last Name *
-              <input id="lastName" type="text" />
+              <input
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                id="lastName"
+                type="text"
+              />
             </label>
-            <label>
+            <label forhtml="email">
               Email *
-              <input id="email" type="email" />
+              <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                id="email"
+                type="email"
+              />
             </label>
-            <label forHtml="phone">
+            <label forhtml="phone">
               Phone Number *
               <PhoneInput
+                value={phone}
+                onChange={handlePhone}
                 inputClass={modalStyles.phoneInput}
                 disableDropdown
                 dropdownClass={modalStyles.dropdown}
                 disableCountryCode
                 label={false}
                 country={"us"}
-                placeholder={false}
+                placeholder="(xxx) xxx-xxxx"
               />
             </label>
             <label>
               Please Choose a date *
               <MappedSchedules />
             </label>
-            <button>Register</button>
+            <button onClick={handleRegisterUser}>Register</button>
           </form>
         </span>
         <h3>We can't wait to see you there!</h3>
       </span>
     </div>
   );
+
+  function handlePhone(e) {
+    setPhone(e);
+  }
+
+  function handleRegisterUser() {
+    const body = {
+      first_name: firstName,
+      last_name: lastName,
+      email: email,
+      phone: phone,
+      schedule: schedule,
+      webinar_id: webinarId,
+    };
+    registerUser(body);
+  }
 }
 
 export default Modal;

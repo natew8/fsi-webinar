@@ -16,6 +16,7 @@ export function WebinarProvider(props) {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [schedule, setSchedule] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   const webinarKey = process.env.REACT_APP_WEBINAR_KEY;
 
@@ -23,22 +24,29 @@ export function WebinarProvider(props) {
     axios
       .post("/api/webinar")
       .then((res) => {
-        console.log(res.data.webinar);
         setPresenter(res.data.webinar.presenters[0]);
         setWebinarId(res.data.webinar.webinar_id);
         setSchedules(res.data.webinar.schedules);
+        setSchedule(res.data.webinar.schedules[0].schedule);
         setName(res.data.webinar.name);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
 
-  const registerUser = () => {
+  const registerUser = (body) => {
+    const { first_name, last_name, email, phone, webinar_id, schedule } = body;
     axios
-      .post(`/api/webinar/register/${firstName}${lastName}${email}${phone}`)
+      .post(
+        `/api/webinar/register/${first_name}/${last_name}/${email}/${phone}/${webinar_id}/${schedule}`
+      )
       .then((res) => {
         console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
 
@@ -55,6 +63,8 @@ export function WebinarProvider(props) {
         phone,
         name,
         schedule,
+        loading,
+        setLoading,
         registerUser,
         setFirstName,
         setLastName,

@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 
 //Get Webinar Data//
 app.post("/api/webinar", async (req, res) => {
-  const api_url = `https://api.webinarjam.com/webinarjam/webinar?api_key=${REACT_APP_WEBINAR_KEY}&webinar_id=51`;
+  const api_url = `https://api.webinarjam.com/webinarjam/webinar?api_key=${REACT_APP_WEBINAR_KEY}&webinar_id=52`;
   const fetch_response = await fetch(api_url, {
     method: "POST",
     headers: {
@@ -35,17 +35,21 @@ app.post("/api/webinar", async (req, res) => {
   res.send(myJson);
 });
 
-//Register User to Webinar//
+//Register User to Webinar  DONT FORGET TO ADD ASYNC AND AWAIT//
 app.post(
-  "/api/webinar/register/:first_name/:last_name/:email/:phone",
+  "/api/webinar/register/:first_name/:last_name/:email/:phone/:webinar_id/:schedule/",
   async (req, res) => {
-    console.log(req);
-    const api_url = `https://api.webinarjam.com/webinarjam/register?api_key=${REACT_APP_WEBINAR_KEY}schedule=78&webinar_id=45&first_name=Nate(test)&last_name=Waite(test)&email=n8w8dev@gmail.com&phone`;
+    const {
+      first_name,
+      last_name,
+      email,
+      phone,
+      webinar_id,
+      schedule,
+    } = req.params;
+    const api_url = `https://api.webinarjam.com/webinarjam/register?api_key=${REACT_APP_WEBINAR_KEY}schedule=${schedule}&webinar_id=${webinar_id}&first_name=${first_name}&last_name=${last_name}&email=${email}&phone=${phone}`;
     const fetch_user = await fetch(api_url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      method: "post",
     });
     console.log(fetch_user);
   }
