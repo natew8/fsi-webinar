@@ -47,11 +47,16 @@ app.post(
       webinar_id,
       schedule,
     } = req.params;
-    const api_url = `https://api.webinarjam.com/webinarjam/register?api_key=${REACT_APP_WEBINAR_KEY}schedule=${schedule}&webinar_id=${webinar_id}&first_name=${first_name}&last_name=${last_name}&email=${email}&phone=${phone}`;
+    const api_url = `https://api.webinarjam.com/webinarjam/register?api_key=${REACT_APP_WEBINAR_KEY}&schedule=${schedule}&webinar_id=${webinar_id}&first_name=${first_name}&last_name=${last_name}&email=${email}&phone=${phone}`;
     const fetch_user = await fetch(api_url, {
       method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
-    console.log(fetch_user);
+
+    const myJson = await fetch_user.json();
+    res.send(myJson);
   }
 );
 

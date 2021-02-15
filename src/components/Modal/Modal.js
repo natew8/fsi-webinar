@@ -3,7 +3,6 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { Context } from "../context/WebinarContext";
 import modalStyles from "./modal.module.scss";
-import moment from "moment";
 import MappedSchedules from "./MappedSchedules";
 
 function Modal(props) {
