@@ -8,6 +8,7 @@
   margin: 0px auto;
   padding: 0rem 0.6rem;
   h1 {
+    text-align: center;
     text-transform: uppercase;
     letter-spacing: 3px;
     margin: 0%;
@@ -33,37 +34,36 @@
 .linksToRegisterHeader {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1rem;
   .line {
-    border-left: 0.1px solid rgb(245, 245, 245);
+    margin: 0px 1rem;
+    border-left: 0.1px solid rgba(245, 245, 245, 0.513);
     width: 0px;
   }
   div {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    width: 60%;
+    width: 59%;
     h1 {
       filter: saturate(0.8);
       text-transform: none;
       font-size: 3rem;
       color: #e06027;
-      text-align: left;
+      text-align: center;
       margin: 0px;
     }
     h2 {
       font-weight: 400;
       color: rgb(245, 245, 245);
       display: flex;
-      align-items: center;
-      text-align: left;
-      margin: 0px;
+      margin: 0px auto;
       h1 {
         color: rgb(245, 245, 245);
         text-decoration: underline;
         margin: 0px 5px;
         font-size: 1.5rem;
         letter-spacing: 0px;
+        text-align: center;
       }
     }
     p {
@@ -74,22 +74,22 @@
     }
   }
   img {
-    width: 35%;
+    width: 40%;
     height: 200px;
   }
 }
 
 .linksToRegisterList {
-  padding: 1rem;
+  padding: 1rem 0rem 0rem 0rem;
   flex-grow: 0.7;
   display: flex;
   flex-direction: column;
   h1 {
     letter-spacing: 1px;
     margin: 0px;
-    margin-top: 1rem;
+    // margin-top: 1rem;
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
   div {
     width: 85%;
@@ -97,19 +97,22 @@
     span {
       display: flex;
       align-items: center;
-      margin-bottom: 1.3rem;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
       h3 {
+        font-weight: 600;
         margin: 0;
         color: rgb(211, 211, 211);
         display: flex;
         align-items: center;
+        font-size: 1.2rem;
         h6 {
           margin: 0px;
           margin-left: 5px;
         }
       }
       img {
-        margin-right: 1rem;
+        margin-right: 0.5rem;
         width: 30px;
         filter: invert(95%) sepia(8%) saturate(5755%) hue-rotate(146deg)
           brightness(96%) contrast(85%);
@@ -117,36 +120,35 @@
     }
   }
 }
-.linksToRegisterTag {
-  h1 {
-    font-size: 1rem;
-    margin: 0px;
-  }
-  h2 {
-    margin: 0px;
-    color: #4bdfe4;
-  }
-}
 .linksToRegisterButtons {
-  flex-grow: 0.6;
-  padding: 2rem 0rem 0rem 0rem;
+  padding: 1rem 0rem;
+  margin-top: 1rem;
+  h1 {
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin: 0%;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
   span {
     margin: 0px auto;
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 70%;
-    h1 {
-      font-size: 1rem;
-      margin: 0px 0.6rem;
-    }
+    // h1 {
+    //   font-size: 1rem;
+    //   margin: 0px 0.6rem;
+    // }
     button {
+      margin: 0;
       filter: saturate(0.8);
       background-color: #e06027;
       width: 50%;
-      height: 3rem;
+      height: 3.5rem;
       border: 1px solid rgb(255, 191, 72);
       border-radius: 5px;
-      font-size: 1.25rem;
+      font-size: 2rem;
       color: rgb(245, 245, 245);
       font-weight: 800;
     }

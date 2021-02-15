@@ -1,0 +1,12 @@
+.date {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  h3 {
+    margin: 0%;
+  }
+}
+
+.selected {
+  background-color: blue;
+}

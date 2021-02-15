@@ -1,5 +1,6 @@
 import React from "react";
 import landingStyles from "./register.module.scss";
+import Logo from "../../../fsiLogo.png";
 
 function RegisterBanner(props) {
   const { openModal } = props;
@@ -14,10 +15,7 @@ function RegisterBanner(props) {
       <h1>Maximise your Social Security benefits </h1>
       <div className={landingStyles.linksToRegister}>
         <div className={landingStyles.linksToRegisterHeader}>
-          <img
-            src="https://static.wixstatic.com/media/e82ded_9bab553a72f44243a0e9b02ff806bf25~mv2.png/v1/fill/w_266,h_130,al_c,q_85,usm_0.66_1.00_0.01/set%20sail%20white%20lettering.webp"
-            alt="logo"
-          />
+          <img src={Logo} alt="logo" />
           <div className={landingStyles.line}></div>
           <div>
             <h1>You're Invited</h1>
@@ -76,14 +74,14 @@ function RegisterBanner(props) {
           </div>
         </div>
         <div className={landingStyles.linksToRegisterTag}>
-          <h1>Dont miss out on this incredible opportunity.</h1>
-          <h2>Register Today!</h2>
+          {/* <h2>Register Today!</h2> */}
         </div>
         <div className={landingStyles.linksToRegisterButtons}>
+          <h1>Dont miss out on this incredible opportunity.</h1>
           <span>
-            <button onClick={handleOpenModal}>Register for this date</button>
-            <h1>or</h1>
-            <button onClick={handleOpenModal}>Register for this date</button>
+            <button onClick={handleOpenModal}>Register Today!</button>
+            {/* <h1>or</h1>
+            <button onClick={handleOpenModal}>Register for this date</button> */}
           </span>
         </div>
       </div>
