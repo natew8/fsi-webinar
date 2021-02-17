@@ -46,7 +46,9 @@ function Modal(props) {
         onClick={(e) => e.stopPropagation()}
         className={modalStyles.formContainer}
       >
-        <div className={modalStyles.div}>&times;</div>
+        <div onClick={handleCloseModal} className={modalStyles.div}>
+          &times;
+        </div>
         <span className={modalStyles.header}>
           <h1>Thank you for your interest in this event</h1>
           <h2>Please fill out the form below to register</h2>
@@ -63,6 +65,7 @@ function Modal(props) {
             <label forhtml="firstName">
               First Name *
               <input
+                required
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 prefix="$"
@@ -73,6 +76,7 @@ function Modal(props) {
             <label forhtml="lastName">
               Last Name *
               <input
+                required
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
                 id="lastName"
@@ -82,6 +86,7 @@ function Modal(props) {
             <label forhtml="email">
               Email *
               <input
+                required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 id="email"
@@ -91,6 +96,7 @@ function Modal(props) {
             <label forhtml="phone">
               Phone Number *
               <PhoneInput
+                required
                 value={phone}
                 onChange={handlePhone}
                 inputClass={modalStyles.phoneInput}
