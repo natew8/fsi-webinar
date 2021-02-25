@@ -5,14 +5,13 @@ import Logo from "../../../fsiLogoWhite.png";
 import { Context } from "../../context/WebinarContext";
 
 function RegisterBanner(props) {
-  const { schedules } = useContext(Context);
+  const { schedules, twoWebinars } = useContext(Context);
   const { openModal } = props;
   console.log(schedules);
   function handleOpenModal(e) {
     e.stopPropagation();
     openModal();
   }
-
   return (
     <div className={landingStyles.landingOneContainer}>
       <h1>Maximise your Social Security benefits </h1>
@@ -23,7 +22,9 @@ function RegisterBanner(props) {
           <div>
             <h1>You're Invited</h1>
             <h2>
-              Limited time live <h1>Online</h1>workshop
+              Limited time live
+              <h1>Online</h1>
+              workshop
             </h2>
             <h3>
               Experienced in the privacy of your own home!<br></br>
@@ -77,18 +78,31 @@ function RegisterBanner(props) {
           </div>
         </div>
         <div className={landingStyles.linksToRegisterButtons}>
-          <h1>Dont miss out on this incredible opportunity.</h1>
-          <span>
-            {schedules.length !== 2 ? (
-              <button onClick={handleOpenModal}>Register Today!</button>
+          {!twoWebinars ? (
+            <h1>Don't miss out on this incredible opportunity.</h1>
+          ) : (
+            <>
+              <h1>Don't miss out on this incredible opportunity.</h1>
+              <h2>Register Today!</h2>
+            </>
+          )}
+          <span className={landingStyles.buttonBox}>
+            {!twoWebinars ? (
+              <button onClick={handleOpenModal}></button>
             ) : (
               <>
-                <button onClick={handleOpenModal}>
-                  {moment(schedules[0].date).format("LL")}
+                <button
+                  className={landingStyles.registerButton}
+                  onClick={handleOpenModal}
+                >
+                  {schedules[0].comment}
                 </button>
                 <h1>or</h1>
-                <button onClick={handleOpenModal}>
-                  {moment(schedules[1].date).format("LL")}
+                <button
+                  className={landingStyles.registerButton}
+                  onClick={handleOpenModal}
+                >
+                  {schedules[1].comment}
                 </button>
               </>
             )}

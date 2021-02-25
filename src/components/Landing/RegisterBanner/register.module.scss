@@ -29,14 +29,13 @@
   background-color: #000000c0;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .linksToRegisterHeader {
   display: flex;
   justify-content: space-between;
   .line {
-    margin: 0px 1rem;
     border-left: 0.1px solid rgba(245, 245, 245, 0.513);
     width: 0px;
     margin: 0%;
@@ -47,7 +46,7 @@
     justify-content: space-evenly;
     h1 {
       filter: saturate(0.8);
-      font-size: 3rem;
+      font-size: 2.75rem;
       text-align: left;
       color: #e06027;
       margin: 0px;
@@ -76,38 +75,34 @@
     }
   }
   .logo {
-    padding: 0.25rem;
+    padding: 0.5rem;
     width: 45%;
   }
 }
 
 .linksToRegisterList {
-  padding: 1rem 0rem 0rem 0rem;
-  flex-grow: 0.7;
+  padding: 1rem 0rem;
   display: flex;
   flex-direction: column;
   h1 {
     letter-spacing: 1px;
     margin: 0px;
     // margin-top: 1rem;
-    margin-bottom: 1rem;
     font-size: 1.7rem;
   }
   div {
-    width: 85%;
     margin: 0px auto;
     span {
       display: flex;
       align-items: center;
-      margin-bottom: 1rem;
       margin-top: 1rem;
       h3 {
         font-weight: 600;
-        margin: 0;
+        margin: 0px;
         color: rgb(211, 211, 211);
         display: flex;
         align-items: center;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         h6 {
           margin: 0px;
           margin-left: 5px;
@@ -124,33 +119,36 @@
 }
 .linksToRegisterButtons {
   padding: 1rem 0rem;
-  margin-top: 1rem;
   h1 {
     font-weight: 800;
     letter-spacing: 1px;
     margin: 0%;
-    font-size: 1rem;
-    margin-bottom: 1rem;
+    font-size: 1em;
   }
-  span {
+  h2 {
+    margin-top: 0%;
+    font-size: 1.5em;
+    color: #e06027;
+    filter: saturate(0.8);
+  }
+  .buttonBox {
     margin: 0px auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70%;
-    // h1 {
-    //   font-size: 1rem;
-    //   margin: 0px 0.6rem;
-    // }
-    button {
+    h1 {
+      font-size: 1rem;
+      margin: 0px 0.6rem;
+    }
+    .registerButton {
       margin: 0;
       filter: saturate(0.8);
       background-color: #e06027;
-      width: 50%;
+      width: 45%;
       height: 3.5rem;
       border: 1px solid rgb(255, 191, 72);
       border-radius: 5px;
-      font-size: 2rem;
+      font-size: 1.5rem;
       color: rgb(245, 245, 245);
       font-weight: 800;
     }

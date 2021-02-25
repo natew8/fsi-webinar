@@ -17,6 +17,7 @@ export function WebinarProvider(props) {
   const [phone, setPhone] = useState("");
   const [schedule, setSchedule] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [twoWebinars, setTwoWebinars] = useState(true);
 
   const webinarKey = process.env.REACT_APP_WEBINAR_KEY;
 
@@ -27,13 +28,18 @@ export function WebinarProvider(props) {
         console.log(res);
         setPresenter(res.data.webinar.presenters);
         setWebinarId(res.data.webinar.webinar_id);
+        {
+          res.data.webinar.schedules.length !== 2 && setTwoWebinars(false);
+        }
         setSchedules(res.data.webinar.schedules);
         setSchedule(res.data.webinar.schedules[0].schedule);
         setName(res.data.webinar.name);
-        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, []);
 
@@ -66,6 +72,7 @@ export function WebinarProvider(props) {
         name,
         schedule,
         loading,
+        twoWebinars,
         setLoading,
         registerUser,
         setFirstName,

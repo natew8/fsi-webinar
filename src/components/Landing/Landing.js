@@ -14,7 +14,11 @@ function Landing(props) {
     <>
       {!loading && <Modal modal={modal} closeModal={selectModal} />}
       <div className={landingStyles.landingOne}>
-        <RegisterBanner modal={modal} openModal={selectModal} />
+        {!loading ? (
+          <RegisterBanner modal={modal} openModal={selectModal} />
+        ) : (
+          <h1 className={landingStyles.loading}>Loading Info...</h1>
+        )}
       </div>
       <div></div>
     </>
