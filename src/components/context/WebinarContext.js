@@ -7,7 +7,7 @@ export function WebinarProvider(props) {
   const [webinarId, setWebinarId] = useState(0);
   const [schedules, setSchedules] = useState([]);
   const [webinarDate, setWebinarDate] = useState("");
-  const [presenter, setPresenter] = useState({});
+  const [presenter, setPresenter] = useState([]);
   const [name, setName] = useState("");
 
   //User Registration State//
@@ -25,7 +25,7 @@ export function WebinarProvider(props) {
       .post("/api/webinar")
       .then((res) => {
         console.log(res);
-        setPresenter(res.data.webinar.presenters[0]);
+        setPresenter(res.data.webinar.presenters);
         setWebinarId(res.data.webinar.webinar_id);
         setSchedules(res.data.webinar.schedules);
         setSchedule(res.data.webinar.schedules[0].schedule);
@@ -33,7 +33,6 @@ export function WebinarProvider(props) {
         setLoading(false);
       })
       .catch((err) => {
-        // setLoading(false);
         console.log(err);
       });
   }, []);

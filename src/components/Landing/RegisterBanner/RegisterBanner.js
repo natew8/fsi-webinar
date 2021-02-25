@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import landingStyles from "./register.module.scss";
-import Logo from "../../../fsiLogo.png";
+import moment from "moment";
+import Logo from "../../../fsiLogoWhite.png";
+import { Context } from "../../context/WebinarContext";
 
 function RegisterBanner(props) {
+  const { schedules } = useContext(Context);
   const { openModal } = props;
-
+  console.log(schedules);
   function handleOpenModal(e) {
     e.stopPropagation();
     openModal();
@@ -15,17 +18,17 @@ function RegisterBanner(props) {
       <h1>Maximise your Social Security benefits </h1>
       <div className={landingStyles.linksToRegister}>
         <div className={landingStyles.linksToRegisterHeader}>
-          <img src={Logo} alt="logo" />
+          <img className={landingStyles.logo} src={Logo} alt="logo" />
           <div className={landingStyles.line}></div>
           <div>
             <h1>You're Invited</h1>
             <h2>
               Limited time live <h1>Online</h1>workshop
             </h2>
-            <p>
-              Experienced in the privacy of your own home - You don't need
-              anything but a screen and internet to join!
-            </p>
+            <h3>
+              Experienced in the privacy of your own home!<br></br>
+              You don't need anything but a screen and internet to join.
+            </h3>
           </div>
         </div>
         <div className={landingStyles.linksToRegisterList}>
@@ -73,15 +76,22 @@ function RegisterBanner(props) {
             </span>
           </div>
         </div>
-        <div className={landingStyles.linksToRegisterTag}>
-          {/* <h2>Register Today!</h2> */}
-        </div>
         <div className={landingStyles.linksToRegisterButtons}>
           <h1>Dont miss out on this incredible opportunity.</h1>
           <span>
-            <button onClick={handleOpenModal}>Register Today!</button>
-            {/* <h1>or</h1>
-            <button onClick={handleOpenModal}>Register for this date</button> */}
+            {schedules.length !== 2 ? (
+              <button onClick={handleOpenModal}>Register Today!</button>
+            ) : (
+              <>
+                <button onClick={handleOpenModal}>
+                  {moment(schedules[0].date).format("LL")}
+                </button>
+                <h1>or</h1>
+                <button onClick={handleOpenModal}>
+                  {moment(schedules[1].date).format("LL")}
+                </button>
+              </>
+            )}
           </span>
         </div>
       </div>
