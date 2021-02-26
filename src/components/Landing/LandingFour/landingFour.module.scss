@@ -1,18 +1,37 @@
 .landingContainer {
   margin: 0% auto;
   max-width: 1000px;
+  max-height: 1000px;
   .title {
     margin: 0%;
     font-size: 3rem;
     font-style: italic;
   }
 }
+.line {
+  border: 1px solid #000000;
+  margin: 1rem;
+}
 .infoBox {
   display: flex;
   p {
+    padding: 1rem 0rem;
+    text-align: left;
+    line-height: 40px;
+    margin: 0%;
+    font-size: 1.75rem;
     font-family: Lato;
   }
 }
 .logo {
-  width: 400px;
+  padding: 0.5rem;
+  width: 450px;
+}
+
+.contactBox {
+  p {
+    padding: 0%;
+    margin: 0%;
+    font-size: 1.25rem;
+  }
 }

@@ -5,7 +5,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100vw;
-  height: 300vh;
   box-sizing: border-box;
   overflow-x: hidden;
 }
