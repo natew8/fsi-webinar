@@ -24,13 +24,11 @@ function ModalA(props) {
     setPhone,
     registerUser,
   } = useContext(Context);
-  console.log(schedules);
 
   const filteredSchedule = schedules.filter(
     (date) => date.schedule === +pickedDate
   );
 
-  console.log(filteredSchedule);
   return (
     <span
       aria-hidden="true"

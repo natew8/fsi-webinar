@@ -26,17 +26,20 @@ export default function MappedSchedules(props) {
     .map((sched) => {
       return { value: sched.schedule, label: sched.comment };
     });
-
   return (
     <>
-      <Select
-        onChange={handleInput}
-        isSearchable={false}
-        placeholder={sortedSchedules[0].label}
-        defaultValue={schedule}
-        styles={styles}
-        options={sortedSchedules}
-      />
+      {schedules.length === 1 ? (
+        <h1 className={mappedStyles.singleSchedule}>{schedules[0].comment}</h1>
+      ) : (
+        <Select
+          onChange={handleInput}
+          isSearchable={false}
+          placeholder={sortedSchedules[0].label}
+          defaultValue={schedule}
+          styles={styles}
+          options={sortedSchedules}
+        />
+      )}
     </>
   );
 
