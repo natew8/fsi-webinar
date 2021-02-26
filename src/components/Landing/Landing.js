@@ -20,7 +20,7 @@ function Landing(props) {
           <h1 className={landingStyles.loading}>Loading Info...</h1>
         )}
       </div>
-      <div></div>
+      <div className={landingStyles.landingTwo}></div>
     </>
   );
 }

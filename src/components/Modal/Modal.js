@@ -7,9 +7,11 @@ import MappedSchedules from "./MappedSchedules";
 
 function Modal(props) {
   const {
+    pickedDate,
     webinarId,
     presenter,
     name,
+    schedules,
     schedule,
     firstName,
     lastName,

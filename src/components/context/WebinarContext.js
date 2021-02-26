@@ -11,7 +11,7 @@ export function WebinarProvider(props) {
   const [name, setName] = useState("");
 
   //User Registration State//
-  const [pickedDate, setPickedDate] = useState("");
+  const [pickedDate, setPickedDate] = useState(0);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
