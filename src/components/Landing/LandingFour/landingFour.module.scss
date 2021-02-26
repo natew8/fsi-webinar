@@ -1,0 +1,18 @@
+.landingContainer {
+  margin: 0% auto;
+  max-width: 1000px;
+  .title {
+    margin: 0%;
+    font-size: 3rem;
+    font-style: italic;
+  }
+}
+.infoBox {
+  display: flex;
+  p {
+    font-family: Lato;
+  }
+}
+.logo {
+  width: 400px;
+}

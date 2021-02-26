@@ -10,7 +10,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 200;
-  margin-bottom: -20px;
 }
 .landingTwo {
   background: linear-gradient(#f4f2f1d7, #f4f2f1d7),
@@ -28,6 +27,10 @@
   background: linear-gradient(#00000094, #00000094),
     url(https://nw-portfolio-images.s3-us-west-1.amazonaws.com/startup-593336_1920.jpg);
   background-position: center;
+}
+
+.landingFour {
+  background-color: #f4f2f1;
 }
 .loading {
   margin: 0px auto;

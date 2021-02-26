@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Context } from "../context/WebinarContext";
 import Modal from "../Modal/Modal";
 import landingStyles from "./landing.module.scss";
+import LandingFour from "./LandingFour/LandingFour";
 import LandingThree from "./LandingThree/LandingThree";
 import LandingTwo from "./LandingTwo/LandingTwo";
 import RegisterBanner from "./RegisterBanner/RegisterBanner";
@@ -23,6 +24,9 @@ function Landing(props) {
       </div>
       <div className={landingStyles.landingThree}>
         <LandingThree />
+      </div>
+      <div className={landingStyles.landingFour}>
+        <LandingFour />
       </div>
     </>
   );
