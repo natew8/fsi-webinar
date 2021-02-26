@@ -29,7 +29,6 @@ export function WebinarProvider(props) {
     axios
       .post("/api/webinar")
       .then((res) => {
-        console.log(res);
         setPresenters(res.data.webinar.presenters);
         setWebinarId(res.data.webinar.webinar_id);
         {
@@ -54,18 +53,14 @@ export function WebinarProvider(props) {
         `/api/webinar/register/${first_name}/${last_name}/${email}/${phone}/${webinar_id}/${schedule}`
       )
       .then((res) => {
-        console.log(res.data);
         setModalA(false);
-        // window.open(res.data.user.thank_you_url);
       })
       .catch((err) => {
         console.log(err);
-      })
-      .finally(() => {
-        setModalA(false);
       });
   };
-  console.log(modalA);
+
+  console.log(schedule);
   return (
     <Context.Provider
       value={{

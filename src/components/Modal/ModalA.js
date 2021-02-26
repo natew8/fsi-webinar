@@ -24,7 +24,13 @@ function ModalA(props) {
     setPhone,
     registerUser,
   } = useContext(Context);
+  console.log(schedules);
 
+  const filteredSchedule = schedules.filter(
+    (date) => date.schedule === +pickedDate
+  );
+
+  console.log(filteredSchedule);
   return (
     <span
       aria-hidden="true"
@@ -94,10 +100,16 @@ function ModalA(props) {
               placeholder="(xxx) xxx-xxxx"
             />
           </label>
-          <label>
-            Please Choose a date *
-            <MappedSchedules />
-          </label>
+          {pickedDate ? (
+            <h1 className={modalStyles.pickedDate}>
+              {filteredSchedule[0].comment}
+            </h1>
+          ) : (
+            <label>
+              Please Choose a date *
+              <MappedSchedules />
+            </label>
+          )}
           <button onClick={handleRegisterUser}>Register</button>
         </form>
       </span>
@@ -109,7 +121,8 @@ function ModalA(props) {
     setPhone(e);
   }
 
-  function handleRegisterUser() {
+  function handleRegisterUser(e) {
+    e.stopPropagation();
     const body = {
       first_name: firstName,
       last_name: lastName,

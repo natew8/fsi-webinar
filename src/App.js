@@ -1,7 +1,6 @@
 import Header from "./components/Header/Header";
 import "./App.css";
 import Landing from "./components/Landing/Landing";
-import Modal from "./components/Modal/Modal";
 import { useContext } from "react";
 import { Context } from "./components/context/WebinarContext";
 import Footer from "./components/Footer/Footer";

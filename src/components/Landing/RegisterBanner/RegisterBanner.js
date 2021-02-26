@@ -13,13 +13,19 @@ const listItems = [
 ];
 
 function RegisterBanner(props) {
-  const { schedules, twoWebinars, setPickedDate } = useContext(Context);
+  const { schedules, twoWebinars, setPickedDate, setSchedule } = useContext(
+    Context
+  );
   const { openModal } = props;
-  console.log(schedules);
   function handleOpenModal(e) {
     e.stopPropagation();
     openModal();
+  }
+  function handleOpenModalPicked(e) {
+    e.stopPropagation();
+    openModal();
     setPickedDate(e.target.value);
+    setSchedule(e.target.value);
   }
 
   const mappedItems = listItems.map((item, index) => {
@@ -84,7 +90,7 @@ function RegisterBanner(props) {
                 <button
                   value={+schedules[0].schedule}
                   className={landingStyles.registerButton}
-                  onClick={handleOpenModal}
+                  onClick={handleOpenModalPicked}
                 >
                   {schedules[0].comment}
                 </button>
@@ -92,7 +98,7 @@ function RegisterBanner(props) {
                 <button
                   value={schedules[1].schedule}
                   className={landingStyles.registerButton}
-                  onClick={handleOpenModal}
+                  onClick={handleOpenModalPicked}
                 >
                   {schedules[1].comment}
                 </button>
