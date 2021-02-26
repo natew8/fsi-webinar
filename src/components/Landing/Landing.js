@@ -13,12 +13,11 @@ function Landing(props) {
   //Modal
   const [modal, setModal] = useState(false);
   const selectModal = () => setModal(!modal);
-  const topRef = useRef();
 
   return (
     <>
       <Modal modal={modal} closeModal={selectModal} />
-      <div ref={topRef} className={landingStyles.landingOne}>
+      <div id="top" className={landingStyles.landingOne}>
         <RegisterBanner modal={modal} openModal={selectModal} />
       </div>
       <div className={landingStyles.landingTwo}>
@@ -34,7 +33,7 @@ function Landing(props) {
         <div className={landingStyles.lanFiveHeader}>
           <h1>Retire With Confidence!</h1>
         </div>
-        <LandingFive top={topRef} modal={modal} openModal={selectModal} />
+        <LandingFive modal={modal} openModal={selectModal} />
       </div>
     </>
   );
