@@ -3,6 +3,14 @@ import landingStyles from "./register.module.scss";
 import moment from "moment";
 import Logo from "../../../fsiLogoWhite.png";
 import { Context } from "../../context/WebinarContext";
+import check from "../../../check-circle-outline-512.webp";
+
+const listItems = [
+  "The pros and cons of IRAs, Roth IRAs, 401ks, pension plans and Social Security.",
+  "Ways to ensure your nest egg lasts no matter how long you're retired.",
+  "Find out how recent tax law changes benefit you and potentially reduce your taxes!",
+  "How has the recent pandemic impacted the market - and can you avoid more losses?",
+];
 
 function RegisterBanner(props) {
   const { schedules, twoWebinars, setPickedDate } = useContext(Context);
@@ -13,6 +21,15 @@ function RegisterBanner(props) {
     openModal();
     setPickedDate(e.target.value);
   }
+
+  const mappedItems = listItems.map((item) => {
+    return (
+      <span>
+        <img src={check} alt="check icon" />
+        <h3>{item}</h3>
+      </span>
+    );
+  });
   return (
     <div className={landingStyles.landingOneContainer}>
       <h1 className={landingStyles.webinarTitle}>
@@ -39,48 +56,7 @@ function RegisterBanner(props) {
           <h1 className={landingStyles.learn}>
             Attend this free live event and learn...
           </h1>
-          <div>
-            <span>
-              <img
-                src="https://nw-portfolio-images.s3-us-west-1.amazonaws.com/check-circle-outline-512.webp"
-                alt="check"
-              />
-              <h3>
-                The pros and cons of IRAs, Roth IRAs, 401ks, pension plans and
-                Social Security.
-              </h3>
-            </span>
-            <span>
-              <img
-                src="https://nw-portfolio-images.s3-us-west-1.amazonaws.com/check-circle-outline-512.webp"
-                alt="check"
-              />
-              <h3>
-                Ways to ensure your nest egg lasts no matter how long you're
-                retired.
-              </h3>
-            </span>
-            <span>
-              <img
-                src="https://nw-portfolio-images.s3-us-west-1.amazonaws.com/check-circle-outline-512.webp"
-                alt="check"
-              />
-              <h3>
-                Find out how recent tax law changes benefit you and potentially
-                reduce your taxes!
-              </h3>
-            </span>
-            <span>
-              <img
-                src="https://nw-portfolio-images.s3-us-west-1.amazonaws.com/check-circle-outline-512.webp"
-                alt="check"
-              />
-              <h3>
-                How has the recent pandemic impacted the market?
-                <h6>(and can you avoid more losses?)</h6>
-              </h3>
-            </span>
-          </div>
+          <div>{mappedItems}</div>
         </div>
         <div className={landingStyles.linksToRegisterButtons}>
           {!twoWebinars ? (
