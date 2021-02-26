@@ -9,7 +9,7 @@ function LandingFour(props) {
         Focused On People, Not Profits...
       </h1>
       <span className={landingStylesFour.infoBox}>
-        <p>
+        <p className={landingStylesFour.summary}>
           At Financial Strategies Institute our first priority is helping you
           take care of yourself and your family. We want to learn more about
           your personal situation, identify your dreams and goals, and
@@ -21,10 +21,18 @@ function LandingFour(props) {
         <span className={landingStylesFour.logoBox}>
           <img className={landingStylesFour.logo} src={blueLogo} alt="logo" />
           <span className={landingStylesFour.contactBox}>
-            <p>Phone: (801) 316-4100</p>
-            <p>Email: david@fsiplanners.com</p>
-            <p>Address: 6955 South Union Park Center,</p>
-            <p>Suite #410, Midvale, UT 84047</p>
+            <div className={landingStylesFour.contact}>
+              <p className={landingStylesFour.contactType}>Phone:</p>
+              <p> (801) 316-4100</p>
+            </div>
+            <div className={landingStylesFour.contact}>
+              <p className={landingStylesFour.contactType}>Email:</p>
+              <p>david@fsiplanners.com</p>
+            </div>
+            <div className={landingStylesFour.contact}>
+              <p className={landingStylesFour.contactType}>Address:</p>
+              <p>6955 South Union Park Center, Suite #410, Midvale, UT 84047</p>
+            </div>
           </span>
         </span>
       </span>
