@@ -7,7 +7,7 @@ export function WebinarProvider(props) {
   const [webinarId, setWebinarId] = useState(0);
   const [schedules, setSchedules] = useState([]);
   const [webinarDate, setWebinarDate] = useState("");
-  const [presenter, setPresenter] = useState([]);
+  const [presenters, setPresenters] = useState([]);
   const [name, setName] = useState("");
 
   //User Registration State//
@@ -27,7 +27,7 @@ export function WebinarProvider(props) {
       .post("/api/webinar")
       .then((res) => {
         console.log(res);
-        setPresenter(res.data.webinar.presenters);
+        setPresenters(res.data.webinar.presenters);
         setWebinarId(res.data.webinar.webinar_id);
         {
           res.data.webinar.schedules.length !== 2 && setTwoWebinars(false);
@@ -65,7 +65,7 @@ export function WebinarProvider(props) {
         webinarId,
         schedules,
         webinarDate,
-        presenter,
+        presenters,
         firstName,
         lastName,
         email,

@@ -22,9 +22,9 @@ function RegisterBanner(props) {
     setPickedDate(e.target.value);
   }
 
-  const mappedItems = listItems.map((item) => {
+  const mappedItems = listItems.map((item, index) => {
     return (
-      <span>
+      <span key={index}>
         <img src={check} alt="check icon" />
         <h3>{item}</h3>
       </span>
