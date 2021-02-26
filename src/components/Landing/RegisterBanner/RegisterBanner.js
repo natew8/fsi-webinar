@@ -5,25 +5,28 @@ import Logo from "../../../fsiLogoWhite.png";
 import { Context } from "../../context/WebinarContext";
 
 function RegisterBanner(props) {
-  const { schedules, twoWebinars } = useContext(Context);
+  const { schedules, twoWebinars, setPickedDate } = useContext(Context);
   const { openModal } = props;
   console.log(schedules);
   function handleOpenModal(e) {
     e.stopPropagation();
     openModal();
+    setPickedDate(e.target.value);
   }
   return (
     <div className={landingStyles.landingOneContainer}>
-      <h1>Maximise your Social Security benefits </h1>
+      <h1 className={landingStyles.webinarTitle}>
+        Maximise your Social Security benefits{" "}
+      </h1>
       <div className={landingStyles.linksToRegister}>
         <div className={landingStyles.linksToRegisterHeader}>
           <img className={landingStyles.logo} src={Logo} alt="logo" />
           <div className={landingStyles.line}></div>
           <div>
-            <h1>You're Invited</h1>
+            <h1 className={landingStyles.invited}>You're Invited</h1>
             <h2>
               Limited time live
-              <h1>Online</h1>
+              <h1 className={landingStyles.online}>Online</h1>
               workshop
             </h2>
             <h3>
@@ -33,7 +36,9 @@ function RegisterBanner(props) {
           </div>
         </div>
         <div className={landingStyles.linksToRegisterList}>
-          <h1>Attend this free live event and learn...</h1>
+          <h1 className={landingStyles.learn}>
+            Attend this free live event and learn...
+          </h1>
           <div>
             <span>
               <img
@@ -79,26 +84,37 @@ function RegisterBanner(props) {
         </div>
         <div className={landingStyles.linksToRegisterButtons}>
           {!twoWebinars ? (
-            <h1>Don't miss out on this incredible opportunity.</h1>
+            <h1 className={landingStyles.dontMiss}>
+              Don't miss out on this incredible opportunity.
+            </h1>
           ) : (
             <>
-              <h1>Don't miss out on this incredible opportunity.</h1>
-              <h2>Register Today!</h2>
+              <h1 className={landingStyles.dontMiss}>
+                Don't miss out on this incredible opportunity.
+              </h1>
+              <h2 className={landingStyles.registerToday}>Register Today!</h2>
             </>
           )}
           <span className={landingStyles.buttonBox}>
             {!twoWebinars ? (
-              <button onClick={handleOpenModal}></button>
+              <button
+                className={landingStyles.registerButton}
+                onClick={handleOpenModal}
+              >
+                Register Today!
+              </button>
             ) : (
               <>
                 <button
+                  value={+schedules[0].schedule}
                   className={landingStyles.registerButton}
                   onClick={handleOpenModal}
                 >
                   {schedules[0].comment}
                 </button>
-                <h1>or</h1>
+                <h1 className={landingStyles.or}>or</h1>
                 <button
+                  value={schedules[1].schedule}
                   className={landingStyles.registerButton}
                   onClick={handleOpenModal}
                 >

@@ -11,6 +11,7 @@ export function WebinarProvider(props) {
   const [name, setName] = useState("");
 
   //User Registration State//
+  const [pickedDate, setPickedDate] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -57,7 +58,7 @@ export function WebinarProvider(props) {
         console.log(err);
       });
   };
-
+  console.log(pickedDate);
   return (
     <Context.Provider
       value={{
@@ -73,6 +74,8 @@ export function WebinarProvider(props) {
         schedule,
         loading,
         twoWebinars,
+        pickedDate,
+        setPickedDate,
         setLoading,
         registerUser,
         setFirstName,
