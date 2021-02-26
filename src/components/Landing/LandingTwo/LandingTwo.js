@@ -13,7 +13,16 @@ const listItems = [
 ];
 
 function LandingTwo(props) {
-  const { schedules, schedule } = useContext(Context);
+  const { schedules, schedule, twoWebinars, setPickedDate } = useContext(
+    Context
+  );
+  const { openModal, modal } = props;
+
+  function handleOpenModal(e) {
+    e.stopPropagation();
+    openModal();
+    setPickedDate(e.target.value);
+  }
 
   const mappedList = listItems.map((item, index) => {
     return (
@@ -23,7 +32,7 @@ function LandingTwo(props) {
       </span>
     );
   });
-  console.log(mappedList);
+
   return (
     <div className={landingTwoStyles.landingContainer}>
       <h1 className={landingTwoStyles.landingHeader}>
@@ -34,8 +43,37 @@ function LandingTwo(props) {
       </h2>
       <span className={landingTwoStyles.listBlock}>{mappedList}</span>
       <span className={landingTwoStyles.buttonBox}>
-        <button>register today!</button>
+        {!twoWebinars ? (
+          <button
+            className={landingTwoStyles.registerButton}
+            onClick={handleOpenModal}
+          >
+            Register Today!
+          </button>
+        ) : (
+          <>
+            <button
+              value={+schedules[0].schedule}
+              className={landingTwoStyles.registerButton}
+              onClick={handleOpenModal}
+            >
+              {schedules[0].comment}
+            </button>
+            <h1 className={landingTwoStyles.or}>or</h1>
+            <button
+              value={schedules[1].schedule}
+              className={landingTwoStyles.registerButton}
+              onClick={handleOpenModal}
+            >
+              {schedules[1].comment}
+            </button>
+          </>
+        )}
       </span>
+      <h1>
+        This is one of the most powerful free events we've ever hosted! Relax,
+        Have Fun, and Be Ready!
+      </h1>
     </div>
   );
 }

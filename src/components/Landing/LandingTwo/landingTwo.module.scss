@@ -1,4 +1,4 @@
-$orange: #e06024;
+$orange: #f56d1e;
 $blue: #4bdfe4;
 .landingContainer {
   min-width: 100px;
@@ -12,11 +12,15 @@ $blue: #4bdfe4;
   }
   .landingSubHeader {
     margin-top: 0%;
+    margin-bottom: 1rem;
   }
 }
 .listBlock {
+  border: 2px solid rgb(136, 136, 136);
   display: grid;
   grid-template-columns: 50% 50%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
   .listItem {
     display: flex;
     align-items: center;
@@ -35,4 +39,28 @@ $blue: #4bdfe4;
   }
 }
 .buttonBox {
+  margin: 0px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .or {
+    font-size: 2rem;
+    margin: 0px 0.6rem;
+  }
+  .registerButton {
+    margin: 0;
+    filter: saturate(0.8);
+    background-color: $orange;
+    width: 45%;
+    height: 3.5rem;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: 800;
+  }
+  button:hover {
+    cursor: pointer;
+    background-color: #c55526;
+  }
 }
