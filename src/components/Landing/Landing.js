@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Context } from "../context/WebinarContext";
 import Modal from "../Modal/Modal";
 import landingStyles from "./landing.module.scss";
+import LandingFive from "./LandingFive/LandingFive";
 import LandingFour from "./LandingFour/LandingFour";
 import LandingThree from "./LandingThree/LandingThree";
 import LandingTwo from "./LandingTwo/LandingTwo";
@@ -27,6 +28,12 @@ function Landing(props) {
       </div>
       <div className={landingStyles.landingFour}>
         <LandingFour />
+      </div>
+      <div className={landingStyles.landingFive}>
+        <div className={landingStyles.lanFiveHeader}>
+          <h1>Retire With Confidence!</h1>
+        </div>
+        <LandingFive modal={modal} openModal={selectModal} />
       </div>
     </>
   );

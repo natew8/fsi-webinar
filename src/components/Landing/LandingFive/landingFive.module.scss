@@ -1,0 +1,37 @@
+$orange: #f56d1e;
+$orange-hover: #e46115;
+$blue: #4bdfe4;
+
+.landingContainer {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 0rem auto;
+}
+.fiveHeader {
+  font-size: 3rem;
+  color: $blue;
+  margin: 0%;
+}
+.fiveSubHeader {
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0%;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.registerButton {
+  background-color: $orange;
+  border: 1px solid rgb(255, 191, 72);
+  outline: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.75rem;
+  height: 3rem;
+  width: 20rem;
+  border-radius: 5px;
+}
+.registerButton:hover {
+  cursor: pointer;
+  background-color: $orange-hover;
+}

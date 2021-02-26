@@ -21,7 +21,7 @@ export function WebinarProvider(props) {
   const [twoWebinars, setTwoWebinars] = useState(true);
 
   //Modal State
-  const [modalA, setModalA] = useState(true);
+  const [modalA, setModalA] = useState(false);
 
   const webinarKey = process.env.REACT_APP_WEBINAR_KEY;
 

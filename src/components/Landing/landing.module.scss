@@ -1,3 +1,6 @@
+$orange: #f56d1e;
+$orange-hover: #e46115;
+$blue: #4bdfe4;
 .landingOne {
   display: flex;
   flex-direction: column;
@@ -32,6 +35,21 @@
 .landingFour {
   background-color: #f4f2f1;
 }
+
+.landingFive {
+  background-color: #000000c0;
+  .lanFiveHeader {
+    padding: 1rem;
+    background-color: $orange;
+    h1 {
+      color: #fff;
+      font-style: italic;
+      font-size: 2.5rem;
+      margin: 0rem;
+    }
+  }
+}
+
 .loading {
   margin: 0px auto;
   margin-top: 20rem;

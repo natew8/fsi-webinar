@@ -4,6 +4,7 @@ import Landing from "./components/Landing/Landing";
 import Modal from "./components/Modal/Modal";
 import { useContext } from "react";
 import { Context } from "./components/context/WebinarContext";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const { loading } = useContext(Context);
@@ -15,6 +16,7 @@ function App() {
         <>
           <Header />
           <Landing />
+          <Footer />
         </>
       )}
     </div>
