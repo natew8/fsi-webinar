@@ -20,6 +20,9 @@ export function WebinarProvider(props) {
   const [loading, setLoading] = useState(true);
   const [twoWebinars, setTwoWebinars] = useState(true);
 
+  //Modal State
+  const [modalA, setModalA] = useState(true);
+
   const webinarKey = process.env.REACT_APP_WEBINAR_KEY;
 
   useEffect(() => {
@@ -56,6 +59,9 @@ export function WebinarProvider(props) {
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        setModalA(false);
       });
   };
   console.log(pickedDate);
@@ -75,6 +81,8 @@ export function WebinarProvider(props) {
         loading,
         twoWebinars,
         pickedDate,
+        modalA,
+        setModalA,
         setPickedDate,
         setLoading,
         registerUser,
