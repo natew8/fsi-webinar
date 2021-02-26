@@ -55,7 +55,8 @@ export function WebinarProvider(props) {
       )
       .then((res) => {
         console.log(res.data);
-        window.open(res.data.user.thank_you_url);
+        setModalA(false);
+        // window.open(res.data.user.thank_you_url);
       })
       .catch((err) => {
         console.log(err);
@@ -64,7 +65,7 @@ export function WebinarProvider(props) {
         setModalA(false);
       });
   };
-  console.log(pickedDate);
+  console.log(modalA);
   return (
     <Context.Provider
       value={{

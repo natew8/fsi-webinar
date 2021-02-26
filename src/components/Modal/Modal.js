@@ -2,9 +2,11 @@ import React, { useContext } from "react";
 import { Context } from "../context/WebinarContext";
 import modalStyles from "./modal.module.scss";
 import ModalA from "./ModalA";
+import ModalB from "./ModalB";
 
 function Modal(props) {
   const { closeModal, modal } = props;
+  const { modalA } = useContext(Context);
 
   function handleCloseModal(e) {
     e.stopPropagation();
@@ -22,7 +24,11 @@ function Modal(props) {
       onClick={handleCloseModal}
       className={modalStyles.modal}
     >
-      <ModalA closeModal={closeModal} />
+      {modalA ? (
+        <ModalA closeModal={closeModal} />
+      ) : (
+        <ModalB closeModal={closeModal} />
+      )}
     </div>
   );
 }
