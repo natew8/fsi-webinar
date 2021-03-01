@@ -47,11 +47,8 @@ export function WebinarProvider(props) {
   }, []);
 
   const registerUser = (body) => {
-    const { first_name, last_name, email, phone, webinar_id, schedule } = body;
     axios
-      .post(
-        `/api/webinar/register/${first_name}/${last_name}/${email}/${phone}/${webinar_id}/${schedule}`
-      )
+      .post("/api/webinar/register", body)
       .then((res) => {
         setModalA(false);
       })

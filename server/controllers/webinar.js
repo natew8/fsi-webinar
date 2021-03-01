@@ -22,7 +22,7 @@ module.exports = {
       phone,
       webinar_id,
       schedule,
-    } = req.params;
+    } = req.body;
     const api_url = `https://api.webinarjam.com/everwebinar/register?api_key=${REACT_APP_WEBINAR_KEY}&schedule=${schedule}&webinar_id=${webinar_id}&first_name=${first_name}&last_name=${last_name}&email=${email}&phone=${phone}`;
     const fetch_user = await fetch(api_url, {
       method: "post",

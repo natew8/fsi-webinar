@@ -49,7 +49,7 @@ function RegisterBanner(props) {
             <h1 className={landingStyles.invited}>You're Invited</h1>
             <h2>
               Limited time live
-              <h1 className={landingStyles.online}>Online</h1>
+              <strong className={landingStyles.online}>Online</strong>
               workshop
             </h2>
             <h3>

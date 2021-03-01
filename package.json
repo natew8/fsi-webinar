@@ -11,6 +11,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "massive": "^6.7.0",
     "moment": "^2.29.1",
     "node-fetch": "^2.6.1",
     "node-sass": "^5.0.0",

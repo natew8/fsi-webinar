@@ -6,7 +6,7 @@ function Header(props) {
     <header className={headerStyles.header}>
       <div>
         <h1>
-          Brand new free <h1>Online</h1> Social Security workshop
+          Brand new free <strong>Online</strong> Social Security workshop
         </h1>
       </div>
     </header>
