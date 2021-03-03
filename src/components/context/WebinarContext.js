@@ -21,7 +21,7 @@ export function WebinarProvider(props) {
   const [twoWebinars, setTwoWebinars] = useState(true);
 
   //Modal State
-  const [modalA, setModalA] = useState(true);
+  const [modalA, setModalA] = useState(false);
 
   const webinarKey = process.env.REACT_APP_WEBINAR_KEY;
 
@@ -57,6 +57,17 @@ export function WebinarProvider(props) {
       });
   };
 
+  const surveyAnswers = (body) => {
+    axios
+      .post("/api/survey", body)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   console.log(schedule);
   return (
     <Context.Provider
@@ -75,6 +86,7 @@ export function WebinarProvider(props) {
         twoWebinars,
         pickedDate,
         modalA,
+        surveyAnswers,
         setModalA,
         setPickedDate,
         setLoading,

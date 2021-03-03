@@ -13,7 +13,7 @@ function App() {
         <h1>Loading...</h1>
       ) : (
         <>
-          <Header />
+          {/* <Header /> */}
           <Landing />
           <Footer />
         </>
