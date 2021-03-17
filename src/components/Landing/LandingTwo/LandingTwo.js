@@ -1,6 +1,11 @@
+//Libraries
 import React, { useContext } from "react";
+//Components
 import { Context } from "../../context/WebinarContext";
+import AppButton from "../../AppButton";
+//Styles
 import landingTwoStyles from "./landingTwo.module.scss";
+//Dependencies
 import check from "../../../check-circle-outline-512.webp";
 
 const listItems = [
@@ -13,15 +18,20 @@ const listItems = [
 ];
 
 function LandingTwo(props) {
-  const { schedules, schedule, twoWebinars, setPickedDate } = useContext(
-    Context
-  );
+  const {
+    schedules,
+    schedule,
+    twoWebinars,
+    setPickedDate,
+    setSchedule,
+  } = useContext(Context);
   const { openModal, modal } = props;
 
   function handleOpenModal(e) {
     e.stopPropagation();
     openModal();
     setPickedDate(e.target.value);
+    setSchedule(+e.target.value);
   }
 
   const mappedList = listItems.map((item, index) => {
@@ -44,35 +54,26 @@ function LandingTwo(props) {
       <span className={landingTwoStyles.listBlock}>{mappedList}</span>
       <span className={landingTwoStyles.buttonBox}>
         {!twoWebinars ? (
-          <button
-            className={landingTwoStyles.registerButton}
-            onClick={handleOpenModal}
-          >
-            Register Today!
-          </button>
+          <AppButton title={"Register Today!"} onClick={handleOpenModal} />
         ) : (
           <>
-            <button
-              value={+schedules[0].schedule}
-              className={landingTwoStyles.registerButton}
+            <AppButton
+              value={schedules[0].schedule}
+              title={schedules[0].comment}
               onClick={handleOpenModal}
-            >
-              {schedules[0].comment}
-            </button>
+            />
             <h1 className={landingTwoStyles.or}>or</h1>
-            <button
+            <AppButton
               value={schedules[1].schedule}
-              className={landingTwoStyles.registerButton}
+              title={schedules[1].comment}
               onClick={handleOpenModal}
-            >
-              {schedules[1].comment}
-            </button>
+            />
           </>
         )}
       </span>
       <h1>
-        This is one of the most powerful free events we've ever hosted! Relax,
-        Have Fun, and Be Ready!
+        This is one of the most powerful free events we've ever hosted!
+        <br /> Relax, Have Fun, and Be Ready!
       </h1>
     </div>
   );

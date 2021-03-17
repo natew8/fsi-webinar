@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-scroll";
+import AppButton from "../../AppButton";
 import landingStylesFive from "./landingFive.module.scss";
 
 function LandingFive(props) {
@@ -10,9 +11,7 @@ function LandingFive(props) {
         Free online workshop event
       </h2>
       <Link to="top" spy={true} smooth={true}>
-        <button className={landingStylesFive.registerButton}>
-          Register Today!
-        </button>
+        <AppButton title={"Register Today!"} />
       </Link>
     </div>
   );

@@ -25,7 +25,7 @@ function RegisterBanner({ openModal }) {
     e.stopPropagation();
     openModal();
     setPickedDate(e.target.value);
-    setSchedule(e.target.value);
+    setSchedule(+e.target.value);
   }
 
   const mappedItems = listItems.map((item, index) => {
