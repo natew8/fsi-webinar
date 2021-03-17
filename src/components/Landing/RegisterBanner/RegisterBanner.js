@@ -4,6 +4,7 @@ import moment from "moment";
 import Logo from "../../../fsiLogoWhite.png";
 import { Context } from "../../context/WebinarContext";
 import check from "../../../check-circle-outline-512.webp";
+import AppButton from "../../AppButton";
 
 const listItems = [
   "The pros and cons of IRAs, Roth IRAs, 401ks, pension plans and Social Security.",
@@ -12,11 +13,10 @@ const listItems = [
   "How has the recent pandemic impacted the market - and can you avoid more losses?",
 ];
 
-function RegisterBanner(props) {
+function RegisterBanner({ openModal }) {
   const { schedules, twoWebinars, setPickedDate, setSchedule } = useContext(
     Context
   );
-  const { openModal } = props;
   function handleOpenModal(e) {
     e.stopPropagation();
     openModal();
@@ -79,29 +79,20 @@ function RegisterBanner(props) {
           )}
           <span className={landingStyles.buttonBox}>
             {!twoWebinars ? (
-              <button
-                className={landingStyles.registerButton}
-                onClick={handleOpenModal}
-              >
-                Register Today!
-              </button>
+              <AppButton title={"Register Today!"} onClick={handleOpenModal} />
             ) : (
               <>
-                <button
+                <AppButton
                   value={+schedules[0].schedule}
-                  className={landingStyles.registerButton}
+                  title={schedules[0].comment}
                   onClick={handleOpenModalPicked}
-                >
-                  {schedules[0].comment}
-                </button>
+                />
                 <h1 className={landingStyles.or}>or</h1>
-                <button
+                <AppButton
                   value={schedules[1].schedule}
-                  className={landingStyles.registerButton}
+                  title={schedules[1].comment}
                   onClick={handleOpenModalPicked}
-                >
-                  {schedules[1].comment}
-                </button>
+                />
               </>
             )}
           </span>

@@ -21,7 +21,7 @@ export function WebinarProvider(props) {
   const [twoWebinars, setTwoWebinars] = useState(true);
 
   //Modal State
-  const [modalA, setModalA] = useState(false);
+  const [modalA, setModalA] = useState(true);
 
   const webinarKey = process.env.REACT_APP_WEBINAR_KEY;
 
@@ -29,6 +29,7 @@ export function WebinarProvider(props) {
     axios
       .post("/api/webinar")
       .then((res) => {
+        console.log(res.data.webinar);
         setPresenters(res.data.webinar.presenters);
         setWebinarId(res.data.webinar.webinar_id);
         {
@@ -37,12 +38,10 @@ export function WebinarProvider(props) {
         setSchedules(res.data.webinar.schedules);
         setSchedule(res.data.webinar.schedules[0].schedule);
         setName(res.data.webinar.name);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
-      })
-      .finally(() => {
-        setLoading(false);
       });
   }, []);
 

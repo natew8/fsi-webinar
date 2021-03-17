@@ -1,0 +1,15 @@
+$orange: #f56d1e;
+$blue: #4bdfe4;
+
+.button {
+  margin: 0;
+  filter: saturate(0.8);
+  background-color: $orange;
+  width: 45%;
+  height: 3.5rem;
+  border: 1px solid rgb(255, 191, 72);
+  border-radius: 5px;
+  font-size: 1.5rem;
+  color: rgb(245, 245, 245);
+  font-weight: 800;
+}
