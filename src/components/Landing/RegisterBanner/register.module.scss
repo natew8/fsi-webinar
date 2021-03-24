@@ -38,11 +38,10 @@ $blue: #4bdfe4;
 
 .linksToRegisterHeader {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   .line {
     border-left: 0.1px solid rgba(245, 245, 245, 0.513);
     width: 0px;
-    margin: 0%;
   }
   div {
     display: flex;
@@ -94,23 +93,20 @@ $blue: #4bdfe4;
     margin: 0px;
     font-size: 2rem;
   }
+  /* Bulleted List */
   div {
     margin: 0px auto;
     span {
       display: flex;
       align-items: center;
       margin-top: 1rem;
-      h3 {
+      p {
         font-weight: 600;
         margin: 0px;
         color: rgb(211, 211, 211);
         display: flex;
         align-items: center;
         font-size: 1.3rem;
-        h6 {
-          margin: 0px;
-          margin-left: 5px;
-        }
       }
       img {
         margin-right: 0.5rem;

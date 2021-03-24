@@ -5,16 +5,10 @@ import AppButton from "../../AppButton";
 import AppLogo from "../../AppLogo";
 //Assets
 import whiteLogo from "../../../assets/fsiLogoWhite.png";
-import check from "../../../assets/check-circle-outline-512.webp";
+
 //Style Modules
 import landingStyles from "./register.module.scss";
-
-const listItems = [
-  "The pros and cons of IRAs, Roth IRAs, 401ks, pension plans and Social Security.",
-  "Ways to ensure your nest egg lasts no matter how long you're retired.",
-  "Find out how recent tax law changes benefit you and potentially reduce your taxes!",
-  "How has the recent pandemic impacted the market - and can you avoid more losses?",
-];
+import AppBulletList from "./AppBulletList";
 
 function RegisterBanner({ openModal }) {
   const { schedules, twoWebinars, setPickedDate, setSchedule } = useContext(
@@ -31,14 +25,6 @@ function RegisterBanner({ openModal }) {
     setSchedule(+e.target.value);
   }
 
-  const mappedItems = listItems.map((item, index) => {
-    return (
-      <span key={index}>
-        <img src={check} alt="check icon" />
-        <h3>{item}</h3>
-      </span>
-    );
-  });
   return (
     <div className={landingStyles.landingOneContainer}>
       <h1 className={landingStyles.webinarTitle}>
@@ -65,7 +51,9 @@ function RegisterBanner({ openModal }) {
           <h1 className={landingStyles.learn}>
             Attend this free live event and learn...
           </h1>
-          <div>{mappedItems}</div>
+          <div>
+            <AppBulletList />
+          </div>
         </div>
         <div className={landingStyles.linksToRegisterButtons}>
           {!twoWebinars ? (
