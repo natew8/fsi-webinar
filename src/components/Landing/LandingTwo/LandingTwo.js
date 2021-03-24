@@ -6,7 +6,7 @@ import AppButton from "../../AppButton";
 //Styles
 import landingTwoStyles from "./landingTwo.module.scss";
 //Dependencies
-import check from "../../../check-circle-outline-512.webp";
+import check from "../../../assets/check-circle-outline-512.webp";
 
 const listItems = [
   "Current economic volatility and what it means for you and your retirement",

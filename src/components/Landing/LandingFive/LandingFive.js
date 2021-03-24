@@ -1,6 +1,9 @@
+//Libraries
 import React from "react";
 import { Link } from "react-scroll";
+//Components
 import AppButton from "../../AppButton";
+//Style Modules
 import landingStylesFive from "./landingFive.module.scss";
 
 function LandingFive(props) {

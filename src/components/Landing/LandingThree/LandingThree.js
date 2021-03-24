@@ -1,11 +1,8 @@
 import React, { useContext } from "react";
-import { Context } from "../../context/WebinarContext";
 import landingStylesThree from "./landingThree.module.scss";
-import headshot from "../../../davidHeadshot.png";
+import headshot from "../../../assets/davidHeadshot.png";
 
 function LandingThree(props) {
-  const { presenters } = useContext(Context);
-
   return (
     <div className={landingStylesThree.landingContainer}>
       <h1 className={landingStylesThree.landingHeader}>About your host</h1>

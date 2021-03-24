@@ -1,9 +1,15 @@
+//Libraries
 import React, { useContext } from "react";
-import MappedSchedules from "./MappedSchedules";
-import "react-phone-input-2/lib/style.css";
 import PhoneInput from "react-phone-input-2";
-import modalStyles from "./modal.module.scss";
+import "react-phone-input-2/lib/style.css";
+//Components
+import MappedSchedules from "./MappedSchedules";
 import { Context } from "../context/WebinarContext";
+import AppLogo from "../AppLogo";
+//Assets
+import whiteLogo from "../../assets/fsiLogoWhite.png";
+//Style Modules
+import modalStyles from "./modal.module.scss";
 
 function ModalA(props) {
   const { closeModal } = props;
@@ -45,10 +51,7 @@ function ModalA(props) {
       </span>
       <span>
         <span className={modalStyles.scheduleContainer}>
-          <img
-            src="https://static.wixstatic.com/media/e82ded_9bab553a72f44243a0e9b02ff806bf25~mv2.png/v1/fill/w_266,h_130,al_c,q_85,usm_0.66_1.00_0.01/set%20sail%20white%20lettering.webp"
-            alt="something"
-          />
+          <AppLogo src={whiteLogo} alt="FSI Logo White" />
         </span>
         <div className={modalStyles.line}></div>
         <form onSubmit={(e) => e.preventDefault()}>

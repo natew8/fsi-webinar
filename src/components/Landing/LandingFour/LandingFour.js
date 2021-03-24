@@ -1,6 +1,6 @@
 import React from "react";
 import landingStylesFour from "./landingFour.module.scss";
-import blueLogo from "../../../fsiLogo.png";
+import blueLogo from "../../../assets/fsiLogo.png";
 
 function LandingFour(props) {
   return (

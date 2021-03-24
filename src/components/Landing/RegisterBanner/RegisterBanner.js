@@ -1,10 +1,13 @@
 import React, { useContext } from "react";
-import landingStyles from "./register.module.scss";
-import moment from "moment";
-import Logo from "../../../fsiLogoWhite.png";
+//Components
 import { Context } from "../../context/WebinarContext";
-import check from "../../../check-circle-outline-512.webp";
 import AppButton from "../../AppButton";
+import AppLogo from "../../AppLogo";
+//Assets
+import whiteLogo from "../../../assets/fsiLogoWhite.png";
+import check from "../../../assets/check-circle-outline-512.webp";
+//Style Modules
+import landingStyles from "./register.module.scss";
 
 const listItems = [
   "The pros and cons of IRAs, Roth IRAs, 401ks, pension plans and Social Security.",
@@ -43,7 +46,7 @@ function RegisterBanner({ openModal }) {
       </h1>
       <div className={landingStyles.linksToRegister}>
         <div className={landingStyles.linksToRegisterHeader}>
-          <img className={landingStyles.logo} src={Logo} alt="logo" />
+          <AppLogo src={whiteLogo} alt="FSI Logo White" width={400} />
           <div className={landingStyles.line}></div>
           <div>
             <h1 className={landingStyles.invited}>You're Invited</h1>
