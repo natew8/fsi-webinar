@@ -22,7 +22,11 @@ export function WebinarProvider(props) {
 
   //Modal State
   const [modalA, setModalA] = useState(true);
+  const [loadingModal, setLoadingModal] = useState(false);
   const [finished, setFinished] = useState(false);
+
+  //Error Message
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     axios
@@ -46,17 +50,10 @@ export function WebinarProvider(props) {
 
   const registerUser = (body) => {
     setModalA(false);
-    // axios
-    //   .post("/api/webinar/register", body)
-    //   .then((res) => {
-    //     console.log(res);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
   };
 
   const surveyAnswers = (body) => {
+    setLoadingModal(true);
     axios
       .post("/api/survey", {
         ...body,
@@ -69,9 +66,11 @@ export function WebinarProvider(props) {
         axios
           .post("/api/webinar/register", body)
           .then((response) => {
+            setLoadingModal(false);
             setFinished(true);
           })
           .catch((err) => {
+            setError(true);
             console.log(err);
           });
         console.log(res);
@@ -97,6 +96,12 @@ export function WebinarProvider(props) {
         twoWebinars,
         pickedDate,
         modalA,
+        loadingModal,
+        finished,
+        error,
+        setError,
+        setLoadingModal,
+        setFinished,
         surveyAnswers,
         setModalA,
         setPickedDate,
