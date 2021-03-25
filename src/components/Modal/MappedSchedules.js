@@ -14,7 +14,7 @@ const styles = {
   }),
 };
 
-export default function MappedSchedules(props) {
+export default function MappedSchedules() {
   //Context//
   const { schedules, setSchedule, schedule } = useContext(Context);
 
@@ -31,14 +31,17 @@ export default function MappedSchedules(props) {
       {schedules.length === 1 ? (
         <h1 className={mappedStyles.singleSchedule}>{schedules[0].comment}</h1>
       ) : (
-        <Select
-          onChange={handleInput}
-          isSearchable={false}
-          placeholder={sortedSchedules[0].label}
-          defaultValue={schedule}
-          styles={styles}
-          options={sortedSchedules}
-        />
+        <label>
+          Please pick a date *
+          <Select
+            onChange={handleInput}
+            isSearchable={false}
+            placeholder={sortedSchedules[0].label}
+            defaultValue={schedule}
+            styles={styles}
+            options={sortedSchedules}
+          />
+        </label>
       )}
     </>
   );

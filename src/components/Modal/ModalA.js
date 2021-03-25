@@ -106,10 +106,7 @@ function ModalA(props) {
               {filteredSchedule[0].comment}
             </h1>
           ) : (
-            <label>
-              Please Choose a date *
-              <MappedSchedules />
-            </label>
+            <MappedSchedules />
           )}
           <button onClick={handleRegisterUser}>Register</button>
         </form>

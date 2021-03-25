@@ -23,8 +23,6 @@ export function WebinarProvider(props) {
   //Modal State
   const [modalA, setModalA] = useState(true);
 
-  const webinarKey = process.env.REACT_APP_WEBINAR_KEY;
-
   useEffect(() => {
     axios
       .post("/api/webinar")
@@ -67,7 +65,6 @@ export function WebinarProvider(props) {
       });
   };
 
-  console.log(schedule);
   return (
     <Context.Provider
       value={{

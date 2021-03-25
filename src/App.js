@@ -1,17 +1,28 @@
-import Header from "./components/Header/Header";
-import "./App.css";
+import React, { useContext } from "react";
+//Components
 import Landing from "./components/Landing/Landing";
-import { useContext } from "react";
 import { Context } from "./components/context/WebinarContext";
 import Footer from "./components/Footer/Footer";
-import AppButton from "./components/AppButton";
+//Assets
+import blueLogo from "./assets/fsiLogo.png";
+//Styles Modules
+import "./App.css";
+import AppLogo from "./components/AppLogo";
 
 function App() {
   const { loading } = useContext(Context);
   return (
     <div className="App">
       {loading ? (
-        <h1>Loading...</h1>
+        <div style={{ width: "100%", height: "100%", backgroundColor: "#eee" }}>
+          <AppLogo
+            width={500}
+            style={{ marginTop: 100 }}
+            src={blueLogo}
+            alt="FSI Logo"
+          />
+          <h1>Loading...</h1>
+        </div>
       ) : (
         <>
           {/* <Header /> */}
