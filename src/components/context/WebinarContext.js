@@ -22,6 +22,7 @@ export function WebinarProvider(props) {
 
   //Modal State
   const [modalA, setModalA] = useState(true);
+  const [finished, setFinished] = useState(false);
 
   useEffect(() => {
     axios
@@ -44,27 +45,41 @@ export function WebinarProvider(props) {
   }, []);
 
   const registerUser = (body) => {
-    axios
-      .post("/api/webinar/register", body)
-      .then((res) => {
-        setModalA(false);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    setModalA(false);
+    // axios
+    //   .post("/api/webinar/register", body)
+    //   .then((res) => {
+    //     console.log(res);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
   };
 
   const surveyAnswers = (body) => {
     axios
-      .post("/api/survey", body)
+      .post("/api/survey", {
+        ...body,
+        firstName: firstName,
+        lastName: lastName,
+        phone: phone,
+        email: email,
+      })
       .then((res) => {
+        axios
+          .post("/api/webinar/register", body)
+          .then((response) => {
+            setFinished(true);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
         console.log(res);
       })
       .catch((err) => {
         console.log(err);
       });
   };
-
   return (
     <Context.Provider
       value={{

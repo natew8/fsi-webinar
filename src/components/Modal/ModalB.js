@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../context/WebinarContext";
+import AppCheckList from "./AppCheckList";
 import modalStylesB from "./modalB.module.scss";
 //Already retired, 1-5, 5-10, 10+
 function ModalB(props) {
@@ -54,49 +55,7 @@ function ModalB(props) {
           </select>
         </label>
         <span className={modalStylesB.checkContainer}>
-          <label>
-            What are you primarily looking to get out of this class? (check all
-            that apply)
-            <label className={modalStylesB.checkLabel} forhtml="1">
-              <input
-                onChange={handleFocus}
-                value="The pros and cons"
-                type="checkbox"
-                id="1"
-              />
-              The pros and cons of IRAs, Roth IRAs, 401ks, pension plans and
-              Social Security
-            </label>
-            <label className={modalStylesB.checkLabel} forhtml="2">
-              <input
-                onChange={handleFocus}
-                value="Nest Egg"
-                type="checkbox"
-                id="2"
-              />
-              Ways to ensure your nes egg lasts no matter how long you're
-              retired.
-            </label>
-            <label className={modalStylesB.checkLabel} forhtml="3">
-              <input
-                onChange={handleFocus}
-                value="Recent tax laws"
-                type="checkbox"
-                id="3"
-              />
-              Find out how recent tax law changes benefit you and potentially
-              reduce your taxes
-            </label>
-            <label className={modalStylesB.checkLabel} forhtml="4">
-              <input
-                onChange={handleFocus}
-                value="Pandemic"
-                type="checkbox"
-                id="4"
-              />
-              How has the recent pandemic impacted the market?
-            </label>
-          </label>
+          <AppCheckList onChange={handleFocus} />
         </span>
         <label forhtml="textbox">
           Anything else you would like us to cover?
@@ -112,7 +71,6 @@ function ModalB(props) {
   function handleYears(e) {
     e.preventDefault();
     setYears(e.target.value);
-    console.log(years);
   }
 
   function handleInvestment(e) {
@@ -122,7 +80,8 @@ function ModalB(props) {
   function handleFocus(e) {
     e.stopPropagation();
     const index = focus.indexOf(e.target.value);
-    e.target.checked ? focus.push(e.target.value) : focus.splice(index);
+    e.target.checked ? focus.push(e.target.value) : focus.splice(index, 1);
+    console.log(focus);
   }
   function handleComment(e) {
     e.stopPropagation();
