@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
+import Select from "react-select";
+//Components
 import { Context } from "../context/WebinarContext";
 import mappedStyles from "./mapped.module.scss";
-import Select from "react-select";
 
 const styles = {
   container: (provided) => ({
@@ -14,9 +15,9 @@ const styles = {
   }),
 };
 
-export default function MappedSchedules() {
+export default function MappedSchedules({ onChange, placeholder }) {
   //Context//
-  const { schedules, setSchedule, schedule } = useContext(Context);
+  const { schedules, schedule } = useContext(Context);
 
   //Sort and Map schedules//
   const sortedSchedules = schedules
@@ -34,9 +35,9 @@ export default function MappedSchedules() {
         <label>
           Please pick a date *
           <Select
-            onChange={handleInput}
+            onChange={onChange}
             isSearchable={false}
-            placeholder={sortedSchedules[0].label}
+            placeholder={placeholder}
             defaultValue={schedule}
             styles={styles}
             options={sortedSchedules}
@@ -45,8 +46,4 @@ export default function MappedSchedules() {
       )}
     </>
   );
-
-  function handleInput(e) {
-    setSchedule(e.value);
-  }
 }
