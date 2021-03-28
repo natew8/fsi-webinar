@@ -53,8 +53,6 @@ export function WebinarProvider(props) {
       .post("/api/webinar/register", body)
       .then((response) => {
         setModalA(false);
-        // setLoadingModal(false);
-        // setFinished(true);
       })
       .catch((err) => {
         setError(true);
@@ -79,6 +77,8 @@ export function WebinarProvider(props) {
         console.log(err);
       });
   };
+
+  console.log(schedule);
   return (
     <Context.Provider
       value={{

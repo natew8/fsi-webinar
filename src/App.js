@@ -14,28 +14,25 @@ import RegisterForm from "./components/Form/RegisterForm";
 function App() {
   const { loading } = useContext(Context);
   return (
-    <>
-      <RegisterForm />
-    </>
-    // <div className="App">
-    //   {loading ? (
-    //     <div style={{ width: "100%", height: "100%", backgroundColor: "#eee" }}>
-    //       <AppLogo
-    //         width={500}
-    //         style={{ marginTop: 100 }}
-    //         src={blueLogo}
-    //         alt="FSI Logo"
-    //       />
-    //       <h1>Loading...</h1>
-    //     </div>
-    //   ) : (
-    //     <>
-    //       {/* <Header /> */}
-    //       <Landing />
-    //       <Footer />
-    //     </>
-    //   )}
-    // </div>
+    <div className="App">
+      {loading ? (
+        <div style={{ width: "100%", height: "100%", backgroundColor: "#eee" }}>
+          <AppLogo
+            width={500}
+            style={{ marginTop: 100 }}
+            src={blueLogo}
+            alt="FSI Logo"
+          />
+          <h1>Loading...</h1>
+        </div>
+      ) : (
+        <>
+          {/* <Header /> */}
+          <Landing />
+          <Footer />
+        </>
+      )}
+    </div>
   );
 }
 

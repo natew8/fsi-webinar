@@ -50,7 +50,7 @@ function RegisterForm(props) {
           lastName: "",
           email: "",
           phone: "",
-          schedule: { schedule },
+          schedule: schedule,
         }}
         onSubmit={handleSubmit}
       >
