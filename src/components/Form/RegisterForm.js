@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import * as Yup from "yup";
 //Components
 import AppFormField from "./AppFormField";
 import Picker from "./RegisterFormPicker";
 import AppForm from "./AppForm";
+import { Context } from "../context/WebinarContext";
+import AppSubmitButton from "./AppSubmitButton";
+import MappedSchedules from "../Modal/MappedSchedules";
 
 //Style Modules
 import formStyles from "./form.module.scss";
-import AppSubmitButton from "./AppSubmitButton";
-import MappedSchedules from "../Modal/MappedSchedules";
+import RegisterFormPicker from "./RegisterFormPicker";
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
@@ -26,10 +28,11 @@ const validationSchema = Yup.object().shape({
     .matches(phoneRegExp, "Please enter a valid phone number")
     .required()
     .label("Phone Number"),
-  schedule: Yup.string().nullable().required().label("Schedule"),
+  schedule: Yup.number().required().label("Schedule"),
 });
 
 function RegisterForm(props) {
+  const { schedule } = useContext(Context);
   //
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
     setTimeout(() => {
@@ -38,7 +41,6 @@ function RegisterForm(props) {
       setSubmitting(false);
     }, 3000);
   };
-
   return (
     <div className={formStyles.container}>
       <AppForm
@@ -48,7 +50,7 @@ function RegisterForm(props) {
           lastName: "",
           email: "",
           phone: "",
-          schedule: null,
+          schedule: { schedule },
         }}
         onSubmit={handleSubmit}
       >
@@ -80,7 +82,7 @@ function RegisterForm(props) {
           id="phone"
           placeholder="(xxx) xxx-xxxx`"
         />
-        <MappedSchedules />
+        <RegisterFormPicker name="schedule" />
         <AppSubmitButton title="Register" />
       </AppForm>
     </div>
