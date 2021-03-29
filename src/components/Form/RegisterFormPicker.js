@@ -1,7 +1,7 @@
 import React from "react";
 import { useFormikContext } from "formik";
 //Components
-import MappedSchedules from "../Modal/MappedSchedules";
+import MappedSchedules from "./MappedSchedules";
 import ErrorMessage from "./ErrorMessage";
 
 function RegisterFormPicker({ name }) {

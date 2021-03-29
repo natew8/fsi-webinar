@@ -2,7 +2,6 @@
 import React, { useContext } from "react";
 import "react-phone-input-2/lib/style.css";
 //Components
-import MappedSchedules from "./MappedSchedules";
 import { Context } from "../context/WebinarContext";
 import AppLogo from "../AppLogo";
 import RegisterForm from "../Form/RegisterForm";

@@ -3,6 +3,7 @@ import { useFormikContext } from "formik";
 import Select from "react-select";
 //Components
 import { Context } from "../context/WebinarContext";
+//Style Modules
 import mappedStyles from "./mapped.module.scss";
 
 const styles = {
@@ -13,6 +14,8 @@ const styles = {
   control: (provided) => ({
     ...provided,
     outline: "none",
+    height: "2.5rem",
+    borderRadius: "5px",
   }),
 };
 
@@ -40,7 +43,7 @@ export default function MappedSchedules({ onChange, placeholder, name }) {
           <Select
             onChange={onChange}
             isSearchable={false}
-            placeholder={placeholder}
+            placeholder={"Hey"}
             defaultValue={values}
             styles={styles}
             options={sortedSchedules}

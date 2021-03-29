@@ -1,16 +1,14 @@
 .container {
-  background-color: #383838;
+  display: flex;
+  flex-direction: column;
   width: 50%;
-  height: 50%;
-  margin: 0% auto;
-  padding: 10px;
 }
 
 .formField {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
   label {
+    font-weight: bold;
     color: #e06027;
     text-align: left;
     display: flex;

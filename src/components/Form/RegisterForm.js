@@ -6,7 +6,7 @@ import Picker from "./RegisterFormPicker";
 import AppForm from "./AppForm";
 import { Context } from "../context/WebinarContext";
 import AppSubmitButton from "./AppSubmitButton";
-import MappedSchedules from "../Modal/MappedSchedules";
+import MappedSchedules from "./MappedSchedules";
 
 //Style Modules
 import formStyles from "./form.module.scss";
@@ -42,7 +42,7 @@ function RegisterForm(props) {
     }, 3000);
   };
   return (
-    <div className={formStyles.container}>
+    <span className={formStyles.container}>
       <AppForm
         validationSchema={validationSchema}
         initialValues={{
@@ -85,7 +85,7 @@ function RegisterForm(props) {
         <RegisterFormPicker name="schedule" />
         <AppSubmitButton title="Register" />
       </AppForm>
-    </div>
+    </span>
   );
 }
 
