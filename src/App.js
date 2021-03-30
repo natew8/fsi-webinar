@@ -4,7 +4,7 @@ import Landing from "./components/Landing/Landing";
 import { Context } from "./components/context/WebinarContext";
 import Footer from "./components/Footer/Footer";
 //Assets
-import blueLogo from "./assets/fsiLogo.png";
+import blueLogo from "./assets/logo/fsiLogo.png";
 //Styles Modules
 import "./App.css";
 import AppLogo from "./components/AppLogo";
