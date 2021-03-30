@@ -1,8 +1,8 @@
 import React from "react";
-import PresenterBio from "./PresenterBio";
+import PresenterModule from "./PresenterModule";
 
 function LandingThree() {
-  return <PresenterBio />;
+  return <PresenterModule />;
 }
 
 export default LandingThree;

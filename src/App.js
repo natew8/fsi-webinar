@@ -8,7 +8,6 @@ import blueLogo from "./assets/logo/fsiLogo.png";
 //Styles Modules
 import "./App.css";
 import AppLogo from "./components/AppLogo";
-import PresenterBio from "./components/Landing/LandingThree/PresenterBio";
 
 function App() {
   const { loading } = useContext(Context);
