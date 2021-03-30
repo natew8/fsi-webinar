@@ -43,8 +43,7 @@ export function WebinarProvider(props) {
         axios
           .post("/api/webinar", query_id)
           .then((res) => {
-            console.log(res.data.webinar);
-            setPresenters(res.data.webinar.presenters);
+            setPresenters(res.data.webinar.presenters[0]);
             setWebinarId(res.data.webinar.webinar_id);
             {
               res.data.webinar.schedules.length !== 2 && setTwoWebinars(false);
