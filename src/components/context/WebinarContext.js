@@ -4,9 +4,6 @@ import React, { createContext, useEffect, useState } from "react";
 export const Context = createContext(null);
 
 export function WebinarProvider(props) {
-  //Query Finder for Webinar Id
-  const query = new URLSearchParams(window.location.search);
-  const webinar_id = query.get("webinarId");
   //State
   const [webinarId, setWebinarId] = useState(0);
   const [schedules, setSchedules] = useState([]);
@@ -34,28 +31,21 @@ export function WebinarProvider(props) {
   const [error, setError] = useState(false);
 
   useEffect(() => {
+    const query = new URLSearchParams(window.location.search);
+    const webinar_id = query.get("webinarId");
     axios
-      .post("/api/everWebinars")
+      .post("/api/webinar", +webinar_id)
       .then((res) => {
-        const [query_id] = res.data.webinars.filter(
-          (web) => web.webinar_id === +webinar_id
-        );
-        axios
-          .post("/api/webinar", query_id)
-          .then((res) => {
-            setPresenters(res.data.webinar.presenters[0]);
-            setWebinarId(res.data.webinar.webinar_id);
-            {
-              res.data.webinar.schedules.length !== 2 && setTwoWebinars(false);
-            }
-            setSchedules(res.data.webinar.schedules);
-            setSchedule(res.data.webinar.schedules[0].schedule);
-            setName(res.data.webinar.name);
-            setLoading(false);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
+        console.log(res.data);
+        setPresenters(res.data.webinar.presenters[0]);
+        setWebinarId(res.data.webinar.webinar_id);
+        {
+          res.data.webinar.schedules.length !== 2 && setTwoWebinars(false);
+        }
+        setSchedules(res.data.webinar.schedules);
+        setSchedule(res.data.webinar.schedules[0].schedule);
+        setName(res.data.webinar.name);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);

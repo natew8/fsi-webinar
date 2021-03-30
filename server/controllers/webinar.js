@@ -15,6 +15,7 @@ module.exports = {
   },
 
   getWebinarInfo: async (req, res) => {
+    console.log(req.body);
     const { webinar_id } = req.body;
     const ever_api = `https://api.webinarjam.com/everwebinar/webinar?api_key=${REACT_APP_WEBINAR_KEY}&webinar_id=${webinar_id}`;
     const fetch_response = await fetch(ever_api, {
