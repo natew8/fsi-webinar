@@ -1,7 +1,10 @@
 import React, { useContext } from "react";
-import { Context } from "../context/WebinarContext";
-import mappedStyles from "./mapped.module.scss";
+import { useFormikContext } from "formik";
 import Select from "react-select";
+//Components
+import { Context } from "../context/WebinarContext";
+//Style Modules
+import mappedStyles from "./mapped.module.scss";
 
 const styles = {
   container: (provided) => ({
@@ -11,12 +14,16 @@ const styles = {
   control: (provided) => ({
     ...provided,
     outline: "none",
+    height: "2.5rem",
+    borderRadius: "5px",
   }),
 };
 
-export default function MappedSchedules() {
+export default function MappedSchedules({ onChange }) {
   //Context//
-  const { schedules, setSchedule, schedule } = useContext(Context);
+  const { schedules } = useContext(Context);
+
+  const { values } = useFormikContext();
 
   //Sort and Map schedules//
   const sortedSchedules = schedules
@@ -34,10 +41,9 @@ export default function MappedSchedules() {
         <label>
           Please pick a date *
           <Select
-            onChange={handleInput}
+            onChange={onChange}
             isSearchable={false}
-            placeholder={sortedSchedules[0].label}
-            defaultValue={schedule}
+            defaultValue={values}
             styles={styles}
             options={sortedSchedules}
           />
@@ -45,8 +51,4 @@ export default function MappedSchedules() {
       )}
     </>
   );
-
-  function handleInput(e) {
-    setSchedule(e.value);
-  }
 }

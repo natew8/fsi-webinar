@@ -1,8 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import landingStylesThree from "./landingThree.module.scss";
 import headshot from "../../../assets/davidHeadshot.png";
 
-function LandingThree(props) {
+const query = new URLSearchParams(window.location.search);
+const presenter = query.get("presenter");
+
+function LandingThree() {
   return (
     <div className={landingStylesThree.landingContainer}>
       <h1 className={landingStylesThree.landingHeader}>About your host</h1>

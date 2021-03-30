@@ -49,7 +49,24 @@ export function WebinarProvider(props) {
   }, []);
 
   const registerUser = (body) => {
-    setModalA(false);
+    console.log(body);
+    axios
+      .post("/api/webinar/register", body)
+      .then((response) => {
+        setModalA(false);
+        axios
+          .post("/api/survey", body)
+          .then((res) => {
+            console.log(res);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      })
+      .catch((err) => {
+        setError(true);
+        console.log(err);
+      });
   };
 
   const surveyAnswers = (body) => {
@@ -63,22 +80,15 @@ export function WebinarProvider(props) {
         email: email,
       })
       .then((res) => {
-        axios
-          .post("/api/webinar/register", body)
-          .then((response) => {
-            setLoadingModal(false);
-            setFinished(true);
-          })
-          .catch((err) => {
-            setError(true);
-            console.log(err);
-          });
         console.log(res);
       })
       .catch((err) => {
         console.log(err);
       });
   };
+
+  console.log(presenters);
+
   return (
     <Context.Provider
       value={{

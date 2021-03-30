@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  label {
+    font-weight: bold;
+    color: #e06027;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    input {
+      box-shadow: 2px 2px 5px rgb(0, 0, 0);
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      height: 2.5rem;
+    }
+  }
+}
+
+.error {
+  color: red;
+  font-size: 1rem;
+}
