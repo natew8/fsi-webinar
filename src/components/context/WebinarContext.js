@@ -49,10 +49,19 @@ export function WebinarProvider(props) {
   }, []);
 
   const registerUser = (body) => {
+    console.log(body);
     axios
       .post("/api/webinar/register", body)
       .then((response) => {
         setModalA(false);
+        axios
+          .post("/api/survey", body)
+          .then((res) => {
+            console.log(res);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       })
       .catch((err) => {
         setError(true);
@@ -78,7 +87,8 @@ export function WebinarProvider(props) {
       });
   };
 
-  console.log(schedule);
+  console.log(presenters);
+
   return (
     <Context.Provider
       value={{

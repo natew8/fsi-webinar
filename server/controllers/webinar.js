@@ -3,7 +3,7 @@ const fetch = require("node-fetch");
 
 module.exports = {
   getWebinarInfo: async (req, res) => {
-    const ever_api = `https://api.webinarjam.com/everwebinar/webinar?api_key=${REACT_APP_WEBINAR_KEY}&webinar_id=59`;
+    const ever_api = `https://api.webinarjam.com/everwebinar/webinar?api_key=${REACT_APP_WEBINAR_KEY}&webinar_id=64`;
     const fetch_response = await fetch(ever_api, {
       method: "POST",
       headers: {

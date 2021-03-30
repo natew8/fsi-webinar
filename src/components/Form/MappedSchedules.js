@@ -19,9 +19,9 @@ const styles = {
   }),
 };
 
-export default function MappedSchedules({ onChange, placeholder, name }) {
+export default function MappedSchedules({ onChange }) {
   //Context//
-  const { schedules, schedule } = useContext(Context);
+  const { schedules } = useContext(Context);
 
   const { values } = useFormikContext();
 
@@ -43,7 +43,6 @@ export default function MappedSchedules({ onChange, placeholder, name }) {
           <Select
             onChange={onChange}
             isSearchable={false}
-            placeholder={"Hey"}
             defaultValue={values}
             styles={styles}
             options={sortedSchedules}

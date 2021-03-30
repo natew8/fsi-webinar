@@ -8,8 +8,7 @@ import blueLogo from "./assets/fsiLogo.png";
 //Styles Modules
 import "./App.css";
 import AppLogo from "./components/AppLogo";
-import AppFormField from "./components/Form/AppFormField";
-import RegisterForm from "./components/Form/RegisterForm";
+import PresenterBio from "./components/Landing/LandingThree/PresenterBio";
 
 function App() {
   const { loading } = useContext(Context);
@@ -27,6 +26,7 @@ function App() {
         </div>
       ) : (
         <>
+          <PresenterBio />
           {/* <Header /> */}
           <Landing />
           <Footer />
