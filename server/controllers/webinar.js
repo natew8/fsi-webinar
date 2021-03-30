@@ -2,8 +2,21 @@ const { REACT_APP_WEBINAR_KEY } = process.env;
 const fetch = require("node-fetch");
 
 module.exports = {
+  getAllWebinars: async (req, res) => {
+    const all_ever_api = `https://api.webinarjam.com/everwebinar/webinars?api_key=${REACT_APP_WEBINAR_KEY}`;
+    const fetch_webinars = await fetch(all_ever_api, {
+      method: "POST",
+      headers: {
+        "Content-Type": "*",
+      },
+    });
+    const myWebinarsJson = await fetch_webinars.json();
+    res.send(myWebinarsJson);
+  },
+
   getWebinarInfo: async (req, res) => {
-    const ever_api = `https://api.webinarjam.com/everwebinar/webinar?api_key=${REACT_APP_WEBINAR_KEY}&webinar_id=64`;
+    const { webinar_id } = req.body;
+    const ever_api = `https://api.webinarjam.com/everwebinar/webinar?api_key=${REACT_APP_WEBINAR_KEY}&webinar_id=${webinar_id}`;
     const fetch_response = await fetch(ever_api, {
       method: "POST",
       headers: {

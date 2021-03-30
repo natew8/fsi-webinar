@@ -26,7 +26,6 @@ function App() {
         </div>
       ) : (
         <>
-          <PresenterBio />
           {/* <Header /> */}
           <Landing />
           <Footer />

@@ -4,10 +4,15 @@ import React, { createContext, useEffect, useState } from "react";
 export const Context = createContext(null);
 
 export function WebinarProvider(props) {
+  //Query Finder for Webinar Id
+  const query = new URLSearchParams(window.location.search);
+  const webinar_id = query.get("webinarId");
+  //State
   const [webinarId, setWebinarId] = useState(0);
   const [schedules, setSchedules] = useState([]);
   const [webinarDate, setWebinarDate] = useState("");
   const [presenters, setPresenters] = useState([]);
+  const [presenter, setPresenter] = useState("");
   const [name, setName] = useState("");
 
   //User Registration State//
@@ -30,18 +35,28 @@ export function WebinarProvider(props) {
 
   useEffect(() => {
     axios
-      .post("/api/webinar")
+      .post("/api/everWebinars")
       .then((res) => {
-        console.log(res.data.webinar);
-        setPresenters(res.data.webinar.presenters);
-        setWebinarId(res.data.webinar.webinar_id);
-        {
-          res.data.webinar.schedules.length !== 2 && setTwoWebinars(false);
-        }
-        setSchedules(res.data.webinar.schedules);
-        setSchedule(res.data.webinar.schedules[0].schedule);
-        setName(res.data.webinar.name);
-        setLoading(false);
+        const [query_id] = res.data.webinars.filter(
+          (web) => web.webinar_id === +webinar_id
+        );
+        axios
+          .post("/api/webinar", query_id)
+          .then((res) => {
+            console.log(res.data.webinar);
+            setPresenters(res.data.webinar.presenters);
+            setWebinarId(res.data.webinar.webinar_id);
+            {
+              res.data.webinar.schedules.length !== 2 && setTwoWebinars(false);
+            }
+            setSchedules(res.data.webinar.schedules);
+            setSchedule(res.data.webinar.schedules[0].schedule);
+            setName(res.data.webinar.name);
+            setLoading(false);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       })
       .catch((err) => {
         console.log(err);
@@ -87,8 +102,6 @@ export function WebinarProvider(props) {
       });
   };
 
-  console.log(presenters);
-
   return (
     <Context.Provider
       value={{
@@ -109,6 +122,8 @@ export function WebinarProvider(props) {
         loadingModal,
         finished,
         error,
+        presenter,
+        setPresenter,
         setError,
         setLoadingModal,
         setFinished,
