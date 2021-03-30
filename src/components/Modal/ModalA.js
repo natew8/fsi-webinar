@@ -12,7 +12,6 @@ import modalStyles from "./modal.module.scss";
 
 function ModalA(props) {
   const { closeModal } = props;
-  const { pickedDate, schedules } = useContext(Context);
 
   return (
     <span
@@ -29,9 +28,12 @@ function ModalA(props) {
         <h2>Please fill out the form below to register</h2>
       </span>
       <span>
-        <span className={modalStyles.scheduleContainer}>
-          <AppLogo src={whiteLogo} alt="FSI Logo White" />
-        </span>
+        <AppLogo
+          width={400}
+          style={{ height: 200, marginTop: "6rem" }}
+          src={whiteLogo}
+          alt="FSI Logo White"
+        />
         <div className={modalStyles.line}></div>
         <RegisterForm />
       </span>
