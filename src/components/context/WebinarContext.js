@@ -46,7 +46,7 @@ export function WebinarProvider(props) {
           .post("/api/webinar", webinar_id)
           .then((res) => {
             console.log(res.data);
-            if (res.data.status === "error") {
+            if (res.data.status !== "success") {
               setError(true);
               setLoading(false);
             }
@@ -89,7 +89,11 @@ export function WebinarProvider(props) {
         ...registerBody,
       })
       .then((res) => {
-        console.log(res);
+        if (res.statusText !== "ok") {
+          setError(true);
+          setLoadingModal(false);
+        }
+        setFinished(true);
       })
       .catch((err) => {
         console.log(err);

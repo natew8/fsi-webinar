@@ -8,24 +8,20 @@ import blueLogo from "./assets/logo/fsiLogo.png";
 //Styles Modules
 import "./App.css";
 import AppLogo from "./components/AppLogo";
+import AppErrorMessage from "./components/AppErrorMessage";
+import ConfirmationScreen from "./components/ConfirmationScreen";
 
 function App() {
-  const { loading, error } = useContext(Context);
+  const { loading, error, finished } = useContext(Context);
+
+  if (finished) {
+    return <ConfirmationScreen />;
+  }
+
   if (error)
     return (
       <div className="App">
-        <div style={{ width: "100%", height: "100%", backgroundColor: "#eee" }}>
-          <AppLogo
-            width={500}
-            style={{ marginTop: 100 }}
-            src={blueLogo}
-            alt="FSI Logo"
-          />
-          <p>An unknown error has occured. Please try again later.</p>
-          <p>
-            If you need further assistance, please email us at email@email.com
-          </p>
-        </div>
+        <AppErrorMessage />
       </div>
     );
 

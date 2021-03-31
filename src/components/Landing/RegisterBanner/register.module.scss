@@ -3,13 +3,15 @@ $orange: #f56d1e;
 $blue: #4bdfe4;
 
 .landingOneContainer {
+  backdrop-filter: blur(5px);
   display: flex;
   flex-direction: column;
-  min-width: 100px;
+  min-width: 150px;
   max-width: 1000px;
-  height: 90%;
+  height: 85%;
   max-height: 100%;
   margin: 0px auto;
+  margin-top: 4rem;
   padding: 0rem 0.6rem;
   .webinarTitle {
     text-align: center;
@@ -20,8 +22,8 @@ $blue: #4bdfe4;
     font-size: 3.7rem;
     color: #fff;
   }
-  h4 {
-    font-size: 1.1rem;
+  p {
+    font-size: 1.5rem;
     color: #fff;
   }
 }
@@ -118,7 +120,6 @@ $blue: #4bdfe4;
   }
 }
 .linksToRegisterButtons {
-  padding: 1rem 0rem;
   .dontMiss {
     color: #fff;
     font-weight: 800;

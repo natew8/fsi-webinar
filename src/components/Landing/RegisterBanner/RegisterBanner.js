@@ -89,10 +89,10 @@ function RegisterBanner({ openModal }) {
           </span>
         </div>
       </div>
-      <h4>
-        With all the uncertainty surrounding our lives, NOW, more than ever is
-        the time to get answers to your questions!
-      </h4>
+      <p>
+        With all the uncertainty surrounding our lives, <em> NOW</em>, more than
+        ever is the time to get answers to your questions!
+      </p>
     </div>
   );
 }
