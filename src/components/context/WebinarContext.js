@@ -16,6 +16,7 @@ export function WebinarProvider(props) {
   const [name, setName] = useState("");
 
   //User Registration State//
+  const [registerBody, setRegisterBody] = useState({});
   const [pickedDate, setPickedDate] = useState(0);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -69,20 +70,11 @@ export function WebinarProvider(props) {
   }, []);
 
   const registerUser = (body) => {
-    console.log(body);
+    setRegisterBody(body);
+    setModalA(false);
     axios
       .post("/api/webinar/register", body)
-      .then((response) => {
-        setModalA(false);
-        axios
-          .post("/api/survey", body)
-          .then((res) => {
-            console.log(res);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      })
+      .then((response) => {})
       .catch((err) => {
         setError(true);
         console.log(err);
@@ -94,10 +86,7 @@ export function WebinarProvider(props) {
     axios
       .post("/api/survey", {
         ...body,
-        firstName: firstName,
-        lastName: lastName,
-        phone: phone,
-        email: email,
+        ...registerBody,
       })
       .then((res) => {
         console.log(res);
@@ -142,6 +131,7 @@ export function WebinarProvider(props) {
         setEmail,
         setPhone,
         setSchedule,
+        surveyAnswers,
       }}
     >
       {props.children}

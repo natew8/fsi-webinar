@@ -53,9 +53,9 @@ function LandingTwo(props) {
       </h2>
       <span className={landingTwoStyles.listBlock}>{mappedList}</span>
       <span className={landingTwoStyles.buttonBox}>
-        {!twoWebinars ? (
-          <AppButton title={"Register Today!"} onClick={handleOpenModal} />
-        ) : (
+        {/* {!twoWebinars ? ( */}
+        <AppButton title={"Register Today!"} onClick={handleOpenModal} />
+        {/* ) : (
           <>
             <AppButton
               value={schedules[0].schedule}
@@ -69,7 +69,7 @@ function LandingTwo(props) {
               onClick={handleOpenModal}
             />
           </>
-        )}
+        )} */}
       </span>
       <h1>
         This is one of the most powerful free events we've ever hosted!

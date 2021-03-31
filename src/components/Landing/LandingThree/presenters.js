@@ -23,14 +23,14 @@ const presentersList = [
   {
     id: 4,
     name: "Lance Bohne",
-    headShot: require("../../../assets/headshots/Headshot-Lance.JPG"),
+    headShot: require("../../../assets/headshots/Headshot-Lance.jpg"),
     bio:
       "Lance L. Bohne was raised in Las Vegas. Attended school at BYU and RPI, majoring in business and economics. He joined Northwestern Mutual as an Agent in 2002 and then joined Nationwide Financial as a Regional Advisor in 2009.  While working at Nationwide Financial and Northwestern Mutual, he qualified for membership in the Million Dollar Round Table (MDRT) several times. He has worked as a financial advisor, agency trainer, and corporate Advisor. He has served as a member of the Boy Scout of America in many roles, lastly as an Eagle Board of Review Chair.  Lance is very active and enjoys athletics with his kids-  he has served as a basketball head-coach numerous times and enjoys competing in triathlons to stay in shape. He currently serves on the Board of Freedom Classical Academy. He holds a FINRA® Series 6, 63, as well as a Life and Health Insurance license. He and his wife Lisa have 6 children.",
   },
   {
     id: 5,
     name: "Derek D. Bohne, CLU©, CHFC©",
-    headShot: require("../../../assets/headshots/Headshot-Derek.jpg"),
+    headShot: require("../../../assets/headshots/Headshot-Derek.JPG"),
     bio:
       "Derek D. Bohne was born and raised in Cedar City, Utah. Attended school at Southern Utah University, majoring in business and finance. He joined the MONY group as a financial advisor in 1992. While working at the MONY Group, he qualified for membership in the Million Dollar Round Table (MDRT) He has worked as a financial advisor, agency manager, and corporate executive. He has served as the State President of NAIFA (The National Association of Insurance and Financial Advisors.) He has also served as the Chairman of the Public Relations Committee. In 2018 he was awarded the “Life Time Achievement Award” at the prestigious Grant Taggart Symposium. His designations include CLU® ChFC® He holds a FINRA® Series 6, 26, 63, 65, and 7, as well as a Life and Health Insurance license. He and his wife Camille have 6 children",
   },

@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
+import AppButton from "../AppButton";
 import { Context } from "../context/WebinarContext";
 import AppCheckList from "./AppCheckList";
 import modalStylesB from "./modalB.module.scss";
 //Already retired, 1-5, 5-10, 10+
 function ModalB(props) {
-  const { surveyAnswers, webinarId, schedule } = useContext(Context);
+  const { surveyAnswers, presenters } = useContext(Context);
   const [years, setYears] = useState("Already Retired");
   const [investment, setInvestment] = useState("<200k");
   const [focus, setFocus] = useState([]);
@@ -62,9 +63,11 @@ function ModalB(props) {
           <textarea onChange={handleComment} id="textbox" />
         </label>
       </span>
-      <button onClick={handleSubmit} className={modalStylesB.confirmButton}>
-        Confirm Registration
-      </button>
+      <AppButton
+        style={{ width: "100%" }}
+        title="Confirm Registration!"
+        onClick={handleSubmit}
+      />
     </span>
   );
 
@@ -93,8 +96,7 @@ function ModalB(props) {
       years: years,
       focus: focus,
       comment: comment,
-      webinarId: webinarId,
-      schedule: schedule,
+      presenter: presenters.name,
     };
     surveyAnswers(body);
   }

@@ -56,22 +56,22 @@ function RegisterBanner({ openModal }) {
           </div>
         </div>
         <div className={landingStyles.linksToRegisterButtons}>
-          {!twoWebinars ? (
-            <h1 className={landingStyles.dontMiss}>
-              Don't miss out on this incredible opportunity.
-            </h1>
-          ) : (
+          {/* {!twoWebinars ? ( */}
+          <h1 className={landingStyles.dontMiss}>
+            Don't miss out on this incredible opportunity.
+          </h1>
+          {/* ) : (
             <>
               <h1 className={landingStyles.dontMiss}>
                 Don't miss out on this incredible opportunity.
               </h1>
               <h2 className={landingStyles.registerToday}>Register Today!</h2>
             </>
-          )}
+          )} */}
           <span className={landingStyles.buttonBox}>
-            {!twoWebinars ? (
-              <AppButton title={"Register Today!"} onClick={handleOpenModal} />
-            ) : (
+            {/* {!twoWebinars ? ( */}
+            <AppButton title={"Register Today!"} onClick={handleOpenModal} />
+            {/* ) : (
               <>
                 <AppButton
                   value={+schedules[0].schedule}
@@ -85,7 +85,7 @@ function RegisterBanner({ openModal }) {
                   onClick={handleOpenModalPicked}
                 />
               </>
-            )}
+            )} */}
           </span>
         </div>
       </div>

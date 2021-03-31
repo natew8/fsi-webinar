@@ -11,6 +11,7 @@ module.exports = {
       last_name,
       phone,
       email,
+      presenter,
     } = req.body;
     const db = req.app.get("db");
 
@@ -25,6 +26,7 @@ module.exports = {
         last_name,
         phone,
         email,
+        presenter,
       });
       return res.status(200).send(survey);
     } catch (error) {

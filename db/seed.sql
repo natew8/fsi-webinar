@@ -6,6 +6,7 @@ phone VARCHAR (30),
 email VARCHAR (150),
 webinar_id INT,
 schedule INT,
+presenter VARCHAR,
 yrs_to_retire VARCHAR,
 focus TEXT[],
 comments VARCHAR

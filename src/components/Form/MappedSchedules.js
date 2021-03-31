@@ -14,7 +14,7 @@ const styles = {
   control: (provided) => ({
     ...provided,
     outline: "none",
-    height: "2.5rem",
+    height: "2.7rem",
   }),
 };
 
@@ -27,7 +27,7 @@ export default function MappedSchedules({ onChange, placeholder }) {
   //Sort and Map schedules//
   const sortedSchedules = schedules
     .sort((a, b) => {
-      return a.schedule - b.schedule;
+      return a.date - b.date;
     })
     .map((sched) => {
       return { value: sched.schedule, label: sched.comment };
@@ -38,7 +38,7 @@ export default function MappedSchedules({ onChange, placeholder }) {
         <h1 className={mappedStyles.singleSchedule}>{schedules[0].comment}</h1>
       ) : (
         <label>
-          Please pick a date *
+          Webinar Schedule *
           <Select
             onChange={onChange}
             isSearchable

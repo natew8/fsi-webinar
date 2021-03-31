@@ -15,9 +15,9 @@ function PresenterModule() {
     .filter((pres) => pres.name.toLowerCase().includes(firstName.toLowerCase()))
     .map((enter) => (
       <span key={enter.id} className={landingStylesThree.presenterBox}>
-        <h2 className={landingStylesThree.presenterName}>{enter.name}</h2>
         <div>
           <img src={enter.headShot.default} alt="headshot" />
+          <h2 className={landingStylesThree.presenterName}>{enter.name}</h2>
           <p className={landingStylesThree.bio}>{enter.bio}</p>
         </div>
       </span>

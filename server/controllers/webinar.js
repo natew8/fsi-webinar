@@ -30,6 +30,7 @@ module.exports = {
   },
 
   registerUser: async (req, res) => {
+    console.log(req.body);
     const {
       first_name,
       last_name,

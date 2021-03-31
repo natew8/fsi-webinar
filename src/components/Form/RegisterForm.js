@@ -9,6 +9,7 @@ import AppSubmitButton from "./AppSubmitButton";
 //Style Modules
 import formStyles from "./form.module.scss";
 import RegisterFormPicker from "./RegisterFormPicker";
+import AppButton from "../AppButton";
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
@@ -18,7 +19,6 @@ const validationSchema = Yup.object().shape({
     .min(4, "Must be at least four characters")
     .label("First Name"),
   last_name: Yup.string()
-    .required()
     .min(4, "Must be at least four characters")
     .label("Last Name"),
   email: Yup.string().email().required().label("Email"),
@@ -58,7 +58,7 @@ function RegisterForm(props) {
           placeholder="First Name"
         />
         <AppFormField
-          label="Last Name *"
+          label="Last Name "
           name="last_name"
           type="text"
           id="lastName"
