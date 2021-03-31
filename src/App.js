@@ -10,7 +10,17 @@ import "./App.css";
 import AppLogo from "./components/AppLogo";
 
 function App() {
-  const { loading } = useContext(Context);
+  const { loading, error } = useContext(Context);
+  if (error)
+    return (
+      <>
+        <p>An unknown error has occured. Please try again later.</p>
+        <p>
+          If you need further assistance, please email us at email@email.com
+        </p>
+      </>
+    );
+
   return (
     <div className="App">
       {loading ? (
@@ -25,7 +35,6 @@ function App() {
         </div>
       ) : (
         <>
-          {/* <Header /> */}
           <Landing />
           <Footer />
         </>

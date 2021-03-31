@@ -45,6 +45,10 @@ export function WebinarProvider(props) {
           .post("/api/webinar", webinar_id)
           .then((res) => {
             console.log(res.data);
+            if (res.data.status === "error") {
+              setError(true);
+              setLoading(false);
+            }
             setPresenters(res.data.webinar.presenters[0]);
             setWebinarId(res.data.webinar.webinar_id);
             {
