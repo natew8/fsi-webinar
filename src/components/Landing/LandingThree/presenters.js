@@ -36,6 +36,4 @@ const presentersList = [
   },
 ];
 
-export default {
-  presentersList,
-};
+export default presentersList;

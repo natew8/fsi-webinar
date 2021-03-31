@@ -8,7 +8,7 @@ function ModalB(props) {
   const { surveyAnswers, presenters, loadingModal } = useContext(Context);
   const [years, setYears] = useState("Already Retired");
   const [investment, setInvestment] = useState("<200k");
-  const [focus, setFocus] = useState([]);
+  const [focus] = useState([]);
   const [comment, setComment] = useState("");
 
   return (

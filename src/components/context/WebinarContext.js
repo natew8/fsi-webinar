@@ -10,7 +10,6 @@ export function WebinarProvider(props) {
   //State
   const [webinarId, setWebinarId] = useState(0);
   const [schedules, setSchedules] = useState([]);
-  const [webinarDate, setWebinarDate] = useState("");
   const [presenters, setPresenters] = useState([]);
   const [presenter, setPresenter] = useState("");
   const [name, setName] = useState("");
@@ -52,9 +51,7 @@ export function WebinarProvider(props) {
             }
             setPresenters(res.data.webinar.presenters[0]);
             setWebinarId(res.data.webinar.webinar_id);
-            {
-              res.data.webinar.schedules.length !== 2 && setTwoWebinars(false);
-            }
+            res.data.webinar.schedules.length !== 2 && setTwoWebinars(false);
             setSchedules(res.data.webinar.schedules);
             setSchedule(res.data.webinar.schedules[0].schedule);
             setName(res.data.webinar.name);
@@ -105,7 +102,6 @@ export function WebinarProvider(props) {
       value={{
         webinarId,
         schedules,
-        webinarDate,
         presenters,
         firstName,
         lastName,
@@ -135,7 +131,6 @@ export function WebinarProvider(props) {
         setEmail,
         setPhone,
         setSchedule,
-        surveyAnswers,
       }}
     >
       {props.children}
