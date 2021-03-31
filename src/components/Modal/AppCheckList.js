@@ -7,7 +7,11 @@ import modalStylesB from "./modalB.module.scss";
 function AppCheckList({ onChange }) {
   const mappedChecklist = questions.map((question) => {
     return (
-      <label className={modalStylesB.checkLabel} forhtml={question.id}>
+      <label
+        key={question.id}
+        className={modalStylesB.checkLabel}
+        forhtml={question.id}
+      >
         <input
           onChange={onChange}
           value={question.value}

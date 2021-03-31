@@ -16,11 +16,11 @@ export function WebinarProvider(props) {
 
   //User Registration State//
   const [registerBody, setRegisterBody] = useState({});
-  const [pickedDate, setPickedDate] = useState(0);
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  // const [pickedDate, setPickedDate] = useState(0);
+  // const [firstName, setFirstName] = useState("");
+  // const [lastName, setLastName] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [phone, setPhone] = useState("");
   const [schedule, setSchedule] = useState(0);
   const [loading, setLoading] = useState(true);
   const [twoWebinars, setTwoWebinars] = useState(true);
@@ -71,7 +71,9 @@ export function WebinarProvider(props) {
     setModalA(false);
     axios
       .post("/api/webinar/register", body)
-      .then((response) => {})
+      .then((res) => {
+        console.log(res.data);
+      })
       .catch((err) => {
         setError(true);
         console.log(err);
@@ -90,6 +92,7 @@ export function WebinarProvider(props) {
           setError(true);
           setLoadingModal(false);
         }
+        setModalA(true);
         setFinished(true);
       })
       .catch((err) => {
@@ -103,15 +106,15 @@ export function WebinarProvider(props) {
         webinarId,
         schedules,
         presenters,
-        firstName,
-        lastName,
-        email,
-        phone,
+        // firstName,
+        // lastName,
+        // email,
+        // phone,
         name,
         schedule,
         loading,
         twoWebinars,
-        pickedDate,
+        // pickedDate,
         modalA,
         loadingModal,
         finished,
@@ -123,13 +126,13 @@ export function WebinarProvider(props) {
         setFinished,
         surveyAnswers,
         setModalA,
-        setPickedDate,
+        // setPickedDate,
         setLoading,
         registerUser,
-        setFirstName,
-        setLastName,
-        setEmail,
-        setPhone,
+        // setFirstName,
+        // setLastName,
+        // setEmail,
+        // setPhone,
         setSchedule,
       }}
     >
