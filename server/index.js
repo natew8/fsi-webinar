@@ -24,6 +24,7 @@ app.use((req, res, next) => {
 });
 
 //Get EverWebinar Data//
+app.post("/api/everWebinars", webinar.getAllWebinars);
 app.post("/api/webinar", webinar.getWebinarInfo);
 //Register User to Webinar//
 app.post("/api/webinar/register", webinar.registerUser);

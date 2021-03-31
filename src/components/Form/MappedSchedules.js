@@ -15,11 +15,10 @@ const styles = {
     ...provided,
     outline: "none",
     height: "2.5rem",
-    borderRadius: "5px",
   }),
 };
 
-export default function MappedSchedules({ onChange }) {
+export default function MappedSchedules({ onChange, placeholder }) {
   //Context//
   const { schedules } = useContext(Context);
 
@@ -42,10 +41,10 @@ export default function MappedSchedules({ onChange }) {
           Please pick a date *
           <Select
             onChange={onChange}
-            isSearchable={false}
-            defaultValue={values}
+            isSearchable
             styles={styles}
             options={sortedSchedules}
+            placeholder={placeholder}
           />
         </label>
       )}

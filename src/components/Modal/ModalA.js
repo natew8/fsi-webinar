@@ -6,7 +6,7 @@ import { Context } from "../context/WebinarContext";
 import AppLogo from "../AppLogo";
 import RegisterForm from "../Form/RegisterForm";
 //Assets
-import whiteLogo from "../../assets/fsiLogoWhite.png";
+import whiteLogo from "../../assets/logo/fsiLogoWhite.png";
 //Style Modules
 import modalStyles from "./modal.module.scss";
 
@@ -29,7 +29,7 @@ function ModalA(props) {
       </span>
       <span>
         <AppLogo
-          width={400}
+          width="45%"
           style={{ height: 200, marginTop: "6rem" }}
           src={whiteLogo}
           alt="FSI Logo White"

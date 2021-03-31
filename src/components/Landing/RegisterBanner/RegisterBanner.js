@@ -4,7 +4,7 @@ import { Context } from "../../context/WebinarContext";
 import AppButton from "../../AppButton";
 import AppLogo from "../../AppLogo";
 //Assets
-import whiteLogo from "../../../assets/fsiLogoWhite.png";
+import whiteLogo from "../../../assets/logo/fsiLogoWhite.png";
 
 //Style Modules
 import landingStyles from "./register.module.scss";

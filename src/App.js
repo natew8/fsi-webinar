@@ -4,14 +4,23 @@ import Landing from "./components/Landing/Landing";
 import { Context } from "./components/context/WebinarContext";
 import Footer from "./components/Footer/Footer";
 //Assets
-import blueLogo from "./assets/fsiLogo.png";
+import blueLogo from "./assets/logo/fsiLogo.png";
 //Styles Modules
 import "./App.css";
 import AppLogo from "./components/AppLogo";
-import PresenterBio from "./components/Landing/LandingThree/PresenterBio";
 
 function App() {
-  const { loading } = useContext(Context);
+  const { loading, error } = useContext(Context);
+  if (error)
+    return (
+      <>
+        <p>An unknown error has occured. Please try again later.</p>
+        <p>
+          If you need further assistance, please email us at email@email.com
+        </p>
+      </>
+    );
+
   return (
     <div className="App">
       {loading ? (
@@ -26,8 +35,6 @@ function App() {
         </div>
       ) : (
         <>
-          <PresenterBio />
-          {/* <Header /> */}
           <Landing />
           <Footer />
         </>

@@ -1,7 +1,7 @@
 import React from "react";
 //Components
 //Assets
-import check from "../../../assets/check-circle-outline-512.webp";
+import check from "../../../assets/icons/check-circle-outline-512.webp";
 
 const listItems = [
   "The pros and cons of IRAs, Roth IRAs, 401ks, pension plans and Social Security.",
