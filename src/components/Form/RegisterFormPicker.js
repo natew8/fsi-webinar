@@ -10,6 +10,7 @@ function RegisterFormPicker({ name }) {
   return (
     <>
       <MappedSchedules
+        placeholder="Select A Date..."
         onChange={(e) => setFieldValue(name, e.value)}
         name={name}
       />
