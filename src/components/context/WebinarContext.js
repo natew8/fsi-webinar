@@ -107,7 +107,6 @@ export function WebinarProvider(props) {
         console.log(err);
       });
   };
-
   return (
     <Context.Provider
       value={{

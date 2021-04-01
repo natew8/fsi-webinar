@@ -14,7 +14,9 @@ function AppErrorMessage(props) {
         alt="FSI Logo"
       />
       <p>An unknown error has occured. Please try again later.</p>
-      <p>If you need further assistance, please email us at email@email.com</p>
+      <p>
+        If you need further assistance, please email us at info@fsiplanners.com
+      </p>
     </div>
   );
 }
