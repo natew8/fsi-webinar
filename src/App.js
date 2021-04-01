@@ -9,13 +9,17 @@ import blueLogo from "./assets/logo/fsiLogo.png";
 import "./App.css";
 import AppLogo from "./components/AppLogo";
 import AppErrorMessage from "./components/AppErrorMessage";
-import ConfirmationScreen from "./components/ConfirmationScreen";
+import ConfirmationScreen from "./components/Confirmation/ConfirmationScreen";
 
 function App() {
   const { loading, error, finished } = useContext(Context);
 
   if (finished) {
-    return <ConfirmationScreen />;
+    return (
+      <div className="App">
+        <ConfirmationScreen />;
+      </div>
+    );
   }
 
   if (error)
