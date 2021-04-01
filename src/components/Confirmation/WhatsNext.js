@@ -42,7 +42,7 @@ function WhatsNext(props) {
         </li>
         <ul>
           <li>email@email.com</li>
-          <li>(xxx) xxx-xxxx</li>
+          <li>(801) 316-4100</li>
         </ul>
         <li>
           Get Excited! This is sure to be an incredibly engaging and informative
