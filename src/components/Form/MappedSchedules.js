@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import Select from "react-select";
+import dayjs from "dayjs";
 //Components
 import { Context } from "../context/WebinarContext";
 //Style Modules
@@ -27,7 +28,10 @@ export default function MappedSchedules({ onChange, placeholder }) {
       return a.date - b.date;
     })
     .map((sched) => {
-      return { value: sched.schedule, label: sched.comment };
+      return {
+        value: sched.schedule,
+        label: dayjs(sched.date).format("dddd, DD MMMM YYYY, hh:mm A"),
+      };
     });
   return (
     <>
