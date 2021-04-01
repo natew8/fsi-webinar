@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import landingStylesFour from "./landingFour.module.scss";
 import blueLogo from "../../../assets/logo/fsiLogo.png";
+import { Context } from "../../context/WebinarContext";
 
-function LandingFour(props) {
+function LandingFour() {
+  const { presenters } = useContext(Context);
   return (
     <div className={landingStylesFour.landingContainer}>
       <h1 className={landingStylesFour.title}>
@@ -27,7 +29,7 @@ function LandingFour(props) {
             </div>
             <div className={landingStylesFour.contact}>
               <p className={landingStylesFour.contactType}>Email:</p>
-              <p>david@fsiplanners.com</p>
+              <p>info@fsiplanners.com</p>
             </div>
             <div className={landingStylesFour.contact}>
               <p className={landingStylesFour.contactType}>Address:</p>

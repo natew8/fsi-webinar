@@ -84,7 +84,6 @@ function ModalB(props) {
     e.stopPropagation();
     const index = focus.indexOf(e.target.value);
     e.target.checked ? focus.push(e.target.value) : focus.splice(index, 1);
-    console.log(focus);
   }
   function handleComment(e) {
     e.stopPropagation();
