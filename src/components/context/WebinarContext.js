@@ -7,23 +7,20 @@ export function WebinarProvider(props) {
   //Webinar Query
   const query = new URLSearchParams(window.location.search);
   const query_id = query.get("webinarId");
-  //State
+  // Webinar Info State
   const [webinarId, setWebinarId] = useState(0);
   const [schedules, setSchedules] = useState([]);
   const [presenters, setPresenters] = useState([]);
   const [presenter, setPresenter] = useState("");
-  const [name, setName] = useState("");
+  const [webinarName, setWebinarName] = useState("");
 
   //User Registration State//
   const [registerBody, setRegisterBody] = useState({});
-  // const [pickedDate, setPickedDate] = useState(0);
-  // const [firstName, setFirstName] = useState("");
-  // const [lastName, setLastName] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [phone, setPhone] = useState("");
   const [schedule, setSchedule] = useState(0);
   const [loading, setLoading] = useState(true);
   const [twoWebinars, setTwoWebinars] = useState(true);
+  //webinar Registration State
+  const [webinarLink, setWebinarLink] = useState("");
 
   //Modal State
   const [modalA, setModalA] = useState(true);
@@ -49,12 +46,12 @@ export function WebinarProvider(props) {
               setError(true);
               setLoading(false);
             }
+            setWebinarName(res.data.webinar.name);
             setPresenters(res.data.webinar.presenters[0]);
             setWebinarId(res.data.webinar.webinar_id);
             res.data.webinar.schedules.length !== 2 && setTwoWebinars(false);
             setSchedules(res.data.webinar.schedules);
             setSchedule(res.data.webinar.schedules[0].schedule);
-            setName(res.data.webinar.name);
             setLoading(false);
           })
           .catch((err) => {
@@ -92,6 +89,7 @@ export function WebinarProvider(props) {
           setError(true);
           setLoadingModal(false);
         }
+        console.log(res);
         setModalA(true);
         setFinished(true);
       })
@@ -110,7 +108,7 @@ export function WebinarProvider(props) {
         // lastName,
         // email,
         // phone,
-        name,
+        webinarName,
         schedule,
         loading,
         twoWebinars,
