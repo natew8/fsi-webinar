@@ -8,7 +8,7 @@ $blue: #4bdfe4;
   padding: 0px;
   margin: 0px auto;
   height: 100vh;
-  background: url(https://nw-portfolio-images.s3-us-west-1.amazonaws.com/startup-593336_1920.jpg);
+  background: url(../../assets/backgrounds/mainBackground1.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -16,7 +16,7 @@ $blue: #4bdfe4;
 }
 .landingTwo {
   background: linear-gradient(#f4f2f1d7, #f4f2f1d7),
-    url(../../mainBackground.jpg);
+    url(../../assets/backgrounds/mainBackground.jpg);
   background-size: cover;
   background-position: top right;
   background-repeat: no-repeat;
@@ -28,7 +28,7 @@ $blue: #4bdfe4;
 
 .landingThree {
   background: linear-gradient(#00000094, #000000d3),
-    url(https://nw-portfolio-images.s3-us-west-1.amazonaws.com/startup-593336_1920.jpg);
+    url(../../assets/backgrounds/mainBackground1.jpg);
   background-position: center;
 }
 
