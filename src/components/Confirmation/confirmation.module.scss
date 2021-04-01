@@ -5,7 +5,7 @@ $blue: #4bdfe4;
   height: 100%;
   width: 1000px;
   margin: 0% auto;
-  padding-top: 10rem;
+  padding-top: 7rem;
 }
 
 .container {
@@ -13,10 +13,13 @@ $blue: #4bdfe4;
   border: 2px solid rgb(136, 136, 136);
   background-color: #000000ce;
   width: 100%;
-  height: 70%;
+  height: 80%;
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  hr {
+    width: 95%;
+  }
 }
 .header {
   h1 {
@@ -54,7 +57,6 @@ $blue: #4bdfe4;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
   margin: 0% auto;
   padding: 0.5rem;
   h1 {
@@ -63,9 +65,7 @@ $blue: #4bdfe4;
   h2 {
     margin: 0%;
   }
-  hr {
-    width: 90%;
-  }
+
   p {
     margin: 0%;
     font-size: 1.2rem;
@@ -73,7 +73,8 @@ $blue: #4bdfe4;
 }
 
 .boxRight {
-  flex: 0.7;
+  padding: 0.5rem;
+  flex: 0.8;
 }
 
 .contactFooter {
@@ -81,7 +82,7 @@ $blue: #4bdfe4;
 }
 .infoBox {
   background-color: #fff;
-  padding: 0.2rem;
+  padding: 0.4rem;
   border: 1px solid #000;
   flex: 1;
   display: flex;
@@ -105,5 +106,20 @@ $blue: #4bdfe4;
   }
   .info {
     font-weight: 600;
+  }
+}
+
+.nextTitle {
+  margin: 0%;
+  color: $blue;
+}
+
+ol {
+  margin: 0%;
+  color: #fff;
+  li {
+    text-align: left;
+    line-height: 28px;
+    font-size: 1.1rem;
   }
 }
