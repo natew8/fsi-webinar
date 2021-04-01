@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { useFormikContext } from "formik";
 import Select from "react-select";
 //Components
 import { Context } from "../context/WebinarContext";
@@ -21,8 +20,6 @@ const styles = {
 export default function MappedSchedules({ onChange, placeholder }) {
   //Context//
   const { schedules } = useContext(Context);
-
-  const { values } = useFormikContext();
 
   //Sort and Map schedules//
   const sortedSchedules = schedules

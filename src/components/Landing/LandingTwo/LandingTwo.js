@@ -17,15 +17,14 @@ const listItems = [
   "How you could reduce or potentially avoid any unnecessary taxes",
 ];
 
-function LandingTwo(props) {
+function LandingTwo({ openModal }) {
   const {
-    schedules,
-    schedule,
-    twoWebinars,
+    // schedules,
+    // schedule,
+    // twoWebinars,
     setPickedDate,
     setSchedule,
   } = useContext(Context);
-  const { openModal, modal } = props;
 
   function handleOpenModal(e) {
     e.stopPropagation();

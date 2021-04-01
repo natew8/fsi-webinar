@@ -10,18 +10,17 @@ export function WebinarProvider(props) {
   //State
   const [webinarId, setWebinarId] = useState(0);
   const [schedules, setSchedules] = useState([]);
-  const [webinarDate, setWebinarDate] = useState("");
   const [presenters, setPresenters] = useState([]);
   const [presenter, setPresenter] = useState("");
   const [name, setName] = useState("");
 
   //User Registration State//
   const [registerBody, setRegisterBody] = useState({});
-  const [pickedDate, setPickedDate] = useState(0);
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  // const [pickedDate, setPickedDate] = useState(0);
+  // const [firstName, setFirstName] = useState("");
+  // const [lastName, setLastName] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [phone, setPhone] = useState("");
   const [schedule, setSchedule] = useState(0);
   const [loading, setLoading] = useState(true);
   const [twoWebinars, setTwoWebinars] = useState(true);
@@ -29,7 +28,7 @@ export function WebinarProvider(props) {
   //Modal State
   const [modalA, setModalA] = useState(true);
   const [loadingModal, setLoadingModal] = useState(false);
-  const [finished, setFinished] = useState(false);
+  const [finished, setFinished] = useState(true);
 
   //Error Message
   const [error, setError] = useState(false);
@@ -46,15 +45,13 @@ export function WebinarProvider(props) {
           .post("/api/webinar", webinar_id)
           .then((res) => {
             console.log(res.data);
-            if (res.data.status === "error") {
+            if (res.data.status !== "success") {
               setError(true);
               setLoading(false);
             }
             setPresenters(res.data.webinar.presenters[0]);
             setWebinarId(res.data.webinar.webinar_id);
-            {
-              res.data.webinar.schedules.length !== 2 && setTwoWebinars(false);
-            }
+            res.data.webinar.schedules.length !== 2 && setTwoWebinars(false);
             setSchedules(res.data.webinar.schedules);
             setSchedule(res.data.webinar.schedules[0].schedule);
             setName(res.data.webinar.name);
@@ -74,7 +71,9 @@ export function WebinarProvider(props) {
     setModalA(false);
     axios
       .post("/api/webinar/register", body)
-      .then((response) => {})
+      .then((res) => {
+        console.log(res.data);
+      })
       .catch((err) => {
         setError(true);
         console.log(err);
@@ -89,7 +88,12 @@ export function WebinarProvider(props) {
         ...registerBody,
       })
       .then((res) => {
-        console.log(res);
+        if (res.statusText !== "ok") {
+          setError(true);
+          setLoadingModal(false);
+        }
+        setModalA(true);
+        setFinished(true);
       })
       .catch((err) => {
         console.log(err);
@@ -101,17 +105,16 @@ export function WebinarProvider(props) {
       value={{
         webinarId,
         schedules,
-        webinarDate,
         presenters,
-        firstName,
-        lastName,
-        email,
-        phone,
+        // firstName,
+        // lastName,
+        // email,
+        // phone,
         name,
         schedule,
         loading,
         twoWebinars,
-        pickedDate,
+        // pickedDate,
         modalA,
         loadingModal,
         finished,
@@ -123,15 +126,14 @@ export function WebinarProvider(props) {
         setFinished,
         surveyAnswers,
         setModalA,
-        setPickedDate,
+        // setPickedDate,
         setLoading,
         registerUser,
-        setFirstName,
-        setLastName,
-        setEmail,
-        setPhone,
+        // setFirstName,
+        // setLastName,
+        // setEmail,
+        // setPhone,
         setSchedule,
-        surveyAnswers,
       }}
     >
       {props.children}

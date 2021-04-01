@@ -5,11 +5,10 @@ import AppFormField from "./AppFormField";
 import AppForm from "./AppForm";
 import { Context } from "../context/WebinarContext";
 import AppSubmitButton from "./AppSubmitButton";
+import RegisterFormPicker from "./RegisterFormPicker";
 
 //Style Modules
 import formStyles from "./form.module.scss";
-import RegisterFormPicker from "./RegisterFormPicker";
-import AppButton from "../AppButton";
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 

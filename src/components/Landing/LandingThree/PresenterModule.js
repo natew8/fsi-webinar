@@ -11,7 +11,7 @@ function PresenterModule() {
   //Breaking down the first name
   const firstName = presenters.name.split(" ")[0];
   //Mapping over the info
-  const currentPresenter = presentersList.presentersList
+  const currentPresenter = presentersList
     .filter((pres) => pres.name.toLowerCase().includes(firstName.toLowerCase()))
     .map((enter) => (
       <span key={enter.id} className={landingStylesThree.presenterBox}>
