@@ -4,31 +4,35 @@ import React, { createContext, useEffect, useState } from "react";
 export const Context = createContext(null);
 
 export function WebinarProvider(props) {
-  //Webinar Query
+  //Webinar URL Query
   const query = new URLSearchParams(window.location.search);
   const query_id = query.get("webinarId");
+
   // Webinar Info State
   const [webinarId, setWebinarId] = useState(0);
   const [schedules, setSchedules] = useState([]);
   const [presenters, setPresenters] = useState([]);
-  const [presenter, setPresenter] = useState("");
-  const [webinarName, setWebinarName] = useState("");
+  const [twoWebinars, setTwoWebinars] = useState(true);
 
   //User Registration State//
   const [registerBody, setRegisterBody] = useState({});
   const [schedule, setSchedule] = useState(0);
-  const [loading, setLoading] = useState(true);
-  const [twoWebinars, setTwoWebinars] = useState(true);
-  //webinar Registration State
-  const [webinarLink, setWebinarLink] = useState("");
 
   //Modal State
   const [modalA, setModalA] = useState(true);
-  const [loadingModal, setLoadingModal] = useState(false);
-  const [finished, setFinished] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   //Error Message
   const [error, setError] = useState(false);
+  //Loading State
+  const [loading, setLoading] = useState(true);
+
+  //ConfirmationState
+  const [finished, setFinished] = useState(false);
+  const [webinarName, setWebinarName] = useState("");
+  const [registeredDate, setRegisteredDate] = useState("");
+  const [webinarLink, setWebinarLink] = useState("");
+  const [presenterName, setPresenterName] = useState("");
 
   useEffect(() => {
     axios
@@ -51,7 +55,7 @@ export function WebinarProvider(props) {
             setWebinarId(res.data.webinar.webinar_id);
             res.data.webinar.schedules.length !== 2 && setTwoWebinars(false);
             setSchedules(res.data.webinar.schedules);
-            setSchedule(res.data.webinar.schedules[0].schedule);
+            setSchedule(res.data.webinar.schedules[0]?.schedule);
             setLoading(false);
           })
           .catch((err) => {
@@ -69,7 +73,13 @@ export function WebinarProvider(props) {
     axios
       .post("/api/webinar/register", body)
       .then((res) => {
+        if (res.data.status !== "success") {
+          setError(true);
+          setLoading(false);
+        }
         console.log(res.data);
+        setWebinarLink(res.data.user.live_room_url);
+        setRegisteredDate(res.data.user.date);
       })
       .catch((err) => {
         setError(true);
@@ -78,7 +88,7 @@ export function WebinarProvider(props) {
   };
 
   const surveyAnswers = (body) => {
-    setLoadingModal(true);
+    setSubmitting(true);
     axios
       .post("/api/survey", {
         ...body,
@@ -87,7 +97,7 @@ export function WebinarProvider(props) {
       .then((res) => {
         if (res.statusText !== "ok") {
           setError(true);
-          setLoadingModal(false);
+          setSubmitting(false);
         }
         console.log(res);
         setModalA(true);
@@ -102,35 +112,27 @@ export function WebinarProvider(props) {
     <Context.Provider
       value={{
         webinarId,
+        registeredDate,
+        webinarLink,
         schedules,
         presenters,
-        // firstName,
-        // lastName,
-        // email,
-        // phone,
         webinarName,
         schedule,
         loading,
         twoWebinars,
-        // pickedDate,
         modalA,
-        loadingModal,
+        submitting,
         finished,
         error,
-        presenter,
-        setPresenter,
+        presenterName,
+        setPresenterName,
         setError,
-        setLoadingModal,
+        setSubmitting,
         setFinished,
         surveyAnswers,
         setModalA,
-        // setPickedDate,
         setLoading,
         registerUser,
-        // setFirstName,
-        // setLastName,
-        // setEmail,
-        // setPhone,
         setSchedule,
       }}
     >

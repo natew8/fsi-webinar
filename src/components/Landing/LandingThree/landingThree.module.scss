@@ -11,26 +11,23 @@ $blue: #4bdfe4;
 .landingHeader {
   margin: 0% auto;
   text-align: left;
-  font-size: 2.25rem;
+  font-size: 1.5rem;
   color: rgb(255, 255, 255);
   border-bottom: 1px solid #fff;
 }
 .presenterBox {
   display: flex;
   flex-direction: column;
-  padding: 1rem 0rem;
-  align-items: center;
   border-bottom: 1px solid #fff;
   img {
-    padding: 0.3rem;
     float: left;
-    margin: 0.9rem 1rem 0rem 0rem;
+    margin: 0rem 1rem 0rem 0rem;
     height: 320px;
   }
   .presenterName {
     width: fit-content;
-    margin: 0% auto;
-    font-size: 2rem;
+    margin: 5px 0px;
+    font-size: 2.1rem;
     color: $orange;
   }
 }
@@ -40,7 +37,7 @@ $blue: #4bdfe4;
   color: rgb(255, 255, 255);
   font-family: Lato;
   text-align: left;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   line-height: 30px;
 }
