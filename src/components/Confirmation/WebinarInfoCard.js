@@ -27,10 +27,7 @@ function WebinarInfoCard(props) {
         />
         <hr width="75%"></hr>
         <div>
-          <p>
-            We are so happy you decided to join us! This is sure to be an
-            incredibly engaging and informative event.
-          </p>
+          <p>We are so happy you decided to join us!</p>
           <p style={{ fontWeight: "bold" }}>
             Please make note of the date and time of the event and come ready
             with questions!

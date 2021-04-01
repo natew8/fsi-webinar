@@ -6,6 +6,7 @@ import blueLogo from "../../assets/logo/fsiLogo.png";
 //Style Module
 import confirmStyles from "./confirmation.module.scss";
 import WebinarInfoCard from "./WebinarInfoCard";
+import WhatsNext from "./WhatsNext";
 function ConfirmationScreen(props) {
   return (
     <div className={confirmStyles.bounds}>
@@ -17,10 +18,9 @@ function ConfirmationScreen(props) {
           <div className={confirmStyles.boxLeft}>
             <WebinarInfoCard />
           </div>
-          <div className={confirmStyles.boxRight}></div>
-        </div>
-        <div className={confirmStyles.contactFooter}>
-          For questions or concerns please contact us at:
+          <div className={confirmStyles.boxRight}>
+            <WhatsNext />
+          </div>
         </div>
       </div>
     </div>
