@@ -73,8 +73,16 @@ $blue: #4bdfe4;
 }
 
 .boxRight {
-  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 0.5rem;
   flex: 0.8;
+  p {
+    flex: 1;
+    margin: 0%;
+    color: $blue;
+    font-size: 1.2rem;
+  }
 }
 
 .contactFooter {
@@ -119,7 +127,7 @@ ol {
   color: #fff;
   li {
     text-align: left;
-    line-height: 28px;
+    line-height: 33px;
     font-size: 1.1rem;
   }
 }
