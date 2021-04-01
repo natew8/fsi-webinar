@@ -28,7 +28,7 @@ export function WebinarProvider(props) {
   //Modal State
   const [modalA, setModalA] = useState(true);
   const [loadingModal, setLoadingModal] = useState(false);
-  const [finished, setFinished] = useState(true);
+  const [finished, setFinished] = useState(false);
 
   //Error Message
   const [error, setError] = useState(false);

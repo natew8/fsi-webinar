@@ -17,7 +17,7 @@ function App() {
   if (finished) {
     return (
       <div className="App">
-        <ConfirmationScreen />;
+        <ConfirmationScreen />
       </div>
     );
   }

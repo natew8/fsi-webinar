@@ -8,7 +8,7 @@ const questions = [
   {
     id: 2,
     question:
-      "Ways to ensure your nes egg lasts no matter how long you're retired.",
+      "Ways to ensure your nest egg lasts no matter how long you're retired.",
     value: "Nest Egg",
   },
   {
