@@ -9,12 +9,12 @@ import landingTwoStyles from "./landingTwo.module.scss";
 import check from "../../../assets/icons/check-circle-outline-512.webp";
 
 const listItems = [
-  "Current economic volatility and what it means for you and your retirement",
-  "Optimization techniques to get the most from your Social Security",
-  "Tax-friendly ways to withdraw your retirement income",
-  "How taxes can affect retirement income, Social Security and your surviving spouse",
-  "How to protect against inflation, taxes and longevity so you never outlive your money",
-  "How you could reduce or potentially avoid any unnecessary taxes",
+  "Current economic volatility and what it means for you and your retirement.",
+  "Optimization techniques to get the most from your Social Security.",
+  "Tax-friendly ways to withdraw your retirement income.",
+  "How taxes can affect retirement income, Social Security and your surviving spouse.",
+  "How to protect against inflation, taxes and longevity so you never outlive your money.",
+  "How you could reduce or potentially avoid any unnecessary taxes.",
 ];
 
 function LandingTwo({ openModal }) {
@@ -70,10 +70,10 @@ function LandingTwo({ openModal }) {
           </>
         )} */}
       </span>
-      <h1>
+      <p>
         This is one of the most powerful free events we've ever hosted!
         <br /> Relax, Have Fun, and Be Ready!
-      </h1>
+      </p>
     </div>
   );
 }
