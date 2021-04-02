@@ -28,17 +28,17 @@ function RegisterBanner({ openModal }) {
   return (
     <div className={landingStyles.landingOneContainer}>
       <h1 className={landingStyles.webinarTitle}>
-        Maximise your Social Security benefits{" "}
+        Maximise your Social Security benefits
       </h1>
       <div className={landingStyles.linksToRegister}>
         <div className={landingStyles.linksToRegisterHeader}>
-          <AppLogo src={whiteLogo} alt="FSI Logo White" width={400} />
+          <AppLogo src={whiteLogo} alt="FSI Logo White" width={"45%"} />
           <div className={landingStyles.line}></div>
           <div>
             <h1 className={landingStyles.invited}>You're Invited</h1>
-            <h2>
+            <h2 className={landingStyles.limited}>
               Limited time live
-              <strong className={landingStyles.online}>Online</strong>
+              <em className={landingStyles.online}>Online</em>
               workshop
             </h2>
             <h3>
@@ -47,6 +47,7 @@ function RegisterBanner({ openModal }) {
             </h3>
           </div>
         </div>
+        <hr></hr>
         <div className={landingStyles.linksToRegisterList}>
           <h1 className={landingStyles.learn}>
             Attend this free live event and learn...
@@ -55,13 +56,14 @@ function RegisterBanner({ openModal }) {
             <AppBulletList />
           </div>
         </div>
+        <hr></hr>
         <div className={landingStyles.linksToRegisterButtons}>
           {/* {!twoWebinars ? ( */}
           <h1 className={landingStyles.dontMiss}>
-            Don't miss out on this incredible opportunity.
+            Don't miss out on this incredible opportunity!
           </h1>
           {/* ) : (
-            <>
+            <>s
               <h1 className={landingStyles.dontMiss}>
                 Don't miss out on this incredible opportunity.
               </h1>

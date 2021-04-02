@@ -26,11 +26,16 @@ $blue: #4bdfe4;
     font-size: 1.5rem;
     color: #fff;
   }
+  hr {
+    display: none;
+    width: 90%;
+    margin: 1rem;
+  }
 }
 
 .linksToRegister {
   padding: 1rem;
-  flex-grow: 1;
+  flex: 1;
   border: 2px solid rgb(136, 136, 136);
   background-color: #000000c0;
   display: flex;
@@ -68,7 +73,6 @@ $blue: #4bdfe4;
         margin: 0px 5px;
         font-size: 1.5rem;
         letter-spacing: 0px;
-        text-align: center;
       }
     }
     h3 {
@@ -105,7 +109,7 @@ $blue: #4bdfe4;
       p {
         font-weight: 600;
         margin: 0px;
-        color: rgb(211, 211, 211);
+        color: rgb(255, 255, 255);
         display: flex;
         align-items: center;
         font-size: 1.3rem;
@@ -153,6 +157,274 @@ $blue: #4bdfe4;
       font-size: 1.5rem;
       color: rgb(245, 245, 245);
       font-weight: 800;
+    }
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .landingOneContainer {
+    padding: 0%;
+  }
+  .linksToRegisterHeader {
+    div {
+      .invited {
+        font-size: 2.2rem;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 890px) {
+  .linksToRegisterHeader {
+    div {
+      h3 {
+        font-size: 1rem;
+      }
+    }
+    .logo {
+      width: 30%;
+    }
+  }
+}
+
+@media only screen and (max-width: 890px) {
+  .landingOneContainer {
+    p {
+      font-size: 1.2rem;
+    }
+  }
+  .linksToRegisterList {
+    padding: 0rem;
+    .learn {
+      font-size: 1.8rem;
+    }
+    /* Bulleted List */
+    div {
+      span {
+        p {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 790px) {
+  .landingOneContainer {
+    margin-top: 2rem;
+    .webinarTitle {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.15rem;
+    }
+  }
+  .linksToRegister {
+    flex: 0.85;
+  }
+  .linksToRegisterHeader {
+    div {
+      .invited {
+        font-size: 2.1rem;
+      }
+      h3 {
+        font-size: 0.9rem;
+      }
+    }
+  }
+  .linksToRegisterList {
+    padding: 0rem;
+    .learn {
+      font-size: 1.7rem;
+    }
+    /* Bulleted List */
+    div {
+      span {
+        p {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 730px) {
+  .landingOneContainer {
+    p {
+      font-size: 1.1rem;
+    }
+  }
+  .linksToRegisterHeader {
+    div {
+      .invited {
+        font-size: 2.1rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+        .online {
+          font-size: 1.2rem;
+        }
+      }
+      h3 {
+        font-size: 0.8rem;
+      }
+    }
+  }
+  .linksToRegisterList {
+    padding: 0rem;
+    .learn {
+      font-size: 1.7rem;
+    }
+    /* Bulleted List */
+    div {
+      span {
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 670px) {
+  .linksToRegisterList {
+    padding: 0rem;
+    .learn {
+      font-size: 1.7rem;
+    }
+    /* Bulleted List */
+    div {
+      span {
+        p {
+          text-align: left;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 635px) {
+  .linksToRegisterHeader {
+    div {
+      .invited {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1rem;
+        .online {
+          font-size: 1rem;
+        }
+      }
+      h3 {
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 570px) {
+  .landingOneContainer {
+    hr {
+      display: inline;
+    }
+  }
+  .linksToRegisterHeader {
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+    div {
+      text-align: center;
+      .invited {
+        text-align: center;
+        font-size: 2.5rem;
+      }
+      .limited {
+        text-align: center;
+        font-size: 2rem;
+        .online {
+          font-size: 2rem;
+        }
+      }
+      h3 {
+        text-align: center;
+        font-size: 1rem;
+      }
+    }
+    .logo {
+      display: none;
+    }
+  }
+  .linksToRegisterButtons {
+    .dontMiss {
+      font-size: 1.4rem;
+    }
+  }
+}
+@media only screen and (max-width: 505px) {
+  .landingOneContainer {
+    margin: 0%;
+    hr {
+      display: inline;
+    }
+  }
+  .linksToRegisterList {
+    padding: 0rem;
+    .learn {
+      font-size: 1.5rem;
+    }
+    /* Bulleted List */
+    div {
+      span {
+        p {
+          font-weight: 600;
+          text-align: left;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  .linksToRegisterHeader {
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+    div {
+      text-align: center;
+      .invited {
+        text-align: center;
+        font-size: 2.5rem;
+      }
+      .limited {
+        text-align: center;
+        font-size: 1.7rem;
+        .online {
+          font-size: 1.7rem;
+        }
+      }
+      h3 {
+        text-align: center;
+        font-size: 1rem;
+      }
+    }
+  }
+  .linksToRegisterButtons {
+    .dontMiss {
+      margin: 0%;
+      font-size: 1.4rem;
+    }
+  }
+}
+//Height
+
+@media only screen and (max-height: 890px) {
+  .landingOneContainer {
+    margin: 0% auto;
+  }
+}
+@media only screen and (max-height: 825px) {
+  .landingOneContainer {
+    margin: 0% auto;
+    .webinarTitle {
+      font-size: 2.5rem;
     }
   }
 }
