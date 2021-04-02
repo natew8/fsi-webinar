@@ -41,3 +41,39 @@ $blue: #4bdfe4;
   font-weight: 600;
   line-height: 35px;
 }
+
+@media only screen and (max-width: 530px) {
+  .landingContainer {
+    max-width: 350px;
+    padding: 0.5rem;
+  }
+
+  .landingHeader {
+    text-align: center;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #fff;
+  }
+  .presenterBox {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #fff;
+    img {
+      float: none;
+      margin: 0rem auto;
+      height: 250px;
+    }
+    .presenterName {
+      margin: 5px auto;
+      font-size: 1.5rem;
+    }
+  }
+  .bio {
+    padding: 0;
+    margin: 0% auto;
+    text-align: left;
+    font-size: 0.9rem;
+    font-weight: 900;
+    line-height: 25px;
+    margin-bottom: 0.5rem;
+  }
+}
