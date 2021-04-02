@@ -359,7 +359,7 @@ $blue: #4bdfe4;
     }
     .webinarTitle {
       margin: 0% auto;
-      padding: 0.75rem 0rem;
+      padding: 1rem 0rem;
       width: 350px;
       max-width: 350px;
       font-weight: 900;
@@ -382,6 +382,8 @@ $blue: #4bdfe4;
     /* Bulleted List */
     div {
       span {
+        margin: 0% auto;
+        margin-top: 1.4rem;
         p {
           font-weight: 500;
           text-align: left;
