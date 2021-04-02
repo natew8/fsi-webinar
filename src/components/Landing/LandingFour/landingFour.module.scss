@@ -64,3 +64,59 @@
     text-align: right;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .landingContainer {
+    max-width: 350px;
+    .title {
+      font-size: 1.5rem;
+    }
+  }
+  .line {
+    height: 0;
+  }
+  .infoBox {
+    display: flex;
+    flex-direction: column;
+    .summary {
+      width: 100%;
+      text-align: center;
+      line-height: 25px;
+      font-size: 1rem;
+      font-family: Lato;
+    }
+  }
+  .logoBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .logo {
+    padding: 0.5rem;
+    width: 250px;
+    margin-bottom: 1rem;
+  }
+
+  .contactBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    p {
+      text-align: left;
+      font-weight: 500;
+      height: 3rem;
+      font-size: 1rem;
+    }
+    .contact {
+      display: flex;
+      justify-content: flex-start;
+    }
+    .contactType {
+      font-weight: 800;
+      width: 7rem;
+      margin-right: 0.2rem;
+      text-align: right;
+    }
+  }
+}
