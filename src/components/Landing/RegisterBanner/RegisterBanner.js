@@ -32,7 +32,11 @@ function RegisterBanner({ openModal }) {
       </h1>
       <div className={landingStyles.linksToRegister}>
         <div className={landingStyles.linksToRegisterHeader}>
-          <AppLogo src={whiteLogo} alt="FSI Logo White" width={"45%"} />
+          <AppLogo
+            className={landingStyles.logo}
+            src={whiteLogo}
+            alt="FSI Logo White"
+          />
           <div className={landingStyles.line}></div>
           <div>
             <h1 className={landingStyles.invited}>You're Invited</h1>
@@ -72,7 +76,11 @@ function RegisterBanner({ openModal }) {
           )} */}
           <span className={landingStyles.buttonBox}>
             {/* {!twoWebinars ? ( */}
-            <AppButton title={"Register Today!"} onClick={handleOpenModal} />
+            <AppButton
+              className={landingStyles.button}
+              title={"Register Today!"}
+              onClick={handleOpenModal}
+            />
             {/* ) : (
               <>
                 <AppButton
