@@ -41,7 +41,7 @@ function WhatsNext(props) {
           don't hesitate to contact us!
         </li>
         <ul>
-          <li>email@email.com</li>
+          <li>info@fsiplanners.com</li>
           <li>(801) 316-4100</li>
         </ul>
         <li>

@@ -22,14 +22,14 @@ function LandingTwo({ openModal }) {
     // schedules,
     // schedule,
     // twoWebinars,
-    setPickedDate,
+    // setPickedDate,
     setSchedule,
   } = useContext(Context);
 
   function handleOpenModal(e) {
     e.stopPropagation();
     openModal();
-    setPickedDate(e.target.value);
+    // setPickedDate(e.target.value);
     setSchedule(+e.target.value);
   }
 

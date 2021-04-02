@@ -4,6 +4,7 @@ module.exports = {
     const {
       years,
       focus,
+      investable_assets,
       comment,
       webinar_id,
       schedule,
@@ -16,9 +17,10 @@ module.exports = {
     const db = req.app.get("db");
 
     try {
-      const survey = db.fsi_webinar_attendees.insert({
+      const survey = db.fsi_webinar_clients.insert({
         yrs_to_retire: years,
         focus,
+        investable_assets,
         comments: comment,
         webinar_id,
         schedule,
