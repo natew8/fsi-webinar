@@ -78,6 +78,10 @@ function RegisterForm(props) {
           placeholder="(xxx) xxx-xxxx`"
         />
         <RegisterFormPicker name="schedule" />
+        <p>
+          By continuing you are indicating that you have read and accept the{" "}
+          <a>terms of service</a> and <a>privacy agreement.</a>
+        </p>
         <AppSubmitButton title="Register" />
       </AppForm>
     </span>
