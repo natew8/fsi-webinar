@@ -38,14 +38,12 @@ export function WebinarProvider(props) {
     axios
       .post("/api/everWebinars")
       .then((res) => {
-        console.log(res.data.webinars);
         const [webinar_id] = res.data.webinars.filter(
           (nar) => nar.webinar_id === +query_id
         );
         axios
           .post("/api/webinar", webinar_id)
           .then((res) => {
-            console.log(res.data);
             if (res.data.status !== "success") {
               setError(true);
               setLoading(false);
