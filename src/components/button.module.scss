@@ -17,3 +17,9 @@ $blue: #4bdfe4;
   cursor: pointer;
   background-color: #c55526;
 }
+
+@media screen and (max-width: 500px) {
+  .button {
+    width: 100%;
+  }
+}

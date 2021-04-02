@@ -8,3 +8,13 @@ body {
   box-sizing: border-box;
   overflow-x: hidden;
 }
+
+@media (max-width: 500px) {
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
