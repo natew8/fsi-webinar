@@ -14,7 +14,7 @@ function AppCheckList({ onChange }) {
       >
         <input
           onChange={onChange}
-          value={question.value}
+          value={question.question}
           type="checkbox"
           id={question.id}
         />

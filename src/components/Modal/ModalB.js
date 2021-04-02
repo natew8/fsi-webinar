@@ -94,6 +94,7 @@ function ModalB(props) {
     const body = {
       years: years,
       focus: focus,
+      investable_assets: investment,
       comment: comment,
       presenter: presenters.name,
     };
