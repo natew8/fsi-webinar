@@ -1,6 +1,5 @@
 module.exports = {
   surveyData: async (req, res) => {
-    console.log(req.body);
     const {
       years,
       focus,
