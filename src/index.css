@@ -1,4 +1,10 @@
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+}
 body {
+  box-sizing: border-box;
   position: relative;
   margin: 0;
   font-family: Lato;

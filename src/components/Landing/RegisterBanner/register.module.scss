@@ -11,14 +11,12 @@ $blue: #4bdfe4;
   height: 85%;
   max-height: 100%;
   margin: 0px auto;
-  margin-top: 4rem;
   padding: 0rem 0.6rem;
   .webinarTitle {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 3px;
     margin: 0%;
-    margin: 0.5rem 0px;
     font-size: 3.7rem;
     color: #fff;
   }
@@ -200,7 +198,6 @@ $blue: #4bdfe4;
 }
 @media only screen and (max-width: 790px) {
   .landingOneContainer {
-    margin-top: 2rem;
     .webinarTitle {
       font-size: 2rem;
     }
@@ -359,15 +356,15 @@ $blue: #4bdfe4;
     }
     .webinarTitle {
       margin: 0% auto;
-      padding: 1rem 0rem;
-      width: 350px;
-      max-width: 350px;
+      padding: 0.5rem 0rem;
+      width: 320px;
+      max-width: 320px;
       font-weight: 900;
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
   }
   .linksToRegister {
-    width: 350px;
+    width: 320px;
     margin: 0% auto;
     padding: 1rem;
 

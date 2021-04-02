@@ -2,17 +2,18 @@ $orange: #f56d1e;
 $orange-hover: #e46115;
 $blue: #4bdfe4;
 .landingOne {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  padding: 0px;
-  margin: 0px auto;
-  height: 100vh;
+  // box-sizing: border-box;
+  // display: flex;
+  // flex-direction: column;
+  // position: relative;
+  // padding: 0px;
+  // margin: 0px auto;
+  // height: 100vh;
   background: url(../../assets/backgrounds/mainBackground1.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  z-index: 200;
+  // z-index: 200;
 }
 .landingTwo {
   background: linear-gradient(#f4f2f1d7, #f4f2f1d7),
@@ -57,17 +58,4 @@ $blue: #4bdfe4;
   margin-top: 20rem;
   color: #f4f2f1;
   font-size: 5rem;
-}
-
-@media only screen and (max-width: 500px) {
-  .landingFive {
-    .lanFiveHeader {
-      padding: 0.5rem;
-      h1 {
-        font-size: 2rem;
-        margin: 0% auto;
-        max-width: 350px;
-      }
-    }
-  }
 }
