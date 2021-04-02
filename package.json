@@ -14,7 +14,6 @@
     "express-session": "^1.17.1",
     "formik": "^2.2.6",
     "massive": "^6.7.0",
-    "moment": "^2.29.1",
     "node-fetch": "^2.6.1",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
@@ -26,8 +25,7 @@
     "request": "^2.88.2",
     "styled-components": "^5.2.1",
     "web-vitals": "^1.0.1",
-    "yup": "^0.32.9",
-    "yup-phone": "^1.2.19"
+    "yup": "^0.32.9"
   },
   "scripts": {
     "predeploy": "npm run build",
