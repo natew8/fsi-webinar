@@ -58,3 +58,16 @@ $blue: #4bdfe4;
   color: #f4f2f1;
   font-size: 5rem;
 }
+
+@media only screen and (max-width: 500px) {
+  .landingFive {
+    .lanFiveHeader {
+      padding: 0.5rem;
+      h1 {
+        font-size: 2rem;
+        margin: 0% auto;
+        max-width: 350px;
+      }
+    }
+  }
+}

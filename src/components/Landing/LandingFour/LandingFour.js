@@ -1,27 +1,25 @@
 import React, { useContext } from "react";
-import landingStylesFour from "./landingFour.module.scss";
+//Components
+import AppLogo from "../../AppLogo";
+//Assets
 import blueLogo from "../../../assets/logo/fsiLogo.png";
-import { Context } from "../../context/WebinarContext";
+//Style Modules
+import landingStylesFour from "./landingFour.module.scss";
 
 function LandingFour() {
-  const { presenters } = useContext(Context);
   return (
     <div className={landingStylesFour.landingContainer}>
       <h1 className={landingStylesFour.title}>
         Focused On People, Not Profits...
       </h1>
+
       <span className={landingStylesFour.infoBox}>
-        <p className={landingStylesFour.summary}>
-          At Financial Strategies Institute our first priority is helping you
-          take care of yourself and your family. We want to learn more about
-          your personal situation, identify your dreams and goals, and
-          understand your tolerance for risk. Long-term relationships that
-          encourage open and honest communication have been the cornerstone of
-          our foundation of success.
-        </p>
-        <div className={landingStylesFour.line}></div>
         <span className={landingStylesFour.logoBox}>
-          <img className={landingStylesFour.logo} src={blueLogo} alt="logo" />
+          <AppLogo
+            src={blueLogo}
+            alt="logo"
+            className={landingStylesFour.logo}
+          />
           <span className={landingStylesFour.contactBox}>
             <div className={landingStylesFour.contact}>
               <p className={landingStylesFour.contactType}>Phone:</p>
@@ -37,6 +35,15 @@ function LandingFour() {
             </div>
           </span>
         </span>
+        <div className={landingStylesFour.line}></div>
+        <p className={landingStylesFour.summary}>
+          At Financial Strategies Institute our first priority is helping you
+          take care of yourself and your family. We want to learn more about
+          your personal situation, identify your dreams and goals, and
+          understand your tolerance for risk. Long-term relationships that
+          encourage open and honest communication have been the cornerstone of
+          our foundation of success.
+        </p>
       </span>
     </div>
   );
