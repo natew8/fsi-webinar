@@ -1,10 +1,14 @@
 $orange: #f56d1e;
 $blue: #4bdfe4;
 .landingContainer {
+  box-sizing: border-box;
   min-width: 100px;
   max-width: 1000px;
   margin: 0% auto;
   padding: 0.6rem;
+  p {
+    font-size: 2rem;
+  }
   .landingHeader {
     margin: 0%;
     color: $orange;
@@ -48,20 +52,41 @@ $blue: #4bdfe4;
     font-size: 2rem;
     margin: 0px 0.6rem;
   }
-  .registerButton {
-    margin: 0;
-    filter: saturate(0.8);
-    background-color: $orange;
-    width: 45%;
-    height: 3.5rem;
-    border: 1px solid #000;
-    border-radius: 5px;
-    font-size: 1.5rem;
-    color: #ffffff;
-    font-weight: 800;
+}
+
+@media only screen and (max-width: 500px) {
+  .landingContainer {
+    p {
+      font-size: 1rem;
+    }
+    max-width: 350px;
+    padding: 0%;
+    .landingHeader {
+      margin-top: 0.5rem;
+      font-size: 1.5rem;
+    }
+    .landingSubHeader {
+      font-size: 1rem;
+      margin-top: 5px;
+    }
   }
-  button:hover {
-    cursor: pointer;
-    background-color: #c55526;
+  .listBlock {
+    grid-template-columns: 100%;
+    .listItem {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      p {
+        text-align: left;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      img {
+        filter: invert(43%) sepia(15%) saturate(6194%) hue-rotate(351deg)
+          brightness(96%) contrast(83%);
+        margin-right: 0.5rem;
+        width: 30px;
+      }
+    }
   }
 }
