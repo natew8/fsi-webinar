@@ -70,3 +70,41 @@ textarea {
   background-color: $orange-hover;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 500px) {
+  .modalB {
+    max-width: 320px;
+    height: 75%;
+    margin-top: -43.5%;
+    h1 {
+      font-size: 1rem;
+    }
+    h2 {
+      font-size: 0.8rem;
+    }
+    h3 {
+      font-size: 0.7rem;
+    }
+    hr {
+      margin: 5px 0px;
+    }
+  }
+
+  .questionsContainer {
+    label {
+      font-size: 0.78rem;
+      margin: 0;
+    }
+    select {
+      margin: 0%;
+      margin-bottom: 5px;
+    }
+  }
+  .checkContainer {
+    .checkLabel {
+      margin: 0.2rem 0;
+      font-size: 0.75rem;
+      flex-direction: row;
+    }
+  }
+}
