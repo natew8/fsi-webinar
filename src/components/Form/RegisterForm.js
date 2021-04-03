@@ -18,6 +18,7 @@ const validationSchema = Yup.object().shape({
     .min(4, "Must be at least four characters")
     .label("First Name"),
   last_name: Yup.string()
+    .required()
     .min(4, "Must be at least four characters")
     .label("Last Name"),
   email: Yup.string().email().required().label("Email"),
@@ -57,7 +58,7 @@ function RegisterForm(props) {
           placeholder="First Name"
         />
         <AppFormField
-          label="Last Name "
+          label="Last Name *"
           name="last_name"
           type="text"
           id="lastName"

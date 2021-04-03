@@ -29,6 +29,7 @@ function ModalA(props) {
       <span>
         <AppLogo
           width="45%"
+          className={modalStyles.logo}
           style={{ height: 200, marginTop: "6rem" }}
           src={whiteLogo}
           alt="FSI Logo White"
