@@ -19,7 +19,7 @@ export function WebinarProvider(props) {
   const [schedule, setSchedule] = useState(0);
 
   //Modal State
-  const [modalA, setModalA] = useState(false);
+  const [modalA, setModalA] = useState(true);
   const [submitting, setSubmitting] = useState(false);
 
   //Error Message
