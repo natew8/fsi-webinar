@@ -17,7 +17,12 @@ function WebinarInfoCard(props) {
 
   return (
     <div className={confirmStyles.webinarInfo}>
-      <AppLogo style={{ marginBottom: "1rem" }} src={blueLogo} width={400} />
+      <AppLogo
+        className={confirmStyles.logo}
+        style={{ marginBottom: "1rem" }}
+        src={blueLogo}
+        width={400}
+      />
       <div className={confirmStyles.infoBox}>
         <h2>{webinarName}</h2>
         <AppInfoText label="Presented By: " info={presenters.name} />

@@ -2,18 +2,19 @@ $orange: #f56d1e;
 $blue: #4bdfe4;
 
 .bounds {
-  height: 100%;
-  width: 1000px;
+  box-sizing: border-box;
+  height: 1000px;
+  max-width: 1000px;
   margin: 0% auto;
-  padding-top: 7rem;
+  padding-top: 4.5rem;
 }
 
 .container {
   box-sizing: border-box;
   border: 2px solid rgb(136, 136, 136);
   background-color: #000000ce;
-  width: 100%;
-  height: 80%;
+  max-width: 1000px;
+  height: 90%;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -134,5 +135,133 @@ ol {
     margin: 0%;
     list-style: square;
     color: $orange;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .bounds {
+    max-width: 320px;
+    height: 1200px;
+  }
+  .container {
+    margin-top: -20%;
+    max-width: 320px;
+    height: fit-content;
+    padding: 0.5rem;
+  }
+  .header {
+    max-width: 320px;
+    h1 {
+      font-size: 1.25rem;
+    }
+  }
+  .body {
+    flex-direction: column;
+  }
+  .boxLeft {
+    flex: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    h3 {
+      color: #fff;
+      text-align: left;
+      margin: 0%;
+    }
+  }
+  .webinarInfo {
+    max-width: 320px;
+    h1 {
+      margin: 0%;
+      font-size: 1rem;
+    }
+    h2 {
+      margin: 0%;
+    }
+
+    p {
+      margin: 0%;
+      font-size: 1rem;
+    }
+    hr {
+      margin: 0% auto;
+    }
+  }
+  .infoBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    p {
+      font-weight: 400;
+      margin: 0%;
+    }
+  }
+  .infoTextContainer {
+    display: flex;
+    margin: 0%;
+    hr {
+      margin: 0% auto;
+    }
+    p {
+      margin: 0%;
+      font-size: 1rem;
+      margin-right: 10px;
+    }
+    .label {
+      font-size: 1rem;
+      font-weight: 300;
+    }
+    .info {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  }
+  .infoBox {
+    h1 {
+      color: #f56d1e;
+    }
+    h2 {
+      margin: 0%;
+      font-size: 1rem;
+    }
+    p {
+      font-size: 0.75rem;
+    }
+  }
+  .logo {
+    width: 80%;
+  }
+  .boxRight {
+    display: flex;
+    flex-direction: column;
+    padding: 0rem;
+    flex: 0.8;
+    p {
+      flex: 1;
+      margin: 5px 0px;
+      font-size: 1.2rem;
+    }
+    hr {
+      margin: 3px 0px;
+    }
+  }
+  .nextTitle {
+    margin: 0.5rem;
+  }
+
+  ol {
+    margin: 0%;
+    color: #fff;
+    li {
+      text-align: left;
+      line-height: 25px;
+      font-size: 1rem;
+    }
+    ul {
+      margin: 0%;
+      list-style: square;
+      color: $orange;
+    }
   }
 }
