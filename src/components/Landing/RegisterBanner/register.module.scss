@@ -8,8 +8,6 @@ $blue: #4bdfe4;
   flex-direction: column;
   min-width: 150px;
   max-width: 1000px;
-  height: 85%;
-  max-height: 100%;
   margin: 0px auto;
   margin-top: 4rem;
   padding: 0rem 0.6rem;
@@ -100,6 +98,7 @@ $blue: #4bdfe4;
   }
   /* Bulleted List */
   div {
+    height: fit-content;
     margin: 0px auto;
     span {
       display: flex;
@@ -349,32 +348,29 @@ $blue: #4bdfe4;
     height: 100%;
     margin: 0%;
     hr {
+      margin: 0 auto;
       display: inline;
     }
     p {
       font-size: 1rem;
       margin: 0% auto;
-      margin-top: 1.5rem;
       max-width: 350px;
     }
     .webinarTitle {
       margin: 0% auto;
-      padding: 1rem 0rem;
+      padding: 0rem;
       width: 350px;
       max-width: 350px;
       font-weight: 900;
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
   }
   .linksToRegister {
     width: 350px;
     margin: 0% auto;
-    padding: 1rem;
-
-    max-height: 100vh;
   }
   .linksToRegisterList {
-    height: 35vh;
+    height: fit-content;
     padding: 0rem;
     .learn {
       font-size: 1rem;
