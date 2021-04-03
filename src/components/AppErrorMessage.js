@@ -3,12 +3,14 @@ import React from "react";
 import AppLogo from "./AppLogo";
 //Assets
 import blueLogo from "../assets/logo/fsiLogo.png";
+//Style Modules
+import "../App.css";
 
 function AppErrorMessage(props) {
   return (
-    <div style={{ width: "100%", height: "100%", backgroundColor: "#eee" }}>
+    <div className="errorBox">
       <AppLogo
-        width={500}
+        width={300}
         style={{ marginTop: 100 }}
         src={blueLogo}
         alt="FSI Logo"

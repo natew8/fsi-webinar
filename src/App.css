@@ -16,3 +16,17 @@
   margin: 0 auto;
   text-align: center;
 }
+.loadingBox {
+  width: 100%;
+  height: 100%;
+  background-color: "#eee";
+}
+@media only screen and (max-width: 500px) {
+  .errorBox {
+    max-width: 320px;
+  }
+
+  p {
+    margin: 0%;
+  }
+}

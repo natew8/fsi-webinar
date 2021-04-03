@@ -32,14 +32,14 @@ function App() {
   return (
     <div className="App">
       {loading ? (
-        <div style={{ width: "100%", height: "100%", backgroundColor: "#eee" }}>
+        <div className="loadingBox">
           <AppLogo
-            width={500}
+            width={300}
             style={{ marginTop: 100 }}
             src={blueLogo}
             alt="FSI Logo"
           />
-          <h1>Loading...</h1>
+          <h1>Page Loading...</h1>
         </div>
       ) : (
         <>
