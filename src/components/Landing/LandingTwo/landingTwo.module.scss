@@ -58,6 +58,7 @@ $blue: #4bdfe4;
   .landingContainer {
     p {
       font-size: 1rem;
+      margin: 5px 0px;
     }
     max-width: 350px;
     padding: 0%;
@@ -75,7 +76,8 @@ $blue: #4bdfe4;
     .listItem {
       display: flex;
       align-items: center;
-      margin: 0;
+      margin: 3px;
+      line-height: 25px;
       p {
         text-align: left;
         font-size: 1rem;
