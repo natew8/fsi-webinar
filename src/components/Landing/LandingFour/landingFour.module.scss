@@ -74,6 +74,7 @@
   }
   .line {
     height: 0;
+    margin: 0;
   }
   .infoBox {
     display: flex;
@@ -95,7 +96,7 @@
   .logo {
     padding: 0.5rem;
     width: 250px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .contactBox {
@@ -105,18 +106,13 @@
     p {
       text-align: left;
       font-weight: 500;
-      height: 3rem;
       font-size: 1rem;
-    }
-    .contact {
-      display: flex;
-      justify-content: flex-start;
     }
     .contactType {
       font-weight: 800;
       width: 7rem;
-      margin-right: 0.2rem;
-      text-align: right;
+      margin-right: 0;
+      text-align: left;
     }
   }
 }
