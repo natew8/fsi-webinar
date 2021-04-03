@@ -4,12 +4,14 @@
   text-align: center;
 }
 .AppConfirmation {
+  box-sizing: border-box;
   background: url(./assets/backgrounds/mainBackground1.jpg);
   background-repeat: no-repeat;
-  height: 100vh;
+  background-position: center top;
+  background-size: cover;
+  height: 1000px;
   width: 100%;
   text-align: center;
-  overflow-y: hidden;
 }
 .errorBox {
   width: fit-content;
@@ -28,5 +30,10 @@
 
   p {
     margin: 0%;
+  }
+
+  .AppConfirmation {
+    height: 1100px;
+    overflow: hidden;
   }
 }
