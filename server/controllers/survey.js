@@ -1,12 +1,13 @@
 module.exports = {
   surveyData: async (req, res) => {
+    console.log(req.body.scheduleDate);
     const {
       years,
       focus,
       investable_assets,
       comment,
       webinar_id,
-      schedule,
+      scheduleDate,
       first_name,
       last_name,
       phone,
@@ -22,7 +23,7 @@ module.exports = {
         investable_assets,
         comments: comment,
         webinar_id,
-        schedule,
+        schedule: scheduleDate,
         first_name,
         last_name,
         phone,
