@@ -17,6 +17,7 @@ export function WebinarProvider(props) {
   //User Registration State//
   const [registerBody, setRegisterBody] = useState({});
   const [schedule, setSchedule] = useState(0);
+  const [scheduleDateForDb, setScheduleDateForDb] = useState("");
 
   //Modal State
   const [modalA, setModalA] = useState(true);
@@ -71,11 +72,15 @@ export function WebinarProvider(props) {
     axios
       .post("/api/webinar/register", body)
       .then((res) => {
+        setScheduleDateForDb(
+          schedules
+            .filter((sch) => sch.schedule === +res.data.user.schedule)
+            .map((ule) => ule.date)
+        );
         if (res.data.status !== "success") {
           setError(true);
           setLoading(false);
         }
-        console.log(res.data);
         setWebinarLink(res.data.user.live_room_url);
         setRegisteredDate(res.data.user.date);
       })
@@ -91,6 +96,7 @@ export function WebinarProvider(props) {
       .post("/api/survey", {
         ...body,
         ...registerBody,
+        scheduleDate: scheduleDateForDb[0],
       })
       .then((res) => {
         if (res.statusText !== "ok") {
