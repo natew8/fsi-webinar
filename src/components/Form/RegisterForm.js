@@ -81,7 +81,8 @@ function RegisterForm(props) {
         <RegisterFormPicker name="schedule" />
         <p>
           By continuing you are indicating that you have read and accept the{" "}
-          <a>terms of service</a> and <a>privacy agreement.</a>
+          <a>terms of service.</a> Your information will only be used vy FSI
+          Planners and not given to third parties.
         </p>
         <AppSubmitButton title="Register" />
       </AppForm>
