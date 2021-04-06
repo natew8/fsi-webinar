@@ -18,6 +18,14 @@ function RegisterBanner({ openModal }) {
   function handleOpenModal(e) {
     e.stopPropagation();
     openModal();
+    window.dataLayer.push({
+      event: "event",
+      eventProps: {
+        category: "User",
+        action: "Clicked Register",
+        label: "Top register button",
+      },
+    });
     ReactGa.event({
       category: "User",
       action: "Clicked Register",
