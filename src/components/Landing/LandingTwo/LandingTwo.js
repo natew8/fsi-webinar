@@ -1,5 +1,6 @@
 //Libraries
 import React, { useContext } from "react";
+import ReactGa from "react-ga";
 //Components
 import { Context } from "../../context/WebinarContext";
 import AppButton from "../../AppButton";
@@ -31,6 +32,11 @@ function LandingTwo({ openModal }) {
     openModal();
     // setPickedDate(e.target.value);
     setSchedule(+e.target.value);
+    ReactGa.event({
+      category: "User",
+      action: "Clicked Register",
+      label: "Second register button",
+    });
   }
 
   const mappedList = listItems.map((item, index) => {

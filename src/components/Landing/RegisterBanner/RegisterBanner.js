@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import ReactGa from "react-ga";
 //Components
 import { Context } from "../../context/WebinarContext";
 import AppButton from "../../AppButton";
@@ -17,6 +18,11 @@ function RegisterBanner({ openModal }) {
   function handleOpenModal(e) {
     e.stopPropagation();
     openModal();
+    ReactGa.event({
+      category: "User",
+      action: "Clicked Register",
+      label: "Top register button",
+    });
   }
   function handleOpenModalPicked(e) {
     e.stopPropagation();

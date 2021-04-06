@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import dayjs from "dayjs";
 //Components
 import AppLogo from "../AppLogo";
-import presenters from "../Landing/LandingThree/presenters";
 import { Context } from "../context/WebinarContext";
 //Assets
 import blueLogo from "../../assets/logo/fsiLogo.png";
@@ -11,9 +10,7 @@ import confirmStyles from "./confirmation.module.scss";
 import AppInfoText from "./AppInfoText";
 
 function WebinarInfoCard(props) {
-  const { presenters, registeredDate, webinarLink, webinarName } = useContext(
-    Context
-  );
+  const { presenters, registeredDate, webinarName } = useContext(Context);
 
   return (
     <div className={confirmStyles.webinarInfo}>

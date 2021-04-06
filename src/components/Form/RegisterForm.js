@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import * as Yup from "yup";
+import ReactGa from "react-ga";
 //Components
 import AppFormField from "./AppFormField";
 import AppForm from "./AppForm";
@@ -35,6 +36,11 @@ function RegisterForm(props) {
   //
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
     registerUser(values);
+    ReactGa.event({
+      category: "User",
+      action: "Submitted Registration Form",
+      label: "Register button on form",
+    });
   };
   return (
     <span className={formStyles.container}>
@@ -81,8 +87,8 @@ function RegisterForm(props) {
         <RegisterFormPicker name="schedule" />
         <p>
           By continuing you are indicating that you have read and accept the{" "}
-          <a>terms of service.</a> Your information will only be used vy FSI
-          Planners and not given to third parties.
+          terms of service. Your information will only be used vy FSI Planners
+          and not given to third parties.
         </p>
         <AppSubmitButton title="Register" />
       </AppForm>
