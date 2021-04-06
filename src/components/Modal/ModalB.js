@@ -77,21 +77,11 @@ function ModalB() {
   function handleYears(e) {
     e.preventDefault();
     setYears(e.target.value);
-    ReactGa.event({
-      category: "User",
-      action: "Selected Years to Retirement",
-      label: "Years to retirement dropdown",
-    });
   }
 
   function handleInvestment(e) {
     e.preventDefault();
     setInvestment(e.target.value);
-    ReactGa.event({
-      category: "User",
-      action: "Selected Total Investible Assets",
-      label: "Assets dropdown",
-    });
   }
   function handleFocus(e) {
     e.stopPropagation();
@@ -101,11 +91,6 @@ function ModalB() {
   function handleComment(e) {
     e.stopPropagation();
     setComment(e.target.value);
-    ReactGa.event({
-      category: "User",
-      action: "Left Comment",
-      label: "Comment Box",
-    });
   }
   function handleSubmit(e) {
     e.stopPropagation();
