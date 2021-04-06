@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import ReactGa from "react-ga";
 
 //Components
 import AppButton from "../AppButton";
@@ -8,12 +9,24 @@ import { Context } from "../context/WebinarContext";
 import confirmStyles from "./confirmation.module.scss";
 
 function WhatsNext(props) {
-  const { webinarLink, setFinished } = useContext(Context);
+  const { webinarLink } = useContext(Context);
 
   const refreshPage = () => {
     window.location.reload(false);
+    ReactGa.event({
+      category: "User",
+      action: "Refreshed Page",
+      label: "Button at bottom of whats next.",
+    });
   };
 
+  const gaEvent = () => {
+    ReactGa.event({
+      category: "User",
+      action: "Visited Webinar Link",
+      label: "HERE link in Whats next.",
+    });
+  };
   return (
     <>
       <h2 className={confirmStyles.nextTitle}>What Happens Next?</h2>
@@ -32,6 +45,8 @@ function WhatsNext(props) {
             style={{ textDecoration: "none", color: "#f56d1e" }}
             target="_blank"
             href={`${webinarLink}`}
+            rel="noreferrer"
+            onClick={gaEvent}
           >
             here!
           </a>

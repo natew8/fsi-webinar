@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+//Google Analytics
+import ReactGa from "react-ga";
 //Components
 import Landing from "./components/Landing/Landing";
 import { Context } from "./components/context/WebinarContext";
@@ -10,6 +12,9 @@ import "./App.css";
 import AppLogo from "./components/AppLogo";
 import AppErrorMessage from "./components/AppErrorMessage";
 import ConfirmationScreen from "./components/Confirmation/ConfirmationScreen";
+
+const { REACT_APP_TRACKING_ID } = process.env;
+ReactGa.initialize(REACT_APP_TRACKING_ID);
 
 function App() {
   const { loading, error, finished } = useContext(Context);

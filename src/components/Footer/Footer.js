@@ -7,7 +7,11 @@ function Footer(props) {
       <div className={footerStyles.content}>
         <p>
           Check the background of your financial professional on FINRA's{" "}
-          <a target="_blank" href="https://brokercheck.finra.org/">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://brokercheck.finra.org/"
+          >
             {" "}
             BrokerCheck.
           </a>
@@ -22,7 +26,7 @@ function Footer(props) {
         <p>
           We take protecting your data and privacy very seriously. As of January
           1, 2020, the{" "}
-          <a target="_blank" href="https://www.caprivacy.org/">
+          <a target="_blank" href="https://www.caprivacy.org/" rel="noreferrer">
             California Consumer Privacy Act (CCPA)
           </a>{" "}
           suggests the following link as an extra measure to safeguard your
@@ -30,6 +34,7 @@ function Footer(props) {
           <a
             target="_blank"
             href="https://www.fsiplanners.com/donotsellmypersonalinformation"
+            rel="noreferrer"
           >
             Do not sell my personal information.
           </a>
@@ -37,11 +42,11 @@ function Footer(props) {
         <p>
           Planners are Registered Representatives of and offer securities
           through Securities America, Inc., member{" "}
-          <a target="_blank" href="https://www.finra.org/#/">
+          <a target="_blank" href="https://www.finra.org/#/" rel="noreferrer">
             FINRA
           </a>
           /
-          <a target="_blank" href="https://www.sipc.org/">
+          <a target="_blank" href="https://www.sipc.org/" rel="noreferrer">
             SIPC.
           </a>{" "}
           Advisory services offered through Securities America Advisors, Inc.,
@@ -53,6 +58,7 @@ function Footer(props) {
           <a
             href="https://static.fmgsuite.com/media/documents/8396c082-a363-4f08-8c96-ba2f53c093bd.pdf"
             target="_blank"
+            rel="noreferrer"
           >
             CLICK HERE
           </a>{" "}

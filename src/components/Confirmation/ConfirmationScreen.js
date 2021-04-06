@@ -1,8 +1,4 @@
 import React from "react";
-//Components
-import AppLogo from "../AppLogo";
-//Assets
-import blueLogo from "../../assets/logo/fsiLogo.png";
 //Style Module
 import confirmStyles from "./confirmation.module.scss";
 import WebinarInfoCard from "./WebinarInfoCard";

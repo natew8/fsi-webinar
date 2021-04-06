@@ -1,12 +1,20 @@
 //Libraries
 import React from "react";
 import { Link } from "react-scroll";
+import ReactGa from "react-ga";
 //Components
 import AppButton from "../../AppButton";
 //Style Modules
 import landingStylesFive from "./landingFive.module.scss";
 
-function LandingFive(props) {
+function LandingFive() {
+  const gaClick = () => {
+    ReactGa.event({
+      category: "User",
+      action: "Clicked Register",
+      label: "Bottom register button",
+    });
+  };
   return (
     <div className={landingStylesFive.landingContainer}>
       <h1 className={landingStylesFive.fiveHeader}>You're Invited!</h1>
@@ -14,7 +22,7 @@ function LandingFive(props) {
         Free online workshop event
       </h2>
       <Link to="top" spy={true} smooth={true}>
-        <AppButton title={"Register Today!"} />
+        <AppButton onClick={gaClick} title={"Register Today!"} />
       </Link>
     </div>
   );

@@ -1,10 +1,13 @@
 import React, { useContext, useState } from "react";
+import ReactGa from "react-ga";
+//Components
 import AppButton from "../AppButton";
 import { Context } from "../context/WebinarContext";
 import AppCheckList from "./AppCheckList";
+//Style Modules
 import modalStylesB from "./modalB.module.scss";
-//Already retired, 1-5, 5-10, 10+
-function ModalB(props) {
+
+function ModalB() {
   const { surveyAnswers, presenters, submitting } = useContext(Context);
   const [years, setYears] = useState("Already Retired");
   const [investment, setInvestment] = useState("<200k");
@@ -74,11 +77,21 @@ function ModalB(props) {
   function handleYears(e) {
     e.preventDefault();
     setYears(e.target.value);
+    ReactGa.event({
+      category: "User",
+      action: "Selected Years to Retirement",
+      label: "Years to retirement dropdown",
+    });
   }
 
   function handleInvestment(e) {
     e.preventDefault();
     setInvestment(e.target.value);
+    ReactGa.event({
+      category: "User",
+      action: "Selected Total Investible Assets",
+      label: "Assets dropdown",
+    });
   }
   function handleFocus(e) {
     e.stopPropagation();
@@ -88,6 +101,11 @@ function ModalB(props) {
   function handleComment(e) {
     e.stopPropagation();
     setComment(e.target.value);
+    ReactGa.event({
+      category: "User",
+      action: "Left Comment",
+      label: "Comment Box",
+    });
   }
   function handleSubmit(e) {
     e.stopPropagation();
@@ -99,6 +117,11 @@ function ModalB(props) {
       presenter: presenters.name,
     };
     surveyAnswers(body);
+    ReactGa.event({
+      category: "User",
+      action: "Finished Registration Process",
+      label: "Register Button",
+    });
   }
 }
 
