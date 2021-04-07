@@ -1,12 +1,11 @@
 module.exports = {
   surveyData: async (req, res) => {
-    console.log(req.body.scheduleDate);
     const {
       years,
       focus,
       investable_assets,
       comment,
-      webinar_id,
+      webinar_name,
       scheduleDate,
       first_name,
       last_name,
@@ -22,7 +21,7 @@ module.exports = {
         focus,
         investable_assets,
         comments: comment,
-        webinar_id,
+        webinar_name,
         schedule: scheduleDate,
         first_name,
         last_name,
@@ -33,7 +32,6 @@ module.exports = {
       return res.status(200).send(survey);
     } catch (error) {
       res.status(500).send(error);
-      console.log(error);
     }
   },
 };

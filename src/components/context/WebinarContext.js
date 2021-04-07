@@ -58,11 +58,13 @@ export function WebinarProvider(props) {
             setLoading(false);
           })
           .catch((err) => {
-            console.log(err);
+            setError(true);
+            setLoading(false);
           });
       })
       .catch((err) => {
-        console.log(err);
+        setError(true);
+        setLoading(false);
       });
   }, []);
 
@@ -97,6 +99,7 @@ export function WebinarProvider(props) {
         ...body,
         ...registerBody,
         scheduleDate: scheduleDateForDb[0],
+        webinar_name: webinarName,
       })
       .then((res) => {
         if (res.statusText !== "ok") {
