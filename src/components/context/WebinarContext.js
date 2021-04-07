@@ -97,6 +97,7 @@ export function WebinarProvider(props) {
         ...body,
         ...registerBody,
         scheduleDate: scheduleDateForDb[0],
+        webinar_name: webinarName,
       })
       .then((res) => {
         if (res.statusText !== "ok") {
