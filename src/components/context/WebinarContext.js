@@ -58,11 +58,13 @@ export function WebinarProvider(props) {
             setLoading(false);
           })
           .catch((err) => {
-            console.log(err);
+            setError(true);
+            setLoading(false);
           });
       })
       .catch((err) => {
-        console.log(err);
+        setError(true);
+        setLoading(false);
       });
   }, []);
 

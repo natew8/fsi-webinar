@@ -1,6 +1,5 @@
 module.exports = {
   surveyData: async (req, res) => {
-    console.log(req.body.scheduleDate);
     const {
       years,
       focus,
@@ -33,7 +32,6 @@ module.exports = {
       return res.status(200).send(survey);
     } catch (error) {
       res.status(500).send(error);
-      console.log(error);
     }
   },
 };
