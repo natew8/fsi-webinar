@@ -87,7 +87,7 @@ function RegisterForm(props) {
         <RegisterFormPicker name="schedule" />
         <p>
           By continuing you are indicating that you have read and accept the{" "}
-          terms of service. Your information will only be used vy FSI Planners
+          terms of service. Your information will only be used by Financial Strategies Institute
           and not given to third parties.
         </p>
         <AppSubmitButton title="Register" />
