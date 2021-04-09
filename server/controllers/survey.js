@@ -29,6 +29,7 @@ module.exports = {
         email,
         presenter,
       });
+      console.log(survey)
       return res.status(200).send(survey);
     } catch (error) {
       res.status(500).send(error);
