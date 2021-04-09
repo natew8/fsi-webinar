@@ -2,6 +2,8 @@ import React, { useContext, useEffect } from "react";
 //Google Analytics
 import ReactGa from "react-ga";
 import TagManager from "react-gtm-module";
+//FB Pixel
+import ReactPixel from 'react-facebook-pixel'
 //Components
 import Landing from "./components/Landing/Landing";
 import { Context } from "./components/context/WebinarContext";
@@ -14,10 +16,15 @@ import AppLogo from "./components/AppLogo";
 import AppErrorMessage from "./components/AppErrorMessage";
 import ConfirmationScreen from "./components/Confirmation/ConfirmationScreen";
 
-const { REACT_APP_TRACKING_ID, REACT_APP_GTM_ID } = process.env;
+const { REACT_APP_TRACKING_ID, REACT_APP_GTM_ID, REACT_APP_PIXEL_ID } = process.env;
 const tagManagerArgs = {
   gtmId: REACT_APP_GTM_ID,
 };
+
+const options = {
+  autoConfig: true,
+  debug: false
+}
 
 function App() {
   const { loading, error, finished } = useContext(Context);
@@ -26,6 +33,7 @@ function App() {
     TagManager.initialize(tagManagerArgs);
     ReactGa.initialize(REACT_APP_TRACKING_ID);
     ReactGa.pageview("/");
+    ReactPixel.init(REACT_APP_PIXEL_ID, options)
   }, []);
 
   if (finished) {
