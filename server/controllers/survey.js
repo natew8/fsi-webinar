@@ -16,7 +16,7 @@ module.exports = {
     const db = req.app.get("db");
 
     try {
-      const survey = db.fsi_webinar_clients.insert({
+      const survey = await db.fsi_webinar_clients.insert({
         yrs_to_retire: years,
         focus,
         investable_assets,
