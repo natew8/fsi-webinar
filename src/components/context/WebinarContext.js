@@ -6,7 +6,7 @@ export const Context = createContext(null);
 export function WebinarProvider(props) {
   //Webinar URL Query
   const query = new URLSearchParams(window.location.search);
-  const query_id = query.get("webinarId");
+  const query_id = query.get('webinarId')
 
   // Webinar Info State
   const [webinarId, setWebinarId] = useState(0);
@@ -69,11 +69,13 @@ export function WebinarProvider(props) {
   }, []);
 
   const registerUser = (body) => {
+    console.log(body)
     setRegisterBody(body);
     setModalA(false);
     axios
       .post("/api/webinar/register", body)
       .then((res) => {
+        setRegisterBody(res.data)
         setScheduleDateForDb(
           schedules
             .filter((sch) => sch.schedule === +res.data.user.schedule)
@@ -90,8 +92,8 @@ export function WebinarProvider(props) {
         setError(true);
         console.log(err);
       });
-  };
-
+    };
+    
   const surveyAnswers = (body) => {
     setSubmitting(true);
     axios
@@ -106,7 +108,6 @@ export function WebinarProvider(props) {
           setError(true);
           setSubmitting(false);
         }
-        console.log(res)
         setModalA(true);
         setFinished(true);
       })

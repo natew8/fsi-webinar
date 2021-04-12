@@ -1,19 +1,20 @@
 module.exports = {
   surveyData: async (req, res) => {
-    console.log('BODY', req.body)
+    console.log( req.app.locals.settings)
     const {
       years,
       focus,
       investable_assets,
       comment,
+      presenter,
       webinar_name,
       scheduleDate,
+    } = req.body;
+    const {    
       first_name,
       last_name,
       phone,
-      email,
-      presenter,
-    } = req.body;
+      email,} = req.body.user
     const db = req.app.get("db");
 
     try {
