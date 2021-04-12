@@ -106,6 +106,7 @@ export function WebinarProvider(props) {
           setError(true);
           setSubmitting(false);
         }
+        console.log(res)
         setModalA(true);
         setFinished(true);
       })
