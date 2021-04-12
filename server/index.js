@@ -14,7 +14,7 @@ app.use(
     resave: false,
     saveUninitialized: true,
     secret: SESSION_SECRET,
-    cookie: { maxAge: 1000 * 60 * 60 * 24 },
+    cookie: { maxAge: 1000 * 60 * 60 * 24 * 7},
   })
 );
 
@@ -36,7 +36,7 @@ app.post("/api/survey", survey.surveyData);
 
 massive({
   connectionString: CONNECTION_STRING,
-  ssl: { rejectUnauthorized: false },
+  ssl: { rejectUnauthorized: true },
 }).then((dbInstance) => {
   console.log("DB READY");
   app.set("db", dbInstance);
