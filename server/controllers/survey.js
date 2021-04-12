@@ -1,5 +1,6 @@
 module.exports = {
   surveyData: async (req, res) => {
+    console.log('BODY', req.body)
     const {
       years,
       focus,
@@ -14,7 +15,6 @@ module.exports = {
       presenter,
     } = req.body;
     const db = req.app.get("db");
-    console.log(db)
 
     try {
       const survey = await db.fsi_webinar_clients.insert({
@@ -30,7 +30,7 @@ module.exports = {
         email,
         presenter,
       });
-      console.log(survey)
+      console.log('SURVEY',survey)
       return res.status(200).send(survey);
     } catch (error) {
       return res.status(500).send(error);
