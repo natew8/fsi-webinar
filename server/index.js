@@ -36,7 +36,7 @@ app.post("/api/survey", survey.surveyData);
 
 massive({
   connectionString: CONNECTION_STRING,
-  ssl: { rejectUnauthorized: true },
+  ssl: { rejectUnauthorized: false },
 }).then((dbInstance) => {
   console.log("DB READY");
   app.set("db", dbInstance);
