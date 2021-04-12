@@ -36,13 +36,14 @@ function RegisterForm(props) {
   const { schedule, webinarId, registerUser } = useContext(Context);
   //
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
+    console.log(values)
     registerUser(values);
     ReactGa.event({
       category: "User",
       action: "Submitted Registration Form",
       label: "Register button on form",
     });
-    ReactPixel.trackCustom("Submitted Registration Form", values )
+    // ReactPixel.trackCustom("Submitted Registration Form", values )
   };
   return (
     <span className={formStyles.container}>
