@@ -1,6 +1,5 @@
 module.exports = {
   surveyData: async (req, res) => {
-    console.log( req.app.locals.settings)
     const {
       years,
       focus,
@@ -31,7 +30,6 @@ module.exports = {
         email,
         presenter,
       });
-      console.log('SURVEY',survey)
       return res.status(200).send(survey);
     } catch (error) {
       return res.status(500).send(error);
