@@ -69,7 +69,6 @@ export function WebinarProvider(props) {
   }, []);
 
   const registerUser = (body) => {
-    console.log(body)
     setRegisterBody(body);
     setModalA(false);
     axios
@@ -99,9 +98,9 @@ export function WebinarProvider(props) {
     axios
       .post("/api/survey", {
         ...body,
-        ...registerBody,
         scheduleDate: scheduleDateForDb[0],
         webinar_name: webinarName,
+        ...registerBody,
       })
       .then((res) => {
         if (res.statusText !== "ok") {
