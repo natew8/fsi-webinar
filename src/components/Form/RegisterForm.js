@@ -43,7 +43,7 @@ function RegisterForm(props) {
       action: "Submitted Registration Form",
       label: "Register button on form",
     });
-    // ReactPixel.trackCustom("Submitted Registration Form", values )
+    ReactPixel.trackCustom("Submitted Registration Form")
   };
   return (
     <span className={formStyles.container}>

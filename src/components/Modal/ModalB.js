@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import ReactGa from "react-ga";
+import ReactPixel from 'react-facebook-pixel'
 //Components
 import AppButton from "../AppButton";
 import { Context } from "../context/WebinarContext";
@@ -107,6 +108,7 @@ function ModalB() {
       action: "Finished Registration Process",
       label: "Register Button",
     });
+    ReactPixel.trackCustom("Submit Survey")
   }
 }
 

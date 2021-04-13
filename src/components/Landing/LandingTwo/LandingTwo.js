@@ -1,6 +1,7 @@
 //Libraries
 import React, { useContext } from "react";
 import ReactGa from "react-ga";
+import ReactPixel from 'react-facebook-pixel'
 //Components
 import { Context } from "../../context/WebinarContext";
 import AppButton from "../../AppButton";
@@ -20,23 +21,23 @@ const listItems = [
 
 function LandingTwo({ openModal }) {
   const {
-    // schedules,
-    // schedule,
-    // twoWebinars,
-    // setPickedDate,
+    schedules,
+    twoWebinars,
+    setPickedDate,
     setSchedule,
   } = useContext(Context);
 
   function handleOpenModal(e) {
     e.stopPropagation();
     openModal();
-    // setPickedDate(e.target.value);
+    setPickedDate(e.target.value);
     setSchedule(+e.target.value);
     ReactGa.event({
       category: "User",
       action: "Clicked Register",
       label: "Second register button",
     });
+    ReactPixel.trackCustom("Open Registration Modal - Second Button")
   }
 
   const mappedList = listItems.map((item, index) => {
@@ -58,9 +59,9 @@ function LandingTwo({ openModal }) {
       </h2>
       <span className={landingTwoStyles.listBlock}>{mappedList}</span>
       <span className={landingTwoStyles.buttonBox}>
-        {/* {!twoWebinars ? ( */}
+        {!twoWebinars ? (
         <AppButton title={"Register Today!"} onClick={handleOpenModal} />
-        {/* ) : (
+        ) : (
           <>
             <AppButton
               value={schedules[0].schedule}
@@ -74,7 +75,7 @@ function LandingTwo({ openModal }) {
               onClick={handleOpenModal}
             />
           </>
-        )} */}
+        )}
       </span>
       <p>
         This is one of the most powerful free events we've ever hosted!

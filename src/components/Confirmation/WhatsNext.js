@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import ReactGa from "react-ga";
-
+import ReactPixel from 'react-facebook-pixel'
 //Components
 import AppButton from "../AppButton";
 import { Context } from "../context/WebinarContext";
@@ -18,6 +18,7 @@ function WhatsNext(props) {
       action: "Refreshed Page",
       label: "Button at bottom of whats next.",
     });
+    ReactPixel.trackCustom("Restart Process")
   };
 
   const gaEvent = () => {
