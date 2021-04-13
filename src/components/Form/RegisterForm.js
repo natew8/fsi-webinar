@@ -34,8 +34,11 @@ const validationSchema = Yup.object().shape({
 
 function RegisterForm(props) {
   const { schedule, webinarId, registerUser } = useContext(Context);
-  //
-  const handleSubmit = (values, { setSubmitting, resetForm }) => {
+  
+
+
+
+  const handleSubmit = (values) => {
     console.log(values)
     registerUser(values);
     ReactGa.event({

@@ -21,16 +21,12 @@ const listItems = [
 
 function LandingTwo({ openModal }) {
   const {
-    schedules,
-    twoWebinars,
-    setPickedDate,
     setSchedule,
   } = useContext(Context);
 
   function handleOpenModal(e) {
     e.stopPropagation();
     openModal();
-    setPickedDate(e.target.value);
     setSchedule(+e.target.value);
     ReactGa.event({
       category: "User",
@@ -59,9 +55,9 @@ function LandingTwo({ openModal }) {
       </h2>
       <span className={landingTwoStyles.listBlock}>{mappedList}</span>
       <span className={landingTwoStyles.buttonBox}>
-        {!twoWebinars ? (
+        {/* {!twoWebinars ? ( */}
         <AppButton title={"Register Today!"} onClick={handleOpenModal} />
-        ) : (
+        {/* ) : (
           <>
             <AppButton
               value={schedules[0].schedule}
@@ -75,7 +71,7 @@ function LandingTwo({ openModal }) {
               onClick={handleOpenModal}
             />
           </>
-        )}
+        )} */}
       </span>
       <p>
         This is one of the most powerful free events we've ever hosted!

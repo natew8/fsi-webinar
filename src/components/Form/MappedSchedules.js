@@ -20,7 +20,7 @@ const styles = {
 
 export default function MappedSchedules({ onChange, placeholder }) {
   //Context//
-  const { schedules } = useContext(Context);
+  const { schedules, pickedDate } = useContext(Context);
 
   //Sort and Map schedules//
   const sortedSchedules = schedules
