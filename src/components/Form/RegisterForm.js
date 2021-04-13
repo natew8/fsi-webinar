@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import * as Yup from "yup";
 import ReactGa from "react-ga";
-import ReactPixel from 'react-facebook-pixel'
 //Components
 import AppFormField from "./AppFormField";
 import AppForm from "./AppForm";
@@ -46,7 +45,6 @@ function RegisterForm(props) {
       action: "Submitted Registration Form",
       label: "Register button on form",
     });
-    ReactPixel.trackCustom("Submitted Registration Form")
   };
   return (
     <span className={formStyles.container}>

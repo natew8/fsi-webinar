@@ -13,7 +13,7 @@ export function WebinarProvider(props) {
   const [schedules, setSchedules] = useState([]);
   const [presenters, setPresenters] = useState([]);
   const [twoWebinars, setTwoWebinars] = useState(true);
-  const [pickedDate, setPickedDate] = useState(0)
+  // const [pickedDate, setPickedDate] = useState(0)
 
   //User Registration State//
   const [registerBody, setRegisterBody] = useState({});
@@ -134,8 +134,6 @@ export function WebinarProvider(props) {
         finished,
         error,
         presenterName,
-        pickedDate,
-        setPickedDate,
         setPresenterName,
         setError,
         setSubmitting,

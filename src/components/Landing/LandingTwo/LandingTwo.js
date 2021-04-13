@@ -1,7 +1,6 @@
 //Libraries
 import React, { useContext } from "react";
 import ReactGa from "react-ga";
-import ReactPixel from 'react-facebook-pixel'
 //Components
 import { Context } from "../../context/WebinarContext";
 import AppButton from "../../AppButton";
@@ -33,7 +32,6 @@ function LandingTwo({ openModal }) {
       action: "Clicked Register",
       label: "Second register button",
     });
-    ReactPixel.trackCustom("Open Registration Modal - Second Button")
   }
 
   const mappedList = listItems.map((item, index) => {

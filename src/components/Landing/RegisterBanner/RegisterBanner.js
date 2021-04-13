@@ -1,6 +1,5 @@
 import React from "react";
 import ReactGa from "react-ga";
-import ReactPixel from 'react-facebook-pixel'
 //Components
 import AppButton from "../../AppButton";
 import AppLogo from "../../AppLogo";
@@ -30,7 +29,6 @@ function RegisterBanner({ openModal }) {
       action: "Clicked Register",
       label: "Top register button",
     });
-    ReactPixel.trackCustom("Open Registration Modal - First Button")
   }
   // function handleOpenModalPicked(e) {
   //   e.stopPropagation();
