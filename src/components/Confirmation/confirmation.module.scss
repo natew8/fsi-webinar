@@ -145,6 +145,11 @@ ol {
   .container {
     height: 80%;
   }
+  ol {
+    li {
+      font-size: 1.1rem;
+    }
+  }
 }
 @media only screen and (max-width: 500px) {
   .bounds {
