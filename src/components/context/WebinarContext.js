@@ -53,7 +53,7 @@ export function WebinarProvider(props) {
             setWebinarName(res.data.webinar.name);
             setPresenters(res.data.webinar.presenters[0]);
             setWebinarId(res.data.webinar.webinar_id);
-            res.data.webinar.schedules.length !== 2 && setTwoWebinars(false);
+            {res.data.webinar.schedules.length !== 2 && setTwoWebinars(false);}
             setSchedules(res.data.webinar.schedules);
             setSchedule(res.data.webinar.schedules[0]?.schedule);
             setLoading(false);

@@ -33,7 +33,7 @@ const validationSchema = Yup.object().shape({
 });
 
 function RegisterForm(props) {
-  const { schedule, webinarId, registerUser } = useContext(Context);
+  const { schedule, webinarId, registerUser, pickedDate } = useContext(Context);
   //
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
     console.log(values)
@@ -87,7 +87,7 @@ function RegisterForm(props) {
           id="phone"
           placeholder="(xxx) xxx-xxxx`"
         />
-        <RegisterFormPicker name="schedule" />
+        {pickedDate ? pickedDate : <RegisterFormPicker name="schedule" />}
         <p>
           By continuing you are indicating that you have read and accept the{" "}
           terms of service. Your information will only be used by Financial Strategies Institute
