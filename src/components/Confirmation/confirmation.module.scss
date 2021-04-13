@@ -127,6 +127,7 @@ ol {
   margin: 0%;
   color: #fff;
   li {
+    list-style: circle;
     text-align: left;
     line-height: 33px;
     font-size: 1.1rem;
@@ -137,7 +138,14 @@ ol {
     color: $orange;
   }
 }
-
+@media only screen and (max-height: 825px) and (max-width: 1440px) {
+  .bounds {
+    padding-top: 0.7rem;
+  }
+  .container {
+    height: 80%;
+  }
+}
 @media only screen and (max-width: 500px) {
   .bounds {
     max-width: 320px;

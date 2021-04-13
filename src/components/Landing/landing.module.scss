@@ -58,7 +58,11 @@ $blue: #4bdfe4;
   color: #f4f2f1;
   font-size: 5rem;
 }
-
+@media only screen and (max-width: 1440px) and (max-height: 800px) {
+  .landingOne {
+    height: 750px;
+  }
+}
 @media only screen and (max-width: 500px) {
   .landingFive {
     .lanFiveHeader {
