@@ -1,8 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import ReactGa from "react-ga";
 import ReactPixel from 'react-facebook-pixel'
 //Components
-import { Context } from "../../context/WebinarContext";
 import AppButton from "../../AppButton";
 import AppLogo from "../../AppLogo";
 //Assets
@@ -13,9 +12,8 @@ import landingStyles from "./register.module.scss";
 import AppBulletList from "./AppBulletList";
 
 function RegisterBanner({ openModal }) {
-  const { schedules, twoWebinars, setPickedDate, setSchedule } = useContext(
-    Context
-  );
+
+
   function handleOpenModal(e) {
     e.stopPropagation();
     openModal();
@@ -34,12 +32,12 @@ function RegisterBanner({ openModal }) {
     });
     ReactPixel.trackCustom("Open Registration Modal - First Button")
   }
-  function handleOpenModalPicked(e) {
-    e.stopPropagation();
-    openModal();
-    setPickedDate(e.target.value);
-    setSchedule(+e.target.value);
-  }
+  // function handleOpenModalPicked(e) {
+  //   e.stopPropagation();
+  //   openModal();
+  //   setPickedDate(e.target.value);
+  //   setSchedule(+e.target.value);
+  // }
 
   return (
     <div className={landingStyles.landingOneContainer}>
@@ -78,29 +76,29 @@ function RegisterBanner({ openModal }) {
         </div>
         <hr></hr>
         <div className={landingStyles.linksToRegisterButtons}>
-          {!twoWebinars ? (
+          {/* {!twoWebinars ? ( */}
           <h1 className={landingStyles.dontMiss}>
             Don't miss out on this incredible opportunity!
           </h1>
-          ) : (
+          {/* ) : (
             <>
               <h1 className={landingStyles.dontMiss}>
                 Don't miss out on this incredible opportunity.
               </h1>
               <h2 className={landingStyles.registerToday}>Register Today!</h2>
             </>
-          )}
+          )} */}
           <span className={landingStyles.buttonBox}>
-            {!twoWebinars ? (
+            {/* {!twoWebinars ? ( */}
             <AppButton
               className={landingStyles.button}
               title={"Register Today!"}
               onClick={handleOpenModal}
             />
-            ) : (
-              <>
+            {/* ) : (
+              <div>
                 <AppButton
-                  value={+schedules[0].schedule}
+                  value={schedules[0].schedule}
                   title={schedules[0].comment}
                   onClick={handleOpenModalPicked}
                 />
@@ -110,8 +108,8 @@ function RegisterBanner({ openModal }) {
                   title={schedules[1].comment}
                   onClick={handleOpenModalPicked}
                 />
-              </>
-            )}
+              </div>
+            )} */}
           </span>
         </div>
       </div>
