@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import ReactGa from "react-ga";
+import ReactPixel from 'react-facebook-pixel'
 //Components
 import { Context } from "../../context/WebinarContext";
 import AppButton from "../../AppButton";
@@ -31,6 +32,7 @@ function RegisterBanner({ openModal }) {
       action: "Clicked Register",
       label: "Top register button",
     });
+    ReactPixel.trackCustom("Open Registration Modal - First Button")
   }
   function handleOpenModalPicked(e) {
     e.stopPropagation();
@@ -76,26 +78,26 @@ function RegisterBanner({ openModal }) {
         </div>
         <hr></hr>
         <div className={landingStyles.linksToRegisterButtons}>
-          {/* {!twoWebinars ? ( */}
+          {!twoWebinars ? (
           <h1 className={landingStyles.dontMiss}>
             Don't miss out on this incredible opportunity!
           </h1>
-          {/* ) : (
-            <>s
+          ) : (
+            <>
               <h1 className={landingStyles.dontMiss}>
                 Don't miss out on this incredible opportunity.
               </h1>
               <h2 className={landingStyles.registerToday}>Register Today!</h2>
             </>
-          )} */}
+          )}
           <span className={landingStyles.buttonBox}>
-            {/* {!twoWebinars ? ( */}
+            {!twoWebinars ? (
             <AppButton
               className={landingStyles.button}
               title={"Register Today!"}
               onClick={handleOpenModal}
             />
-            {/* ) : (
+            ) : (
               <>
                 <AppButton
                   value={+schedules[0].schedule}
@@ -109,7 +111,7 @@ function RegisterBanner({ openModal }) {
                   onClick={handleOpenModalPicked}
                 />
               </>
-            )} */}
+            )}
           </span>
         </div>
       </div>
