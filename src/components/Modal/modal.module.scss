@@ -1,12 +1,12 @@
 .modal {
-  background-color: #58585877;
+  background-color: #58585896;
   backdrop-filter: saturate(0.5) blur(10px);
   position: fixed;
   top: 0%;
   left: 0%;
   bottom: 0%;
   width: 100vw;
-  height: 1000px;
+  height: 100vh;
   z-index: 2000;
   align-items: center;
   justify-content: center;
@@ -15,13 +15,12 @@
 .formContainer {
   box-shadow: 6px 4px 10px black;
   border-radius: 5px;
-  padding: 1rem;
+  padding: 1rem 1.2rem;
   background-color: #383838;
   max-width: 1000px;
   height: fit-content;
   z-index: 440000;
-  display: flex;
-  flex-direction: column;
+  position: absolute;
 
   .div {
     font-weight: bolder;

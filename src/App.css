@@ -23,6 +23,12 @@
   height: 100%;
   background-color: "#eee";
 }
+
+@media only screen and (max-height: 825px) and (max-width: 1440px) {
+  .AppConfirmation {
+    overflow: hidden;
+  }
+}
 @media only screen and (max-width: 500px) {
   .errorBox {
     max-width: 320px;
