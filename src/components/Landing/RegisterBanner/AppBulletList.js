@@ -4,8 +4,8 @@ import React from "react";
 import check from "../../../assets/icons/check-circle-outline-512.webp";
 
 const listItems = [
+  "The pros and cons of Roth conversions.",
   "The pros and cons of IRAs, Roth IRAs, 401ks, pension plans and Social Security.",
-  "Ways to ensure your nest egg lasts no matter how long you're retired.",
   "Find out how recent tax law changes benefit you and potentially reduce your taxes!",
   "How has the recent pandemic impacted the market - and can you avoid more losses?",
 ];

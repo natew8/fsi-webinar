@@ -29,18 +29,12 @@ function RegisterBanner({ openModal }) {
       action: "Clicked Register",
       label: "Top register button",
     });
-  }
-  // function handleOpenModalPicked(e) {
-  //   e.stopPropagation();
-  //   openModal();
-  //   setPickedDate(e.target.value);
-  //   setSchedule(+e.target.value);
-  // }
+  } 
 
   return (
     <div className={landingStyles.landingOneContainer}>
       <h1 className={landingStyles.webinarTitle}>
-        Maximise your Social Security benefits
+        Taxes and Retirement
       </h1>
       <div className={landingStyles.linksToRegister}>
         <div className={landingStyles.linksToRegisterHeader}>
