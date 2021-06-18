@@ -13,14 +13,12 @@
 .formField {
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
   label {
     font-weight: bold;
     color: #e06027;
     text-align: left;
     display: flex;
     flex-direction: column;
-    margin-top: 1rem;
     input {
       box-shadow: 2px 2px 5px rgb(0, 0, 0);
       font-size: 1rem;
@@ -33,8 +31,8 @@
 
 .error {
   color: rgb(255, 0, 0);
-  font-size: 1rem;
   text-align: left;
+  margin: 0%;
 }
 
 @media only screen and(max-width:500px) {
