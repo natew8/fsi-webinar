@@ -348,6 +348,8 @@ $blue: #4bdfe4;
     margin: 0%;
     hr {
       margin: 0 auto;
+      margin-bottom: 5px;
+      margin-top: 5px;
       display: inline;
     }
     p {
@@ -383,6 +385,9 @@ $blue: #4bdfe4;
           font-weight: 500;
           text-align: left;
           font-size: 1rem;
+        }
+        img {
+          width: 25px;
         }
       }
     }

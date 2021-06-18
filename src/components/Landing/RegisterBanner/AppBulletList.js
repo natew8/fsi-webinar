@@ -3,6 +3,7 @@ import React from "react";
 //Assets
 import check from "../../../assets/icons/check-circle-outline-512.webp";
 
+
 const listItems = [
   "The pros and cons of Roth conversions.",
   "The pros and cons of IRAs, Roth IRAs, 401ks, pension plans and Social Security.",
@@ -19,7 +20,7 @@ function AppBulletList() {
       </span>
     );
   });
-  return <div>{mappedBullet}</div>;
+  return <>{mappedBullet}</>;
 }
 
 export default AppBulletList;
